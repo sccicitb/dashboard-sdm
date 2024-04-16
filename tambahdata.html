@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCCIC</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body>
+    <div class="dashboard section">
+      <div class="row all-content">
+        <!-- list -->
+        <div class="col-lg-2 col-md-2 col-sm-4 list">
+          <div class="row icon-dash">
+            <div class="col">
+              <img src="img/logo.png" alt="" />
+            </div>
+          </div>
+          <hr />
+          <div class="all-list">
+            <div class="row patient">
+              <div class="col">
+                <a href="index.html">
+                  <h6 class="">SCCIC</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row doctor">
+              <div class="col">
+                <a href="ids.html">
+                  <h6>IDS</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+              <div class="col">
+                <a href="idh.html">
+                  <h6>IDH</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+              <div class="col">
+                <a href="msp.html">
+                  <h6>MSP</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+              <div class="col">
+                <a href="lci.html">
+                  <h6>LCI</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+              <div class="col">
+                <a href="resume.html">
+                  <h6>Resume</h6>
+                </a>
+              </div>
+            </div>
+            <hr>
+            <div class="row tool">
+              <div class="col">
+                <a href="https://citylab.itb.ac.id/sccic-dashmgmt/projects">
+                  <h6>SDM</h6>
+                </a>
+              </div>
+            </div>
+            <hr>
+            <br> <br> 
+            <!-- <div class="d-flex justify-content-center">
+              <button class="btn logout" id="logout">Log Out</button>
+            </div> -->
+          </div>
+        </div>
+        <!-- end of list -->
+
+        <!-- main content -->
+        <div class="col-lg-10 col-md-10 col-sm-8 maindoc">
+          <div class="row">
+            <div class="col title">
+              <h1>ADD NEW DATA</h1>
+              <p>Create a new data and add them to this site.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <section class="pagetambahdokter">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <form class="add">
+                        <div class="form-group">
+                          <label for="email" style="color: rgb(216, 216, 216)">Proyek</label>
+                          <input type="text" class="form-control" id="email" aria-describedby="emailHelp" name="nama" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="specialist" style="color: rgb(216, 216, 216)">Mitra</label>
+                          <input type="text" class="form-control" id="specialist" name="specialist" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="phone" style="color: rgb(216, 216, 216)">Nilai Dana</label>
+                          <input type="text" class="form-control" id="phone" name="phone" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="status" style="color: rgb(216, 216, 216)">Status</label>
+                          <select name="status" id="status">
+                            <option value="inisiasi">Inisiasi</option>
+                            <option value="proposal">Proposal</option>
+                            <option value="penawaran">Penawaran</option>
+                            <option value="nego">Nego</option>
+                            <option value="kontrak">Kontrak</option>
+                          </select>
+                        </div>
+                        <div class="form-group"> 
+                          <label for="alamat" style="color: rgb(216, 216, 216)">PIC</label>
+                          <input type="text" class="form-control" id="alamat" name="alamat" required />
+                        </div>
+                        <!-- <div class="form-group">
+                          <label for="dokterid" style="color: rgb(216, 216, 216)">Dokter ID</label>
+                          <input type="text" class="form-control" id="dokterid" name="userId" required />
+                        </div> -->
+                        <div class="button">
+                          <button type="submit" class="btn submit" style="margin-top: 10px">Submit</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- end of main content -->
+      </div>
+    </div>
+
+    <!-- script -->
+    <script src="../bootstrap/js/jquery-3.6.0.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <!-- end of script -->
+    <!-- script of firestore -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+      import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB40QTGt7KfQQLZ_ZG8_xdep7dQhcWK8b8",
+        authDomain: "oxycon-34b18.firebaseapp.com",
+        databaseURL: "https://oxycon-34b18-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "oxycon-34b18",
+        storageBucket: "oxycon-34b18.appspot.com",
+        messagingSenderId: "648156586578",
+        appId: "1:648156586578:web:2896cc6aef48b472dbf58b",
+        measurementId: "G-0504EZS97M",
+      };
+
+      // init firebase
+      initializeApp(firebaseConfig);
+
+      // init services
+      const db = getFirestore();
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const Firecollection = urlParams.get('collection');
+      console.log(Firecollection)
+      /* get collection data dokter */
+      const dbListDokter = collection(db, Firecollection); //dblist dokter
+
+      getDocs(dbListDokter)
+        .then((snapshot) => {
+          let listDokter = [];
+          snapshot.docs.forEach((doc) => {
+            listDokter.push({ ...doc.data(), id: doc.id });
+          });
+          console.log(listDokter);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      /* end of get collection data dokter */
+
+      /* adding new dokter */
+      const addDokterForm = document.querySelector(".add");
+      addDokterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        addDoc(dbListDokter, {
+          nama: addDokterForm.nama.value,
+          specialist: addDokterForm.specialist.value,
+          phone: addDokterForm.phone.value,
+          alamat: addDokterForm.alamat.value,
+          // userId: addDokterForm.userId.value,
+          status: addDokterForm.status.value,
+        }).then(() => {
+          addDokterForm.reset();
+          alert("Data Berhasil di Tambahkan");
+          history.back();
+        });
+      });
+    </script>
+    <!-- end of list of firestore -->
+  </body>
+</html>

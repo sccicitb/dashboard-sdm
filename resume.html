@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCCIC</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    .table-wrapper {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      overflow: auto;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dashboard section">
+    <div class="row all-content">
+      <!-- list -->
+      <div class="col-lg-2 col-md-2 col-sm-4 list">
+        <div class="row icon-dash">
+          <div class="col">
+            <img src="img/logo.png" alt="" />
+          </div>
+        </div>
+        <hr />
+        <div class="all-list">
+          <div class="row patient">
+            <div class="col">
+              <a href="index.html">
+                <h6 class="">SCCIC</h6>
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div class="row doctor">
+            <div class="col">
+              <a href="ids.html">
+                <h6>IDS</h6>
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div class="row tool">
+            <div class="col">
+              <a href="idh.html">
+                <h6>IDH</h6>
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div class="row tool">
+            <div class="col">
+              <a href="msp.html">
+                <h6>MSP</h6>
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div class="row tool">
+            <div class="col">
+              <a href="lci.html">
+                <h6>LCI</h6>
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div class="row tool">
+            <div class="col">
+              <a href="resume.html">
+                <h6>Resume</h6>
+              </a>
+            </div>
+          </div>
+          <hr>
+          <div class="row tool">
+            <div class="col">
+              <a href="https://citylab.itb.ac.id/sccic-dashmgmt/projects">
+                <h6>SDM</h6>
+              </a>
+            </div>
+          </div>
+          <hr>
+          <br> <br>
+          <!-- <div class="d-flex justify-content-center">
+              <button class="btn logout" id="logout">Log Out</button>
+            </div> -->
+        </div>
+      </div>
+      <!-- end of list -->
+
+      <!-- main content for doctor list -->
+      <div class="col-lg-10 col-md-10 col-sm-8 main">
+        <div class="row">
+          <div class="col title">
+            <h1>RESUME</h1>
+          </div>
+        </div>
+        <br />
+        <!-- list dokter -->
+        <div class="doctorlist-title table-wrapper">
+          <table class="table">
+            <tr>
+              <th>Organisasi / PT</th>
+              <th colspan="4">Status Proyek</th>
+              <th colspan="4">Jumlah Proyek (Clients)</th>
+              <th>PIC</th>
+              <th>Target 2024</th>
+              <th>Realisasi Q-1</th>
+              <th>Target Q-1</th>
+              <th>Target Q-2</th>
+            </tr>
+            <tr>
+              <td>SCCIC</td>
+              <td style="background-color: green;" > Rp6.379.376.500,00 </td>
+              <td style="background-color: blue;"> Rp8.161.522.239,00
+              </td>
+              <td style="background-color: yellow; color: black;"> Rp8.200.000.000,00
+              </td>
+              <td style="background-color: white;color: black;"> Rp7.214.858.130,00
+              </td>
+              <td  style="background-color: green;">5</td>
+              <td style="background-color: blue;">9</td>
+              <td style="background-color: yellow; color: black;">9</td>
+              <td style="background-color: white;color: black;">6</td>
+              <td>Dona</td>
+              <td> Rp23.000.000.000,00
+              </td>
+              <td>28%</td>
+              <td> Rp23.000.000.000,00
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>INDISMART</td>
+              <td style="background-color: green;"> Rp250.000.000,00 </td>
+              <td style="background-color: blue;"> Rp- </td>
+              <td style="background-color: yellow; color: black;"> Rp3.400.000.000,00 </td>
+              <td style="background-color: white; color: black;"> Rp15.150.000.000,00 </td>
+              <td style="background-color: green;">1</td>
+              <td style="background-color: blue;">1</td>
+              <td style="background-color: yellow; color: black;">4</td>
+              <td style="background-color: white;color: black;">36</td>
+              <td>Djaka</td>
+              <td >Rp18.000.000.000,00</td>
+              <td>1%</td>
+              <td>Rp5.000.000.000,00</td>
+            </tr>
+            <tr>
+              <td>LCI</td>
+              <td style="background-color: green;"> Rp388.000.000,00 </td>
+              <td style="background-color: blue;"> Rp790.000.000,00 </td>
+              <td style="background-color: yellow; color: black;"> Rp4.243.000.000,00 </td>
+              <td style="background-color: white; color: black;"> Rp- </td>
+              <td style="background-color: green;">2</td>
+              <td style="background-color: blue;">7</td>
+              <td style="background-color: yellow; color: black;">10</td>
+              <td style="background-color: white; color: black;">0</td>
+              <td>Alda</td>
+              <td>Rp7.000.000.000,00</td>
+              <td>6%</td>
+              <td>Rp1.500.000.000,00</td>
+            </tr>
+            <tr>
+              <td>INDOHEALTH</td>
+              <td style="background-color: green"> Rp453.000.000,00 </td>
+              <td style="background-color: blue;"> Rp280.000.000,00 </td>
+              <td style="background-color: yellow; color: black;"> Rp3.000.000.000,00 </td>
+              <td style="background-color: white; color: black;"> Rp1.650.000.000,00 </td>
+              <td  style="background-color: green">2</td>
+              <td style="background-color: blue;">2</td>
+              <td style="background-color: yellow; color: black;">6</td>
+              <td  style="background-color: white; color: black;">5</td>
+              <td>Alawi</td>
+              <td>Rp5.000.000.000,00</td>
+              <td>9%</td>
+              <td>Rp1.250.000.000,00</td>
+            </tr>
+            <tr>
+              <td>MSP</td>
+              <td style="background-color: green;"> Rp80.000.000,00 </td>
+              <td style="background-color: blue;"> Rp2.115.000.000,00 </td>
+              <td style="background-color: yellow; color: black;"> Rp3.520.000.000,00 </td>
+              <td style="background-color: white; color: black;"> Rp1.000.000.000,00 </td>
+              <td style="background-color: green;"></td>>1</td>
+              <td style="background-color: blue;">4</td>
+              <td style="background-color: yellow; color: black;">7</td>
+              <td  style="background-color: white; color: black;">6</td>
+              <td>Fakhri</td>
+              <td>Rp7.000.000.000,00</td>
+              <td>1%</td>
+              <td>Rp1.500.000.000,00</td>
+            </tr>
+            <tr>
+              <td>Jumlah</td>
+              <td> Rp7.550.376.500,00 </td>
+              <td> Rp11.346.522.239,00 </td>
+              <td> Rp22.363.000.000,00 </td>
+              <td> Rp25.014.858.130,00 </td>
+              <td>11</td>
+              <td>23</td>
+              <td>36</td>
+              <td>53</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td colspan="">SCCIC</td>
+              <td colspan="">Rp29.955.756.869,00</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td colspan="">IDS</td>
+              <td colspan="">Rp18.800.000.000,00</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td colspan="">LCI</td>
+              <td colspan="">Rp5.421.000.000,00</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td colspan="">IDH</td>
+              <td colspan="">Rp5.383.000.000,00</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td colspan="">MSP</td>
+              <td colspan="">Rp6.715.000.000,00</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td colspan="">SUM</td>
+              <td colspan="">Rp66.274.756.869,00</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- end of main content for doctor list -->
+
+        <!-- Modal 1 -->
+
+        <!-- end of modal 1 -->
+        <!-- Modal -->
+
+        <!-- end of modal -->
+      </div>
+    </div>
+  </div>
+
+  <!-- script -->
+  <script src="../bootstrap/js/jquery-3.6.0.min.js"></script>
+  <script src="../bootstrap/js/bootstrap.js"></script>
+  <!-- end of script -->
+
+  <!-- script of firestore -->
+  <script type="module" src=""></script>
+  <!-- end of list of firestore -->
+</body>
+
+</html>

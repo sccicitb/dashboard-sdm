@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCCIC</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body>
+    <div class="dashboard section">
+      <div class="row all-content">
+        <!-- list -->
+        <div class="col-lg-2 col-md-2 col-sm-4 list">
+          <div class="row icon-dash">
+            <div class="col">
+              <img src="img/logo.png" alt="" />
+            </div>
+          </div>
+          <hr />
+          <div class="all-list">
+            <div class="row patient">
+              <div class="col">
+                <a href="index.html">
+                  <h6 class="">SCCIC</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row doctor">
+              <div class="col">
+                <a href="ids.html">
+                  <h6>IDS</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+              <div class="col">
+                <a href="idh.html">
+                  <h6>IDH</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+              <div class="col">
+                <a href="msp.html">
+                  <h6>MSP</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+              <div class="col">
+                <a href="lci.html">
+                  <h6>LCI</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+                <div class="col">
+                  <a href="resume.html">
+                    <h6>Resume</h6>
+                  </a>
+                </div>
+            </div>
+            <hr>
+            <div class="row tool">
+              <div class="col">
+                <a href="https://citylab.itb.ac.id/sccic-dashmgmt/projects">
+                  <h6>SDM</h6>
+                </a>
+              </div>
+            </div>
+            <hr>
+            <br> <br> 
+            <!-- <div class="d-flex justify-content-center">
+              <button class="btn logout" id="logout">Log Out</button>
+            </div> -->
+          </div>
+        </div>
+        <!-- end of list -->
+
+        <!-- main content for doctor list -->
+        <div class="col-lg-10 col-md-10 col-sm-8 main">
+          <div class="row">
+            <div class="col title">
+              <h1>RESUME</h1>
+            </div>
+          </div>
+          <br />
+          <!-- list dokter -->
+          <div class="doctorlist-title">
+            <table class="table">
+              <thead>
+                <th>Organisasi</th>
+                <th>Status Proyek</th>
+                <th>Nominal (Rp)</th>
+                <th>Jumlah Client</th>
+                <th>PIC</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>SCCIC</td>
+                  <td>
+                    <select name="status" id="status" style="width: 100%">
+                        <option value="inisiasi">Inisiasi</option>
+                        <option value="proposal">Proposal</option>
+                        <option value="penawaran">Penawaran</option>
+                        <option value="nego">Nego</option>
+                        <option value="kontrak">Kontrak</option>
+                      </select>
+                  </td>
+                  <td> Rp6.379.376.500,00 </td>
+                  <td>5</td>
+                  <td>Dona</td>
+                </tr>
+                <tr>
+                  <td>INDISMART</td>
+                  <td> 
+                    <select name="status" id="status" style="width: 100%">
+                    <option value="inisiasi">Inisiasi</option>
+                    <option value="proposal">Proposal</option>
+                    <option value="penawaran">Penawaran</option>
+                    <option value="nego">Nego</option>
+                    <option value="kontrak">Kontrak</option>
+                  </select>
+                  </td>
+                  <td> Rp250.000.000,00</td>
+                  <td>1</td>
+                  <td>Djaka</td>
+                </tr>
+                <tr>
+                    <td>LCI</td>
+                    <td>                  
+                        <select name="status" id="status" style="width: 100%">
+                        <option value="inisiasi">Inisiasi</option>
+                        <option value="proposal">Proposal</option>
+                        <option value="penawaran">Penawaran</option>
+                        <option value="nego">Nego</option>
+                        <option value="kontrak">Kontrak</option>
+                      </select>
+                    </td>
+                    <td> Rp388.000.000,00</td>
+                    <td>2</td>
+                    <td>Alda</td>
+                </tr>
+                <tr>
+                    <td>INDIHEALTH</td>
+                    <td>                 
+                        <select name="status" id="status" style="width: 100%">
+                        <option value="inisiasi">Inisiasi</option>
+                        <option value="proposal">Proposal</option>
+                        <option value="penawaran">Penawaran</option>
+                        <option value="nego">Nego</option>
+                        <option value="kontrak">Kontrak</option>
+                      </select>
+                    </td>
+                    <td> Rp453.000.000,00</td>
+                    <td>2</td>
+                    <td>Alawi</td>
+                </tr>
+                <tr>
+                    <td>MSP</td>
+                    <td>                  
+                        <select name="status" id="status" style="width: 100%">
+                        <option value="inisiasi">Inisiasi</option>
+                        <option value="proposal">Proposal</option>
+                        <option value="penawaran">Penawaran</option>
+                        <option value="nego">Nego</option>
+                        <option value="kontrak">Kontrak</option>
+                      </select>
+                    </td>
+                    <td> Rp80.000.000,00</td>
+                    <td>1</td>
+                    <td>Fakhri</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- end of main content for doctor list -->
+
+          <!-- Modal 1 -->
+
+          <!-- end of modal 1 -->
+          <!-- Modal -->
+
+          <!-- end of modal -->
+        </div>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script src="../bootstrap/js/jquery-3.6.0.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <!-- end of script -->
+
+    <!-- script of firestore -->
+    <script type="module" src=""></script>
+    <!-- end of list of firestore -->
+  </body>
+</html>
