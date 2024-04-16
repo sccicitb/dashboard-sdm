@@ -138,18 +138,17 @@
                   <label for="" class="labs">Mitra</label>
                   <input type="text" id="spedokter" /> <br />
                   <label for="" class="labs">Nilai Dana</label>
-                  <input type="text" id="aldokter" /> <br />
+                  <input type="text" id="phodokter" /> <br />
                   <label for="status" class="labs">Status:</label>
                   <select name="status" id="status" style="width: 100%">
                     <option value="inisiasi">Inisiasi</option>
                     <option value="proposal">Proposal</option>
                     <option value="penawaran">Penawaran</option>
-                    <option value="nego">Nego</option>
                     <option value="kontrak">Kontrak</option>
                   </select>
 
                   <label for="" class="labs">PIC</label>
-                  <input type="text" id="phodokter" /> <br />
+                  <input type="text" id="aldokter" /> <br />
                  
                   <label for="" class="labs" style="display: none">ID Dokument</label>
                   <input type="text" id="iddocdok" style="display: none" />
@@ -245,22 +244,22 @@
       function renderDokter(doc) {
         let trow = document.createElement("tr");
         var nomor = document.createElement("td");
-        let namaDokter = document.createElement("td");
-        let spesialisasiDokter = document.createElement("td");
-        let alamatDokter = document.createElement("td");
-        let status = document.createElement("td");
-        let phoneDokter = document.createElement("td");
+        let namaDokter = document.createElement("td"); //proyek
+        let spesialisasiDokter = document.createElement("td"); ///mitra
+        let phoneDokter = document.createElement("td"); //nilai dana
+        let status = document.createElement("td"); //status
+        let alamatDokter = document.createElement("td"); // pic
         let ControlDiv = document.createElement("td");
 
-        docList.push([doc.data().nama, doc.data().specialist, doc.data().alamat, doc.data().phone, doc.data().status, doc.id]);
+        docList.push([doc.data().nama, doc.data().specialist, doc.data().phone, doc.data().status, doc.data().alamat, doc.id]);
 
         trow.setAttribute("data-id", doc.id);
         nomor.innerHTML = ++plusnomor;
         namaDokter.textContent = doc.data().nama;
         spesialisasiDokter.textContent = doc.data().specialist;
-        alamatDokter.textContent = doc.data().phone;
+        phoneDokter.textContent = doc.data().phone;
         status.innerHTML = doc.data().status;
-        phoneDokter.textContent = doc.data().alamat;
+        alamatDokter.textContent = doc.data().alamat;
         ControlDiv.innerHTML +=
           '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes(' +
           plusnomor +
@@ -269,13 +268,41 @@
           '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes(' +
           plusnomor +
           ')"><i class="fa fa-trash" style="font-size:24px; color: white;"></i></button>';
+        
+          if (doc.data().status.toLowerCase() === "proposal") {
+        trow.style.backgroundColor = "yellow";
+        nomor.style.color = "black";
+        namaDokter.style.color = "black";
+        spesialisasiDokter.style.color = "black";
+        phoneDokter.style.color = "black";
+        status.style.color = "black";
+        alamatDokter.style.color = "black";
+        } 
+
+        if (doc.data().status.toLowerCase() === "kontrak") {
+        trow.style.backgroundColor = "green";
+        }
+
+        if (doc.data().status.toLowerCase() === "penawaran") {
+        trow.style.backgroundColor = "blue";
+        }
+
+        if (doc.data().status.toLowerCase() === "inisiasi") {
+        trow.style.backgroundColor = "white";
+        nomor.style.color = "black";
+        namaDokter.style.color = "black";
+        spesialisasiDokter.style.color = "black";
+        phoneDokter.style.color = "black";
+        status.style.color = "black";
+        alamatDokter.style.color = "black";
+        } 
 
         trow.appendChild(nomor);
         trow.appendChild(namaDokter);
         trow.appendChild(spesialisasiDokter);
-        trow.appendChild(alamatDokter);
-        trow.appendChild(status);
         trow.appendChild(phoneDokter);
+        trow.appendChild(status);
+        trow.appendChild(alamatDokter);
         trow.appendChild(ControlDiv);
 
         dokterList.appendChild(trow);
@@ -285,20 +312,21 @@
       var dokterdocid = document.getElementById("iddocdok");
       var dokternama = document.getElementById("namadokter");
       var dokterspe = document.getElementById("spedokter");
-      var dokteral = document.getElementById("aldokter");
-      var doktersta = document.getElementById("status");
       var dokterpho = document.getElementById("phodokter");
+      var doktersta = document.getElementById("status");
+      var dokteral = document.getElementById("aldokter");
+
 
       let Deldoc = document.getElementById("Deldoc");
 
       /* Fungsi CRUD*/
       window.Fillboxes = (index) => {
         if (index == null) {
-          dokternama.value = "";
-          dokterspe.value = "";
-          dokteral.value = "";
-          doktersta.value = "";
+          dokternama.value = ""; //proyek
+          dokterspe.value = ""; //mitra
           dokterpho.value = "";
+          doktersta.value = "";
+          dokteral.value = ""; //
           dokterdocid.value = "";
         } else {
           --index;
@@ -337,14 +365,14 @@
         updateDoc(updatedatadoc, {
           nama: dokternama.value,
           specialist: dokterspe.value,
-          alamat: dokteral.value,
           phone: dokterpho.value,
           status: doktersta.value,
+          alamat: dokteral.value,
         })
           .then(() => {
             console.log("add data sukses");
             alert("Data Berhasil Update");
-            window.location.href = "idh.html";
+            window.location.href = "index.html";
           })
           .catch((error) => {
             console.log("unsesesful" + error);
@@ -357,7 +385,7 @@
       //   signOut(auth)
       //     .then(() => {
       //       console.log("User Telah Keluar");
-      //       history.back()
+      //       history.back();
       //     })
       //     .catch((err) => {
       //       console.log(err.message);
@@ -371,7 +399,7 @@
           .then(() => {
             console.log("add data sukses");
             alert("Data Berhasil Dihapus");
-            window.location.href = "idh.html";
+            window.location.href = "index.html";
           })
           .catch((error) => {
             console.log("unsesesful" + error);
