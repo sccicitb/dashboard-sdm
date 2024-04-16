@@ -141,10 +141,10 @@
                   <input type="text" id="phodokter" /> <br />
                   <label for="status" class="labs">Status:</label>
                   <select name="status" id="status" style="width: 100%">
-                    <option value="inisiasi">Inisiasi</option>
-                    <option value="proposal">Proposal</option>
-                    <option value="penawaran">Penawaran</option>
-                    <option value="kontrak">Kontrak</option>
+                    <option value="inisiasi" style="background-color:white ;">Inisiasi</option>
+                    <option value="proposal" style="background-color:yellow ;">Proposal</option>
+                    <option value="penawaran" style="background-color:blue ; color: white;">Penawaran</option>
+                    <option value="kontrak" style="background-color:green ; color: white;" >Kontrak</option>
                   </select>
 
                   <label for="" class="labs">PIC</label>
@@ -236,6 +236,22 @@
      });
      */
 
+     
+      // backgournd status style
+      function updateStyle() {
+            var select = document.getElementById("status");
+            var selectedOption = select.options[select.selectedIndex];
+            select.style.backgroundColor = selectedOption.style.backgroundColor;
+            select.style.color = selectedOption.style.color;
+        }
+
+        // Panggil fungsi saat opsi berubah
+        document.getElementById("status").addEventListener("change", updateStyle);
+        
+        // Panggil fungsi untuk mengatur latar belakang secara awal
+        updateStyle();
+      // end of update background style for status
+
       /*membuat tabel untuk dokter*/
       var plusnomor = 0;
       var docList = [];
@@ -260,17 +276,9 @@
         phoneDokter.textContent = doc.data().phone;
         status.innerHTML = doc.data().status;
         alamatDokter.textContent = doc.data().alamat;
-        ControlDiv.innerHTML +=
-          '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes(' +
-          plusnomor +
-          ')"><i class="fa fa-pencil" style="font-size:24px; color: white; margin-left:"5px"></i></button>';
-        ControlDiv.innerHTML +=
-          '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes(' +
-          plusnomor +
-          ')"><i class="fa fa-trash" style="font-size:24px; color: white;"></i></button>';
 
-        
-          if (doc.data().status.toLowerCase() === "proposal") {
+
+        if (doc.data().status.toLowerCase() === "proposal") {
         trow.style.backgroundColor = "yellow";
         nomor.style.color = "black";
         namaDokter.style.color = "black";
@@ -278,6 +286,10 @@
         phoneDokter.style.color = "black";
         status.style.color = "black";
         alamatDokter.style.color = "black";
+        }
+
+        if (doc.data().status.toLowerCase() === "proposal") {
+        trow.style.backgroundColor = "yellow"
         } 
 
         if (doc.data().status.toLowerCase() === "kontrak") {
@@ -290,12 +302,35 @@
 
         if (doc.data().status.toLowerCase() === "inisiasi") {
         trow.style.backgroundColor = "white";
+        } 
+
+        if (doc.data().status.toLowerCase() === "kontrak" || doc.data().status.toLowerCase() === "penawaran" ) {
+        ControlDiv.innerHTML +=
+          '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes(' +
+          plusnomor +
+          ')"><i class="fa fa-pencil" style="font-size:24px; color: white; margin-left:"5px"></i></button>';
+        ControlDiv.innerHTML +=
+          '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes(' +
+          plusnomor +
+          ')"><i class="fa fa-trash" style="font-size:24px; color: white;"></i></button>';
+        } 
+
+        if (doc.data().status.toLowerCase() === "inisiasi" || doc.data().status.toLowerCase() === "proposal" ) {
         nomor.style.color = "black";
         namaDokter.style.color = "black";
         spesialisasiDokter.style.color = "black";
         phoneDokter.style.color = "black";
         status.style.color = "black";
         alamatDokter.style.color = "black";
+
+        ControlDiv.innerHTML +=
+          '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes(' +
+          plusnomor +
+          ')"><i class="fa fa-pencil" style="font-size:24px; color: black; margin-left:"5px"></i></button>';
+        ControlDiv.innerHTML +=
+          '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes(' +
+          plusnomor +
+          ')"><i class="fa fa-trash" style="font-size:24px; color: black;"></i></button>';
         } 
 
         trow.appendChild(nomor);
