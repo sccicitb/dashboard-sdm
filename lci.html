@@ -111,7 +111,7 @@
                 <th>No.</th>
                 <th>Proyek</th>
                 <th>Mitra</th>
-                <th>Nilai Dana</th>
+                <th>Dana (Rp)</th>
                 <th>Status</th>
                 <th>PIC</th>
                 <th>Action</th>
@@ -401,7 +401,7 @@
         updateDoc(updatedatadoc, {
           nama: dokternama.value,
           specialist: dokterspe.value,
-          phone: dokterpho.value,
+          phone: +dokterpho.value,
           status: doktersta.value,
           alamat: dokteral.value,
         })

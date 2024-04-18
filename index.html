@@ -204,7 +204,7 @@
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-      import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+      import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc, query, where } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
       import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
       const firebaseConfig = {
@@ -240,6 +240,24 @@
         updateStyle();
       // end of update background style for status
 
+      // format rupiah
+      function formatRupiah(angka, prefix) {
+          var number_string = angka.toString(),
+              split = number_string.split(','),
+              sisa = split[0].length % 3,
+              rupiah = split[0].substr(0, sisa),
+              ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+          if (ribuan) {
+              var separator = sisa ? '.' : '';
+              rupiah += separator + ribuan.join('.');
+          }
+
+          rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+          return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+      }
+      // end of rupiah
+
       /*membuat tabel untuk dokter*/
       var plusnomor = 0;
       var docList = [];
@@ -261,7 +279,9 @@
         nomor.innerHTML = ++plusnomor;
         namaDokter.textContent = doc.data().nama;
         spesialisasiDokter.textContent = doc.data().specialist;
-        phoneDokter.textContent = doc.data().phone;
+        const phoneValue = doc.data().phone;
+        phoneDokter.textContent = formatRupiah(phoneValue.toString());
+
         status.innerHTML = doc.data().status;
         alamatDokter.textContent = doc.data().alamat;
 
@@ -361,6 +381,71 @@
         }
       };
 
+      // filter by status
+      function countStatusDocument(status) {
+        const q = query(collection(db, "sccic"), where("status", "==", status));
+
+        getDocs(q)
+        .then((querySnapshot) => {
+          console.log("Number of documents with status '" + status + "': ", querySnapshot.size);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      }
+
+      countStatusDocument("kontrak");
+      countStatusDocument("penawaran");
+      countStatusDocument("inisiasi");
+      countStatusDocument("proposal");
+      // end of filter by status 
+
+      // filter for sum dana
+
+      function sumPriceByStatusA(status, callback) {
+      const q = query(collection(db, "ids"), where("status", "==", status));
+
+      getDocs(q)
+        .then((querySnapshot) => {
+          let total = 0;
+          querySnapshot.forEach((doc) => {
+            total += doc.data().phone;
+          });
+          callback(total);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      }
+
+
+      // end of filter sum dana 
+      function sumPriceByStatus(status, callback) {
+      const q = query(collection(db, "sccic"), where("status", "==", status));
+
+      getDocs(q)
+        .then((querySnapshot) => {
+          let total = 0;
+          querySnapshot.forEach((doc) => {
+            total += doc.data().phone;
+          });
+          callback(total);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      }
+
+      // Menggunakan fungsi untuk menjumlahkan nilai price dari dokumen dengan status "kontrak"
+      sumPriceByStatus("kontrak", (sum) => {
+        console.log("Total price of documents with status 'kontrak': ", sum);
+      });
+
+      sumPriceByStatusA("kontrak", (sum) => {
+        console.log("Total price of documents with status 'kontrak': ", sum);
+      });
+
+
       /* get collection data dokter */
       //dblist dokter
       const dbListDokter = collection(db, "sccic");
@@ -368,11 +453,16 @@
         .then((snapshot) => {
           let listDokter = [];
           let listid = [];
+          let totalDana = 0;
           snapshot.docs.forEach((doc) => {
             listDokter.push({ ...doc.data(), id: doc.id });
             listid.push({ idini: doc.id });
             renderDokter(doc);
+            const dana = doc.data().phone || 0;
+            totalDana += dana;
           });
+          console.log("Total Harga Semua in Collection:", totalDana);
+          console.log("Number of documents in collection: ", snapshot.size);
           console.log(listDokter);
           console.log(listid);
         })
@@ -387,7 +477,7 @@
         updateDoc(updatedatadoc, {
           nama: dokternama.value,
           specialist: dokterspe.value,
-          phone: dokterpho.value,
+          phone: +dokterpho.value,
           status: doktersta.value,
           alamat: dokteral.value,
         })
@@ -419,6 +509,7 @@
       Deldoc.addEventListener("click", delDoc);
       UpDatadoc.addEventListener("click", UpdDoc);
       // }
+
     </script>
     <!-- end of list of firestore -->
   </body>

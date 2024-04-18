@@ -166,15 +166,42 @@
         measurementId: "G-0504EZS97M",
       };
 
+      // adding rupiah
+      /* Dengan Rupiah */
+      var dengan_rupiah = document.getElementById('phone');
+      dengan_rupiah.addEventListener('keyup', function(e) {
+          // Menghapus semua karakter non-digit
+          var cleanValue = this.value.replace(/\D/g, '');
+          dengan_rupiah.value = formatRupiah(cleanValue, 'Rp. ');
+      });
+
+      /* Fungsi */
+      function formatRupiah(angka, prefix) {
+          var number_string = angka.toString(),
+              split = number_string.split(','),
+              sisa = split[0].length % 3,
+              rupiah = split[0].substr(0, sisa),
+              ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+          if (ribuan) {
+              var separator = sisa ? '.' : '';
+              rupiah += separator + ribuan.join('.');
+          }
+
+          rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+          return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+      }
+
       // init firebase
       initializeApp(firebaseConfig);
 
       // init services
       const db = getFirestore();
 
+
       const urlParams = new URLSearchParams(window.location.search);
       const Firecollection = urlParams.get('collection');
-      console.log(Firecollection)
+      console.log(Firecollection);
       /* get collection data dokter */
       const dbListDokter = collection(db, Firecollection); //dblist dokter
 
@@ -199,7 +226,7 @@
         addDoc(dbListDokter, {
           nama: addDokterForm.nama.value,
           specialist: addDokterForm.specialist.value,
-          phone: addDokterForm.phone.value,
+          phone: parseFloat(addDokterForm.phone.value.replace(/\D/g, '')),
           alamat: addDokterForm.alamat.value,
           // userId: addDokterForm.userId.value,
           status: addDokterForm.status.value,
@@ -209,6 +236,7 @@
           history.back();
         });
       });
+
     </script>
     <!-- end of list of firestore -->
   </body>
