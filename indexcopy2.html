@@ -238,7 +238,7 @@
         
         // Panggil fungsi untuk mengatur latar belakang secara awal
         updateStyle();
-      // end of update background style for status
+        // end of update background style for status
 
       // format rupiah
       function formatRupiah(angka, prefix) {
@@ -258,9 +258,12 @@
       }
       // end of rupiah
 
+      // -------------------------------------=------------------------------------------------------- //
+
       /*membuat tabel untuk dokter*/
       var plusnomor = 0;
       var docList = [];
+      let trowRefs = [];
 
       const rowsByStatus = {
       kontrak: [],
@@ -272,13 +275,11 @@
       const dokterList = document.querySelector("#dokterList");
       function renderDokter(doc) {
         let trow = document.createElement("tr");
-        // var nomor = document.createElement("td");
         let namaDokter = document.createElement("td"); //proyek
         let spesialisasiDokter = document.createElement("td"); ///mitra
         let phoneDokter = document.createElement("td"); //nilai dana
         let status = document.createElement("td"); //status
         let alamatDokter = document.createElement("td"); // pic
-        // let ControlDiv = document.createElement("td");
 
         docList.push([doc.data().nama, doc.data().specialist, doc.data().phone, doc.data().status, doc.data().alamat, doc.id]);
 
@@ -296,35 +297,14 @@
         phoneDokter.textContent = phone;
         status.textContent = statusValue;
         alamatDokter.textContent = alamat;
-
-        // if (doc.data().status.toLowerCase() === "penawaran" || doc.data().status.toLowerCase() === "kontrak" ) {
-        // ControlDiv.innerHTML +=
-        //   '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes(' +
-        //   plusnomor +
-        //   ')"><i class="fa fa-pencil" style="font-size:24px; color: white; margin-left:"5px"></i></button>';
-        // ControlDiv.innerHTML +=
-        //   '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes(' +
-        //   plusnomor +
-        //   ')"><i class="fa fa-trash" style="font-size:24px; color: white;"></i></button>';
-        // } 
-        
-        // if (doc.data().status.toLowerCase() === "inisiasi" || doc.data().status.toLowerCase() === "proposal" ) {
-
-        // namaDokter.style.color = "black";
-        // spesialisasiDokter.style.color = "black";
-        // phoneDokter.style.color = "black";
-        // status.style.color = "black";
-        // alamatDokter.style.color = "black";
-
-        // ControlDiv.innerHTML +=
-        //   '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes(' +
-        //   plusnomor +
-        //   ')"><i class="fa fa-pencil" style="font-size:24px; color: black; margin-left:"5px"></i></button>';
-        // ControlDiv.innerHTML +=
-        //   '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes(' +
-        //   plusnomor +
-        //   ')"><i class="fa fa-trash" style="font-size:24px; color: black;"></i></button>';
-        // }
+       
+        if (doc.data().status.toLowerCase() === "inisiasi" || doc.data().status.toLowerCase() === "proposal" ) {
+        namaDokter.style.color = "black";
+        spesialisasiDokter.style.color = "black";
+        phoneDokter.style.color = "black";
+        status.style.color = "black";
+        alamatDokter.style.color = "black";
+        }
 
         const row = [ namaDokter, spesialisasiDokter, phoneDokter, status, alamatDokter ];
         rowsByStatus[statusValue].push(row);
@@ -340,36 +320,27 @@
 
       let Deldoc = document.getElementById("Deldoc");
 
-      // ControlDiv.addEventListener("click", () => {
-      //     Fillboxes(plusnomor); // plusnomor disesuaikan dengan nomor baris yang sesuai
-      // });
 
       /* Fungsi CRUD*/
-      window.Fillboxes = (index) => {
-        if (index == null) {
-          dokternama.value = ""; //proyek
-          dokterspe.value = ""; //mitra
+      window.Fillboxes = (docId) => {
+      const index = docList.findIndex(doc => doc[5] === docId);
+      if (index == null) {
+          dokternama.value = ""; 
+          dokterspe.value = ""; 
           dokterpho.value = "";
           doktersta.value = "";
-          dokteral.value = ""; //
+          dokteral.value = ""; 
           dokterdocid.value = "";
-        } else {
-          // --index;
-          const row = rowsByStatus[status][index];
-          // dokternama.value = docList[index][0];
-          // dokterspe.value = docList[index][1];
-          // dokterpho.value = docList[index][2];
-          // doktersta.value = docList[index][3];
-          // dokteral.value = docList[index][4];
-          // dokterdocid.value = docList[index][5];
-          dokternama.value = row[0].textContent;
-          dokterspe.value = row[1].textContent;
-          dokterpho.value = row[2].textContent;
-          doktersta.value = row[3].textContent;
-          dokteral.value = row[4].textContent;
-          dokterdocid.value = index;
-        }
-      };
+          
+      } else {
+        dokternama.value = docList[index][0];
+          dokterspe.value = docList[index][1];
+          dokterpho.value = docList[index][2];
+          doktersta.value = docList[index][3];
+          dokteral.value = docList[index][4];
+          dokterdocid.value = docList[index][5];
+      }
+  };
 
 
       /* get collection data dokter */
@@ -395,7 +366,7 @@
           // Render baris-baris ke dalam tabel sesuai urutan status
           ["kontrak", "penawaran", "proposal", "inisiasi"].forEach((status) => {
             const rows = rowsByStatus[status];
-            rows.forEach((row) => {
+            rows.forEach((row, index) => {
               plusnomor++;
               const trow = document.createElement("tr");
               let ControlDiv = document.createElement("td");
@@ -404,14 +375,18 @@
               // row[0] = nomorTD;
               row.unshift(nomorTD); // Sisipkan nomorTD sebagai elemen pertama di dalam array row
 
+              // Tombol Edit
               ControlDiv.innerHTML +=
-              '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes(' +
-              plusnomor +
-              ')"><i class="fa fa-trash" style="font-size:24px; color: black;"></i></button>';
-              
+                    `<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes('${docList[index][5]}')"><i class="fa fa-pencil" style="font-size:24px; color: ${status === 'inisiasi' || status === 'proposal' ? 'black' : 'white'}; margin-left:5px"></i></button>`;
+                // Tombol Hapus
+                ControlDiv.innerHTML +=
+                    `<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes('${docList[index][5]}')"><i class="fa fa-trash" style="font-size:24px; color: ${status === 'inisiasi' || status === 'proposal' ? 'black' : 'white'};"></i></button>`;
+
+
+
               ControlDiv.addEventListener("click", () => {
-                  Fillboxes(plusnomor); // Panggil fungsi Fillboxes dengan plusnomor yang sesuai
-              });
+              Fillboxes(docList[index][5]); // Panggil fungsi Fillboxes dengan doc.id yang sesuai
+             });
 
               row.push(ControlDiv);
 
@@ -427,11 +402,11 @@
                 nomorTD.style.color = "black";
               }
 
-              
               row.forEach((td) => {
                 trow.appendChild(td);
               });
               dokterList.appendChild(trow);
+              trowRefs.push(trow);
             });
           });
         })
@@ -453,12 +428,14 @@
           .then(() => {
             console.log("add data sukses");
             alert("Data Berhasil Update");
-            window.location.href = "index.html";
+            window.location.href = "indexcopy2.html";
           })
           .catch((error) => {
             console.log("unsesesful" + error);
           });
       }
+
+// -------------------------------------=------------------------------------------------------- //
 
       //delete
       async function delDoc() {
@@ -467,7 +444,7 @@
           .then(() => {
             console.log("add data sukses");
             alert("Data Berhasil Dihapus");
-            window.location.href = "index.html";
+            window.location.href = "indexcopy2.html";
           })
           .catch((error) => {
             console.log("unsesesful" + error);
