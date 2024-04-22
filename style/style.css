@@ -16,8 +16,7 @@ body::before {
   height: 100%;
   background-size: cover;
   z-index: -1;
-  /* filter: grayscale(50%); */
-  background: linear-gradient(30deg, #C52D39, rgba(41, 41, 41, 0.401));
+  background: linear-gradient(30deg, #740c15, rgb(96, 3, 3));
 }
 
 /* style for index */
@@ -167,7 +166,7 @@ body::before {
 }
 
 .main {
-  background: linear-gradient(30deg, #C52D39, rgba(41, 41, 41, 0.401));
+  background: linear-gradient(30deg, #740c15, rgb(96, 3, 3));
 }
 
 .icon-dash {
@@ -251,7 +250,7 @@ body::before {
   border: none;
   border-radius: 5px;
   margin-left: 8px;
-  background-color: #C52D39;
+  background-color: #3aa546;
   color: white;
   font-size: 1.1em;
 }
@@ -378,4 +377,55 @@ body::before {
 .submit:hover,
 .logout:hover {
   background-color: rgb(224, 224, 224);
+}
+
+/* resume */
+.selected-year {
+  color: whitesmoke;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3em;
+}
+
+.selected-year select {
+  min-width: 150px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.target-realisasi, .status-proyek {
+  background-color: #a9a9a9be;
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 15px;
+}
+
+.status-klien {
+  background-color: blue;
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 15px;
+}
+
+#sccic-kontrak, #ids-kontrak, #idh-kontrak, #lci-kontrak, #msp-kontrak,
+#sccic-kontrakk, #ids-kontrakk, #idh-kontrakk, #lci-kontrakk, #msp-kontrakk{
+  background-color: green;
+}
+
+#sccic-penawaran, #ids-penawaran, #idh-penawaran, #lci-penawaran, #msp-penawaran,
+#sccic-penawarank, #ids-penawarank, #idh-penawarank, #lci-penawarank, #msp-penawarank {
+  background-color: blue;
+}
+
+#sccic-proposal, #ids-proposal, #idh-proposal, #lci-proposal, #msp-proposal,
+#sccic-proposalk, #ids-proposalk, #idh-proposalk, #lci-proposalk, #msp-proposalk {
+  background-color: yellow;
+  color: black;
+}
+
+#sccic-inisiasi, #ids-inisiasi, #idh-inisiasi, #lci-inisiasi, #msp-inisiasi,
+#sccic-inisiasik, #ids-inisiasik, #idh-inisiasik, #lci-inisiasik, #msp-inisiasik {
+  background-color: white;
+  color: black;
 }

@@ -10,14 +10,6 @@
   <link rel="stylesheet" href="style/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <style>
-    .table-wrapper {
-      display: grid;
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-      overflow: auto;
-      white-space: nowrap;
-    }
-  </style>
 </head>
 
 <body>
@@ -104,171 +96,214 @@
           </div>
         </div>
         <br />
-        <!-- list dokter -->
-        <div class="doctorlist-title table-wrapper">
-          <table class="table">
-            <tr>
-              <th>Organisasi / PT</th>
-              <th colspan="4">Status Proyek</th>
-              <th colspan="4">Jumlah Proyek (Clients)</th>
-              <th>PIC</th>
-              <th>Target 2024</th>
-              <th>Realisasi Q-1</th>
-              <th>Target Q-1</th>
-              <th>Target Q-2</th>
-            </tr>
-            <tr>
-              <td>SCCIC</td>
-              <td style="background-color: green;" > Rp6.379.376.500,00 </td>
-              <td style="background-color: blue;"> Rp8.951.509.239,00
-              </td>
-              <td style="background-color: yellow; color: black;"> Rp8.207.000.000,00
-              </td>
-              <td style="background-color: white;color: black;"> Rp7.214.858.130,00
-              </td>
-              <td  style="background-color: green;">5</td>
-              <td style="background-color: blue;">9</td>
-              <td style="background-color: yellow; color: black;">9</td>
-              <td style="background-color: white;color: black;">6</td>
-              <td>Dona</td>
-              <td> Rp23.000.000.000,00
-              </td>
-              <td>28%</td>
-              <td> Rp23.000.000.000,00
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>INDISMART</td>
-              <td style="background-color: green;"> Rp250.000.000,00 </td>
-              <td style="background-color: blue;"> Rp- </td>
-              <td style="background-color: yellow; color: black;"> Rp3.400.000.000,00 </td>
-              <td style="background-color: white; color: black;"> Rp15.150.000.000,00 </td>
-              <td style="background-color: green;">1</td>
-              <td style="background-color: blue;">1</td>
-              <td style="background-color: yellow; color: black;">4</td>
-              <td style="background-color: white;color: black;">36</td>
-              <td>Djaka</td>
-              <td >Rp18.000.000.000,00</td>
-              <td>1%</td>
-              <td>Rp5.000.000.000,00</td>
-            </tr>
-            <tr>
-              <td>LCI</td>
-              <td style="background-color: green;"> Rp388.000.000,00 </td>
-              <td style="background-color: blue;"> Rp790.000.000,00 </td>
-              <td style="background-color: yellow; color: black;"> Rp4.243.000.000,00 </td>
-              <td style="background-color: white; color: black;"> Rp- </td>
-              <td style="background-color: green;">2</td>
-              <td style="background-color: blue;">7</td>
-              <td style="background-color: yellow; color: black;">10</td>
-              <td style="background-color: white; color: black;">0</td>
-              <td>Alda</td>
-              <td>Rp7.000.000.000,00</td>
-              <td>6%</td>
-              <td>Rp1.500.000.000,00</td>
-            </tr>
-            <tr>
-              <td>INDOHEALTH</td>
-              <td style="background-color: green"> Rp453.000.000,00 </td>
-              <td style="background-color: blue;"> Rp280.000.000,00 </td>
-              <td style="background-color: yellow; color: black;"> Rp3.000.000.000,00 </td>
-              <td style="background-color: white; color: black;"> Rp1.650.000.000,00 </td>
-              <td  style="background-color: green">2</td>
-              <td style="background-color: blue;">2</td>
-              <td style="background-color: yellow; color: black;">6</td>
-              <td  style="background-color: white; color: black;">5</td>
-              <td>Alawi</td>
-              <td>Rp5.000.000.000,00</td>
-              <td>9%</td>
-              <td>Rp1.250.000.000,00</td>
-            </tr>
-            <tr>
-              <td>MSP</td>
-              <td style="background-color: green;"> Rp80.000.000,00 </td>
-              <td style="background-color: blue;"> Rp2.115.000.000,00 </td>
-              <td style="background-color: yellow; color: black;"> Rp3.520.000.000,00 </td>
-              <td style="background-color: white; color: black;"> Rp1.000.000.000,00 </td>
-              <td style="background-color: green;"></td>>1</td>
-              <td style="background-color: blue;">4</td>
-              <td style="background-color: yellow; color: black;">7</td>
-              <td  style="background-color: white; color: black;">6</td>
-              <td>Fakhri</td>
-              <td>Rp7.000.000.000,00</td>
-              <td>1%</td>
-              <td>Rp1.500.000.000,00</td>
-            </tr>
-            <tr>
-              <td>Jumlah</td>
-              <td> Rp7.550.376.500,00 </td>
-              <td> Rp11.346.522.239,00 </td>
-              <td> Rp22.363.000.000,00 </td>
-              <td> Rp25.014.858.130,00 </td>
-              <td>11</td>
-              <td>23</td>
-              <td>36</td>
-              <td>53</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td colspan="">SCCIC</td>
-              <td colspan="">Rp29.955.756.869,00</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td colspan="">IDS</td>
-              <td colspan="">Rp18.800.000.000,00</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td colspan="">LCI</td>
-              <td colspan="">Rp5.421.000.000,00</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td colspan="">IDH</td>
-              <td colspan="">Rp5.383.000.000,00</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td colspan="">MSP</td>
-              <td colspan="">Rp6.715.000.000,00</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td colspan="">SUM</td>
-              <td colspan="">Rp66.274.756.869,00</td>
-            </tr>
-          </table>
+
+        <!-- select year -->
+        <div class="selected-year d-flex justify-content-end align-self-center mr-5">
+          <label for="">Periode : </label>
+          <select name="" id="">
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+          </select>
         </div>
+        <!-- end of select year -->
+        <br>
 
-        <!-- end of main content for doctor list -->
+        <!-- target and realisasi -->
+        <div class="target-realisasi">
+          <div class="doctorlist-title" onload="ReadAll()">
+            <table class="table">
+              <thead>
+                <th>Organisasi</th>
+                <th>Target</th>
+                <th>Realisasi (Q1)</th>
+                <th>Target (Q1)</th>
+                <th>Realisasi (Q2)</th>
+                <th>Target (Q2)</th>
+                <th>Action</th>
+              </thead>
+              <!-- <tbody id="dataList"></tbody> -->
+              <tbody id="tabel-target">
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- end of target and realisasi -->
+        <br>
 
-        <!-- Modal 1 -->
+        <!-- target and realisasi -->
+        <div class="status-proyek">
+          <div class="doctorlist-title">
+            <table class="table">
+              <thead>
+                <th>Organisasi</th>
+                <th>Kontrak</th>
+                <th>Penawaran</th>
+                <th>Proposal</th>
+                <th>Inisiasi</th>
+              </thead>
+              <!-- <tbody id="dataList"></tbody> -->
+              <tbody id="tabel-proyek">
+                <tr>
+                  <td>SCCIC</td>
+                  <td id="sccic-kontrak"></td>
+                  <td id="sccic-penawaran"></td>
+                  <td id="sccic-proposal"></td>
+                  <td id="sccic-inisiasi"></td>
+                </tr>
+                <tr>
+                  <td>INDISMART</td>
+                  <td id="ids-kontrak"></td>
+                  <td id="ids-penawaran"></td>
+                  <td id="ids-proposal"></td>
+                  <td id="ids-inisiasi"></td>
+                </tr>
+                <tr>
+                  <td>LCI</td>
+                  <td id="lci-kontrak"></td>
+                  <td id="lci-penawaran"></td>
+                  <td id="lci-proposal"></td>
+                  <td id="lci-inisiasi"></td>
+                </tr>
+                <tr>
+                  <td>INDOHEALTH</td>
+                  <td id="idh-kontrak"></td>
+                  <td id="idh-penawaran"></td>
+                  <td id="idh-proposal"></td>
+                  <td id="idh-inisiasi"></td>
+                </tr>
+                <tr>
+                  <td>MSP</td>
+                  <td id="msp-kontrak"></td>
+                  <td id="msp-penawaran"></td>
+                  <td id="msp-proposal"></td>
+                  <td id="msp-inisiasi"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- end of target and realisasi -->
+        <br>
 
-        <!-- end of modal 1 -->
-        <!-- Modal -->
+        <!-- jumlah proyek -->
+        <div class="row  d-flex justify-content-center">
+          <div class="doctorlist-title status-proyek col-lg-5">
+            <table class="table">
+              <thead>
+                <th>Organisasi</th>
+                <th colspan="4" class="text-center">Jumlah Client</th>
+              </thead>
+              <!-- <tbody id="dataList"></tbody> -->
+              <tbody id="tabel-proyek">
+                <tr>
+                  <td>SCCIC</td>
+                  <td id="sccic-kontrakk"></td>
+                  <td id="sccic-penawarank"></td>
+                  <td id="sccic-proposalk"></td>
+                  <td id="sccic-inisiasik"></td>
+                </tr>
+                <tr>
+                  <td>INDISMART</td>
+                  <td id="ids-kontrakk"></td>
+                  <td id="ids-penawarank"></td>
+                  <td id="ids-proposalk"></td>
+                  <td id="ids-inisiasik"></td>
+                </tr>
+                <tr>
+                  <td>LCI</td>
+                  <td id="lci-kontrakk"></td>
+                  <td id="lci-penawarank"></td>
+                  <td id="lci-proposalk"></td>
+                  <td id="lci-inisiasik"></td>
+                </tr>
+                <tr>
+                  <td>INDOHEALTH</td>
+                  <td id="idh-kontrakk"></td>
+                  <td id="idh-penawarank"></td>
+                  <td id="idh-proposalk"></td>
+                  <td id="idh-inisiasik"></td>
+                </tr>
+                <tr>
+                  <td>MSP</td>
+                  <td id="msp-kontrakk"></td>
+                  <td id="msp-penawarank"></td>
+                  <td id="msp-proposalk"></td>
+                  <td id="msp-inisiasik"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="doctorlist-title status-proyek col-lg-5">
+            <table class="table">
+              <thead>
+                <th>Organisasi</th>
+                <th>Total Dana</th>
+              </thead>
+              <!-- <tbody id="dataList"></tbody> -->
+              <tbody id="tabel-proyek">
+                <tr>
+                  <td>SCCIC</td>
+                  <td id="sccic-dana"></td>
+                </tr>
+                <tr>
+                  <td>INDISMART</td>
+                  <td id="ids-dana"></td>
+                </tr>
+                <tr>
+                  <td>LCI</td>
+                  <td id="lci-dana"></td>
+                </tr>
+                <tr>
+                  <td>INDOHEALTH</td>
+                  <td id="idh-dana"></td>
+                </tr>
+                <tr>
+                  <td>MSP</td>
+                  <td id="msp-dana"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- end of jumlah proyek -->
+        <br>
 
-        <!-- end of modal -->
+
+        <!-- modal -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <label for="" class="labs">Organisasi/PT: </label>
+                  <input type="text" id="nama" /> <br />
+                  <label for="" class="labs">Target: </label>
+                  <input type="text" id="target" /> <br />
+                  <label for="" class="labs">Realisasi Q1: </label>
+                  <input type="text" id="realisasiQ1" /> <br />
+                  <label for="" class="labs">Target Q1: </label>
+                  <input type="text" id="targetQ1" /> <br />
+                  <label for="" class="labs">Realisasi Q2: </label>
+                  <input type="text" id="realisasiQ2" /> <br />
+                  <label for="" class="labs">Target Q2: </label>
+                  <input type="text" id="targetQ2" /> <br />
+                  <label for="" class="labs" style="display: none">ID Dokument</label>
+                  <input type="text" id="idTarget" style="display: none" />
+                  <br />
+                </div>
+                <div class="modal-footer">
+                  <button id="UpDatadoc" class="UpDatadoc btn btn-success" type="button">Update Data</button>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of modal edit -->
+
       </div>
     </div>
   </div>
@@ -279,7 +314,266 @@
   <!-- end of script -->
 
   <!-- script of firestore -->
-  <script type="module" src=""></script>
+  <!-- Script -->
+  <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+      import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc, query, where } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB40QTGt7KfQQLZ_ZG8_xdep7dQhcWK8b8",
+        authDomain: "oxycon-34b18.firebaseapp.com",
+        databaseURL: "https://oxycon-34b18-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "oxycon-34b18",
+        storageBucket: "oxycon-34b18.appspot.com",
+        messagingSenderId: "648156586578",
+        appId: "1:648156586578:web:2896cc6aef48b472dbf58b",
+        measurementId: "G-0504EZS97M",
+      };
+
+      // init firebase
+      initializeApp(firebaseConfig);
+
+      // init services
+      const db = getFirestore();
+      const auth = getAuth();
+
+      // Fungsi formatRupiah
+      function formatRupiah(angka) {
+          var reverse = angka.toString().split('').reverse().join('');
+          var ribuan = reverse.match(/\d{1,3}/g);
+          var hasil = ribuan.join('.').split('').reverse().join('');
+          return hasil + ',00';
+      }
+
+      var plusnomor = 0;
+      var targetList = [];
+
+      const targetListin = document.querySelector("#tabel-target");
+      function renderTarget(doc) {
+        let trow = document.createElement("tr");
+        var nomor = document.createElement("td");
+        let organisasitd = document.createElement("td"); 
+        let targettd = document.createElement("td"); 
+        let targetQ1td = document.createElement("td"); 
+        let realisasiQ1td = document.createElement("td"); 
+        let targetQ2td = document.createElement("td"); 
+        let realisasiQ2td = document.createElement("td"); 
+        let ControlDivTarget = document.createElement("td");
+
+        targetList.push([doc.data().organisasi, doc.data().target, doc.data().targetQ1, doc.data().realisasiQ1, doc.data().targetQ2, doc.data().realisasiQ2, doc.id]);
+
+        trow.setAttribute("data-id", doc.id);
+        nomor.innerHTML = ++plusnomor;  
+        nomor.style.display = "none";
+        organisasitd.textContent = doc.data().organisasi;
+        targettd.textContent = formatRupiah(doc.data().target.toString());
+        targetQ1td.textContent = formatRupiah( doc.data().targetQ1.toString());
+        realisasiQ1td.textContent = doc.data().realisasiQ1;
+        targetQ2td.textContent = formatRupiah( doc.data().targetQ2.toString());
+        realisasiQ2td.textContent = doc.data().realisasiQ2;
+
+        ControlDivTarget.innerHTML +=
+          '<button style="background-color:#87CEEB; padding: 5px 25px; border: none; border-radius: 10px; border: none; cursor: pointer" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes(' +
+          plusnomor +
+          ')">Edit</button>';
+
+        // Append cells to table row
+        trow.appendChild(nomor);
+        trow.appendChild(organisasitd);
+        trow.appendChild(targettd);
+        trow.appendChild(targetQ1td);
+        trow.appendChild(realisasiQ1td);
+        trow.appendChild(targetQ2td);
+        trow.appendChild(realisasiQ2td);
+        trow.appendChild(ControlDivTarget);
+
+        targetListin.appendChild(trow);
+      }
+      
+      var idTarget= document.getElementById("idTarget");
+      var organisasitb = document.getElementById("nama");
+      var targettb = document.getElementById("target");
+      var targetq1tb = document.getElementById("targetQ1");
+      var realisasiQ1tb = document.getElementById("realisasiQ1");
+      var targetQ2tb = document.getElementById("targetQ2");
+      var realisasiQ2tb = document.getElementById("realisasiQ1");
+
+      window.Fillboxes = (index) => {
+        if (index == null) {
+          organisasitb.value = "";
+          targettb.value = "";
+          targetq1tb.value = "";
+          realisasiQ1tb.value = "";
+          targetQ2tb.value = "";
+          realisasiQ2tb.value = "";
+          idTarget.value = "";
+        } else {
+          --index;
+          organisasitb.value = targetList[index][0];
+          targettb.value = +targetList[index][1];
+          targetq1tb.value = +targetList[index][2];
+          realisasiQ1tb.value = targetList[index][3];
+          targetQ2tb.value = +targetList[index][4];
+          realisasiQ2tb.value = targetList[index][5];
+          idTarget.value = targetList[index][6];
+          console.log("ini target" + organisasitb.value)
+          console.log("ini target" + idTarget.value)
+        }
+      };
+
+
+      //database target
+      const dbListTarget = collection(db, "target");
+      getDocs(dbListTarget)
+        .then((snapshot) => {
+          let listTarget = [];
+          let listidTarget = [];
+          snapshot.docs.forEach((doc) => {
+            listTarget.push({ ...doc.data(), id: doc.id });
+            listidTarget.push({ idini: doc.id });
+            renderTarget(doc);
+          });   
+        })
+        .catch((err) => {
+          console.log(err.message);
+      });
+
+        //update
+        async function UpdDoc() {
+        const updatedatatarget = doc(db, "target", idTarget.value);
+        // console.log("ini id target" + idTarget.value)
+        updateDoc(updatedatatarget, {
+          organisasi: organisasitb.value,
+          target: +targettb.value,
+          targetQ1: +targetq1tb,
+          realisasiQ1tb: realisasiQ1tb,
+          targetQ2: +targetQ2tb,
+          realisasiQ2: realisasiQ2tb
+        })
+          .then(() => {
+            alert("Data Berhasil Update");
+            window.location.href = "resumecopy.html";
+          })
+          .catch((error) => {
+            console.log("unsesesful" + error);
+          });
+      }
+
+      // filter data target
+
+      function sumPriceByStatusAndDisplay(collectionName, status, elementId, elemenK, elemenD) {
+      console.log("Searching for status:", status, "in collection:", collectionName);
+      const q = status ? query(collection(db, collectionName), where("status", "==", status)) : collection(db, collectionName);
+
+      getDocs(q)
+        .then((querySnapshot) => {
+          let total = 0;
+          querySnapshot.forEach((doc) => {
+            total += doc.data().phone;
+          });
+          if(elementId) {
+            // console.log("Total for status", status, "in collection", collectionName, ":", total);
+            document.getElementById(elementId).textContent = formatRupiah(total);
+          }
+          else if(elemenK) {
+            // console.log("Total for client", status, "in collection", collectionName, ":", querySnapshot.size);
+            document.getElementById(elemenK).textContent = querySnapshot.size;
+          }
+          else if(elemenD) {
+            document.getElementById(elemenD).textContent = formatRupiah(total);
+            console.log("total semua price" + collectionName + total);
+          }         
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    }
+
+    // Panggil fungsi sumPriceByStatusAndDisplay untuk menampilkan total harga pada elemen HTML
+    sumPriceByStatusAndDisplay("sccic", "", "", "", "sccic-dana");
+    sumPriceByStatusAndDisplay("ids", "", "", "", "ids-dana");
+    sumPriceByStatusAndDisplay("lci", "", "", "", "lci-dana");
+    sumPriceByStatusAndDisplay("msp", "", "", "", "msp-dana");
+    sumPriceByStatusAndDisplay("idh", "", "", "", "idh-dana");
+
+    sumPriceByStatusAndDisplay("sccic", "kontrak", "sccic-kontrak", "");
+    sumPriceByStatusAndDisplay("sccic", "penawaran", "sccic-penawaran", "");
+    sumPriceByStatusAndDisplay("sccic", "proposal", "sccic-proposal", "");
+    sumPriceByStatusAndDisplay("sccic", "inisiasi", "sccic-inisiasi", "");
+
+    sumPriceByStatusAndDisplay("sccic", "kontrak", "", "sccic-kontrakk");
+    sumPriceByStatusAndDisplay("sccic", "penawaran", "", "sccic-penawarank");
+    sumPriceByStatusAndDisplay("sccic", "proposal", "", "sccic-proposalk");
+    sumPriceByStatusAndDisplay("sccic", "inisiasi", "", "sccic-inisiasik");
+
+    sumPriceByStatusAndDisplay("ids", "kontrak", "ids-kontrak", "");
+    sumPriceByStatusAndDisplay("ids", "penawaran", "ids-penawaran","");
+    sumPriceByStatusAndDisplay("ids", "proposal", "ids-proposal","");
+    sumPriceByStatusAndDisplay("ids", "inisiasi", "ids-inisiasi","");
+
+    sumPriceByStatusAndDisplay("ids", "kontrak", "", "ids-kontrakk");
+    sumPriceByStatusAndDisplay("ids", "penawaran", "","ids-penawarank");
+    sumPriceByStatusAndDisplay("ids", "proposal", "","ids-proposalk");
+    sumPriceByStatusAndDisplay("ids", "inisiasi", "","ids-inisiasik");
+
+    sumPriceByStatusAndDisplay("lci", "kontrak", "lci-kontrak", "");
+    sumPriceByStatusAndDisplay("lci", "penawaran", "lci-penawaran","");
+    sumPriceByStatusAndDisplay("lci", "proposal", "lci-proposal", "");
+    sumPriceByStatusAndDisplay("lci", "inisiasi", "lci-inisiasi", "");
+
+    sumPriceByStatusAndDisplay("lci", "kontrak", "", "lci-kontrakk");
+    sumPriceByStatusAndDisplay("lci", "penawaran", "","lci-penawarank");
+    sumPriceByStatusAndDisplay("lci", "proposal", "", "lci-proposalk");
+    sumPriceByStatusAndDisplay("lci", "inisiasi", "", "lci-inisiasik");
+
+    sumPriceByStatusAndDisplay("msp", "kontrak", "msp-kontrak", "");
+    sumPriceByStatusAndDisplay("msp", "penawaran", "msp-penawaran", "");
+    sumPriceByStatusAndDisplay("msp", "proposal", "msp-proposal", "");
+    sumPriceByStatusAndDisplay("msp", "inisiasi", "msp-inisiasi", "");
+
+    sumPriceByStatusAndDisplay("msp", "kontrak", "", "msp-kontrakk");
+    sumPriceByStatusAndDisplay("msp", "penawaran", "", "msp-penawarank");
+    sumPriceByStatusAndDisplay("msp", "proposal", "", "msp-proposalk");
+    sumPriceByStatusAndDisplay("msp", "inisiasi", "", "msp-inisiasik");
+
+    sumPriceByStatusAndDisplay("idh", "kontrak", "idh-kontrak", "");
+    sumPriceByStatusAndDisplay("idh", "penawaran", "idh-penawaran", "");
+    sumPriceByStatusAndDisplay("idh", "proposal", "idh-proposal", "");
+    sumPriceByStatusAndDisplay("idh", "inisiasi", "idh-inisiasi", "");
+
+    sumPriceByStatusAndDisplay("idh", "kontrak", "", "idh-kontrakk");
+    sumPriceByStatusAndDisplay("idh", "penawaran", "", "idh-penawarank");
+    sumPriceByStatusAndDisplay("idh", "proposal", "", "idh-proposalk");
+    sumPriceByStatusAndDisplay("idh", "inisiasi", "", "idh-inisiasik");
+
+    //jumlah klien
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      UpDatadoc.addEventListener("click", UpdDoc);
+
+
+      
+
+
+
+
+
+    // end of database
+</script>
   <!-- end of list of firestore -->
 </body>
 

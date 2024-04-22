@@ -65,7 +65,7 @@
             <div class="row tool">
               <div class="col">
                 <a href="resume.html">
-                  <h6>Resume</h6>
+                  <h6>RESUME</h6>
                 </a>
               </div>
             </div>
@@ -137,7 +137,7 @@
                   <input type="text" id="namadokter" /> <br />
                   <label for="" class="labs">Mitra</label>
                   <input type="text" id="spedokter" /> <br />
-                  <label for="" class="labs">Nilai Dana</label>
+                  <label for="" class="labs">Dana (Rp)</label>
                   <input type="text" id="phodokter" /> <br />
                   <label for="status" class="labs">Status:</label>
                   <select name="status" id="status" style="width: 100%">
@@ -204,7 +204,7 @@
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-      import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+      import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc, query, where } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
       import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
       const firebaseConfig = {
@@ -225,18 +225,6 @@
       const db = getFirestore();
       const auth = getAuth();
 
-      //logout session
-      /*
-      onAuthStateChanged(auth, (user) => {
-        if (user == null) {
-          location.href = "index.html";
-        } else {
-          console.log(user)
-        }
-     });
-     */
-
-     
       // backgournd status style
       function updateStyle() {
             var select = document.getElementById("status");
@@ -245,103 +233,79 @@
             select.style.color = selectedOption.style.color;
         }
 
-        // Panggil fungsi saat opsi berubah
-        document.getElementById("status").addEventListener("change", updateStyle);
-        
-        // Panggil fungsi untuk mengatur latar belakang secara awal
-        updateStyle();
+      // Panggil fungsi saat opsi berubah
+      document.getElementById("status").addEventListener("change", updateStyle);
+      
+      // Panggil fungsi untuk mengatur latar belakang secara awal
+      updateStyle();
       // end of update background style for status
+
+      // format rupiah
+      function formatRupiah(angka, prefix) {
+          var number_string = angka.toString(),
+              split = number_string.split(','),
+              sisa = split[0].length % 3,
+              rupiah = split[0].substr(0, sisa),
+              ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+          if (ribuan) {
+              var separator = sisa ? '.' : '';
+              rupiah += separator + ribuan.join('.');
+          }
+
+          rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+          return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+      }
+      // end of rupiah
 
       /*membuat tabel untuk dokter*/
       var plusnomor = 0;
       var docList = [];
+      let trowRefs = [];
+
+      const rowsByStatus = {
+      kontrak: [],
+      penawaran: [],
+      proposal: [],
+      inisiasi: []
+      };
 
       const dokterList = document.querySelector("#dokterList");
       function renderDokter(doc) {
         let trow = document.createElement("tr");
-        var nomor = document.createElement("td");
         let namaDokter = document.createElement("td"); //proyek
         let spesialisasiDokter = document.createElement("td"); ///mitra
         let phoneDokter = document.createElement("td"); //nilai dana
         let status = document.createElement("td"); //status
         let alamatDokter = document.createElement("td"); // pic
-        let ControlDiv = document.createElement("td");
 
         docList.push([doc.data().nama, doc.data().specialist, doc.data().phone, doc.data().status, doc.data().alamat, doc.id]);
 
         trow.setAttribute("data-id", doc.id);
-        nomor.innerHTML = ++plusnomor;
-        namaDokter.textContent = doc.data().nama;
-        spesialisasiDokter.textContent = doc.data().specialist;
-        phoneDokter.textContent = doc.data().phone;
-        status.innerHTML = doc.data().status;
-        alamatDokter.textContent = doc.data().alamat;
-
-        if (doc.data().status.toLowerCase() === "proposal") {
-        trow.style.backgroundColor = "yellow";
-        nomor.style.color = "black";
-        namaDokter.style.color = "black";
-        spesialisasiDokter.style.color = "black";
-        phoneDokter.style.color = "black";
-        status.style.color = "black";
-        alamatDokter.style.color = "black";
-        }
-
-        if (doc.data().status.toLowerCase() === "proposal") {
-        trow.style.backgroundColor = "yellow"
-        } 
-
-        if (doc.data().status.toLowerCase() === "kontrak") {
-        trow.style.backgroundColor = "green";
-        }
-
-        if (doc.data().status.toLowerCase() === "penawaran") {
-        trow.style.backgroundColor = "blue";
-        }
-
-        if (doc.data().status.toLowerCase() === "inisiasi") {
-        trow.style.backgroundColor = "white";
-        } 
-
-        if (doc.data().status.toLowerCase() === "kontrak" || doc.data().status.toLowerCase() === "penawaran" ) {
-        ControlDiv.innerHTML +=
-          '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes(' +
-          plusnomor +
-          ')"><i class="fa fa-pencil" style="font-size:24px; color: white; margin-left:"5px"></i></button>';
-        ControlDiv.innerHTML +=
-          '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes(' +
-          plusnomor +
-          ')"><i class="fa fa-trash" style="font-size:24px; color: white;"></i></button>';
-        } 
-
-        if (doc.data().status.toLowerCase() === "inisiasi" || doc.data().status.toLowerCase() === "proposal" ) {
-        nomor.style.color = "black";
-        namaDokter.style.color = "black";
-        spesialisasiDokter.style.color = "black";
-        phoneDokter.style.color = "black";
-        status.style.color = "black";
-        alamatDokter.style.color = "black";
-
-        ControlDiv.innerHTML +=
-          '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes(' +
-          plusnomor +
-          ')"><i class="fa fa-pencil" style="font-size:24px; color: black; margin-left:"5px"></i></button>';
-        ControlDiv.innerHTML +=
-          '<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes(' +
-          plusnomor +
-          ')"><i class="fa fa-trash" style="font-size:24px; color: black;"></i></button>';
-        } 
+        // nomor.innerHTML = ++plusnomor;
+        const nama = doc.data().nama;
+        const spesialisasi = doc.data().specialist;
+        const phoneValue = doc.data().phone;
+        const phone = formatRupiah(phoneValue.toString());
+        const statusValue = doc.data().status.toLowerCase();
+        const alamat = doc.data().alamat;
         
+        namaDokter.textContent = nama;
+        spesialisasiDokter.textContent = spesialisasi;
+        phoneDokter.textContent = phone;
+        status.textContent = statusValue;
+        alamatDokter.textContent = alamat;
+       
+        if (doc.data().status.toLowerCase() === "inisiasi" || doc.data().status.toLowerCase() === "proposal" ) {
+        namaDokter.style.color = "black";
+        spesialisasiDokter.style.color = "black";
+        phoneDokter.style.color = "black";
+        status.style.color = "black";
+        alamatDokter.style.color = "black";
+        }
 
-        trow.appendChild(nomor);
-        trow.appendChild(namaDokter);
-        trow.appendChild(spesialisasiDokter);
-        trow.appendChild(phoneDokter);
-        trow.appendChild(status);
-        trow.appendChild(alamatDokter);
-        trow.appendChild(ControlDiv);
-
-        dokterList.appendChild(trow);
+        const row = [ namaDokter, spesialisasiDokter, phoneDokter, status, alamatDokter,  doc.id];
+        rowsByStatus[statusValue].push(row);
       }
       /*end of membuat tabel untuk dokter*/
 
@@ -352,27 +316,28 @@
       var doktersta = document.getElementById("status");
       var dokteral = document.getElementById("aldokter");
 
-
       let Deldoc = document.getElementById("Deldoc");
 
       /* Fungsi CRUD*/
-      window.Fillboxes = (index) => {
-        if (index == null) {
-          dokternama.value = ""; //proyek
-          dokterspe.value = ""; //mitra
-          dokterpho.value = "";
-          doktersta.value = "";
-          dokteral.value = ""; //
-          dokterdocid.value = "";
-        } else {
-          --index;
-          dokternama.value = docList[index][0];
-          dokterspe.value = docList[index][1];
-          dokterpho.value = docList[index][2];
-          doktersta.value = docList[index][3];
-          dokteral.value = docList[index][4];
-          dokterdocid.value = docList[index][5];
-        }
+      window.Fillboxes = (docId) => {
+          const index = docList.findIndex(doc => doc[5] === docId);
+          console.log(docList[index])
+          if (index == null) {
+              dokternama.value = ""; 
+              dokterspe.value = ""; 
+              dokterpho.value = "";
+              doktersta.value = "";
+              dokteral.value = ""; 
+              dokterdocid.value = "";
+              
+          } else {
+              dokternama.value = docList[index][0];
+              dokterspe.value = docList[index][1];
+              dokterpho.value = docList[index][2];
+              doktersta.value = docList[index][3];
+              dokteral.value = docList[index][4];
+              dokterdocid.value = docList[index][5];
+          }
       };
 
       /* get collection data dokter */
@@ -382,13 +347,60 @@
         .then((snapshot) => {
           let listDokter = [];
           let listid = [];
+          let totalDana = 0;
           snapshot.docs.forEach((doc) => {
             listDokter.push({ ...doc.data(), id: doc.id });
             listid.push({ idini: doc.id });
             renderDokter(doc);
+            const dana = doc.data().phone || 0;
+            totalDana += dana;
           });
-          console.log(listDokter);
-          console.log(listid);
+          console.log("Total Harga Semua in Collection:", totalDana);
+          console.log("Number of documents in collection: ", snapshot.size);
+          // console.log(listDokter);
+          // console.log(listid);
+
+          // Render baris-baris ke dalam tabel sesuai urutan status
+          ["kontrak", "penawaran", "proposal", "inisiasi"].forEach((status) => {
+            const rows = rowsByStatus[status];
+            // console.log(rows)
+            rows.forEach((row, index) => {
+              plusnomor++;
+              const trow = document.createElement("tr");
+              let ControlDiv = document.createElement("td");
+              const nomorTD = document.createElement("td");
+              nomorTD.textContent = plusnomor;
+              row.unshift(nomorTD); // Sisipkan nomorTD sebagai elemen pertama di dalam array row
+
+              // Tombol Edit
+              ControlDiv.innerHTML +=
+                    `<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes('${row[6]}')"><i class="fa fa-pencil" style="font-size:24px; color: ${status === 'inisiasi' || status === 'proposal' ? 'black' : 'white'}; margin-left:5px"></i></button>`;
+                // Tombol Hapus
+              ControlDiv.innerHTML +=
+                    `<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes('${row[6]}')"><i class="fa fa-trash" style="font-size:24px; color: ${status === 'inisiasi' || status === 'proposal' ? 'black' : 'white'};"></i></button>`;
+
+              row.pop()
+              row.push(ControlDiv);
+
+              if (status === "proposal") {
+                trow.style.backgroundColor = "yellow";
+                nomorTD.style.color = "black";
+              } else if (status === "kontrak") {
+                trow.style.backgroundColor = "green";
+              } else if (status === "penawaran") {
+                trow.style.backgroundColor = "blue";
+              } else if (status === "inisiasi") {
+                trow.style.backgroundColor = "white";
+                nomorTD.style.color = "black";
+              }
+
+              row.forEach((td) => {
+                trow.appendChild(td);
+              });
+              dokterList.appendChild(trow);
+              trowRefs.push(trow);
+            });
+          });
         })
         .catch((err) => {
           console.log(err.message);
@@ -408,25 +420,12 @@
           .then(() => {
             console.log("add data sukses");
             alert("Data Berhasil Update");
-            window.location.href = "index.html";
+            window.location.href = "lci.html";
           })
           .catch((error) => {
             console.log("unsesesful" + error);
           });
       }
-
-      //logout
-      // const logoutButton = document.getElementById("logout");
-      // logoutButton.addEventListener("click", (e) => {
-      //   signOut(auth)
-      //     .then(() => {
-      //       console.log("User Telah Keluar");
-      //       history.back();
-      //     })
-      //     .catch((err) => {
-      //       console.log(err.message);
-      //     });
-      // });
 
       //delete
       async function delDoc() {
@@ -435,7 +434,7 @@
           .then(() => {
             console.log("add data sukses");
             alert("Data Berhasil Dihapus");
-            window.location.href = "index.html";
+            window.location.href = "lci.html";
           })
           .catch((error) => {
             console.log("unsesesful" + error);
@@ -446,6 +445,72 @@
       Deldoc.addEventListener("click", delDoc);
       UpDatadoc.addEventListener("click", UpdDoc);
       // }
+
+      
+      // filter by status
+      function countStatusDocument(status) {
+        const q = query(collection(db, "lci"), where("status", "==", status));
+
+        getDocs(q)
+        .then((querySnapshot) => {
+          console.log("Number of documents with status '" + status + "': ", querySnapshot.size);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      }
+
+      countStatusDocument("kontrak");
+      countStatusDocument("penawaran");
+      countStatusDocument("inisiasi");
+      countStatusDocument("proposal");
+      // end of filter by status 
+
+      // filter for sum dana
+      function sumPriceByStatusA(status, callback) {
+      const q = query(collection(db, "ids"), where("status", "==", status));
+
+      getDocs(q)
+        .then((querySnapshot) => {
+          let total = 0;
+          querySnapshot.forEach((doc) => {
+            total += doc.data().phone;
+          });
+          callback(total);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      }
+
+
+      // end of filter sum dana 
+      function sumPriceByStatus(status, callback) {
+      const q = query(collection(db, "lci"), where("status", "==", status));
+
+      getDocs(q)
+        .then((querySnapshot) => {
+          let total = 0;
+          querySnapshot.forEach((doc) => {
+            total += doc.data().phone;
+          });
+          callback(total);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      }
+
+      // Menggunakan fungsi untuk menjumlahkan nilai price dari dokumen dengan status "kontrak"
+      sumPriceByStatus("kontrak", (sum) => {
+        console.log("Total price of documents with status 'kontrak': ", sum);
+      });
+
+      sumPriceByStatusA("kontrak", (sum) => {
+        console.log("Total price of documents with status 'kontrak': ", sum);
+      });
+
+
     </script>
     <!-- end of list of firestore -->
   </body>
