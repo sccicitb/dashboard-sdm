@@ -67,7 +67,7 @@
           <div class="row tool">
             <div class="col">
               <a href="resume.html">
-                <h6>Resume</h6>
+                <h6>RESUME</h6>
               </a>
             </div>
           </div>
@@ -81,9 +81,6 @@
           </div>
           <hr>
           <br> <br>
-          <!-- <div class="d-flex justify-content-center">
-              <button class="btn logout" id="logout">Log Out</button>
-            </div> -->
         </div>
       </div>
       <!-- end of list -->
@@ -119,10 +116,49 @@
                 <th>Target (Q1)</th>
                 <th>Realisasi (Q2)</th>
                 <th>Target (Q2)</th>
-                <th>Action</th>
               </thead>
               <!-- <tbody id="dataList"></tbody> -->
               <tbody id="tabel-target">
+                <tr>
+                  <td>SCCIC</td>
+                  <td id="target-sccic"></td>
+                  <td id="realisasi-sccic"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>INDISMART</td>
+                  <td ></td>
+                  <td id="realisasi-ids"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>LCI</td>
+                  <td></td>
+                  <td id="realisasi-lci"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>INDIHEALTH</td>
+                  <td></td>
+                  <td id="realisasi-idh"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>MSP</td>
+                  <td></td>
+                  <td id="realisasi-msp"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -165,7 +201,7 @@
                   <td id="lci-inisiasi"></td>
                 </tr>
                 <tr>
-                  <td>INDOHEALTH</td>
+                  <td>INDIHEALTH</td>
                   <td id="idh-kontrak"></td>
                   <td id="idh-penawaran"></td>
                   <td id="idh-proposal"></td>
@@ -217,7 +253,7 @@
                   <td id="lci-inisiasik"></td>
                 </tr>
                 <tr>
-                  <td>INDOHEALTH</td>
+                  <td>INDIHEALTH</td>
                   <td id="idh-kontrakk"></td>
                   <td id="idh-penawarank"></td>
                   <td id="idh-proposalk"></td>
@@ -284,12 +320,8 @@
                   <input type="text" id="nama" /> <br />
                   <label for="" class="labs">Target: </label>
                   <input type="text" id="target" /> <br />
-                  <label for="" class="labs">Realisasi Q1: </label>
-                  <input type="text" id="realisasiQ1" /> <br />
                   <label for="" class="labs">Target Q1: </label>
                   <input type="text" id="targetQ1" /> <br />
-                  <label for="" class="labs">Realisasi Q2: </label>
-                  <input type="text" id="realisasiQ2" /> <br />
                   <label for="" class="labs">Target Q2: </label>
                   <input type="text" id="targetQ2" /> <br />
                   <label for="" class="labs" style="display: none">ID Dokument</label>
@@ -322,14 +354,13 @@
       import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
       const firebaseConfig = {
-        apiKey: "AIzaSyB40QTGt7KfQQLZ_ZG8_xdep7dQhcWK8b8",
-        authDomain: "oxycon-34b18.firebaseapp.com",
-        databaseURL: "https://oxycon-34b18-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "oxycon-34b18",
-        storageBucket: "oxycon-34b18.appspot.com",
-        messagingSenderId: "648156586578",
-        appId: "1:648156586578:web:2896cc6aef48b472dbf58b",
-        measurementId: "G-0504EZS97M",
+        apiKey: "AIzaSyAUoy9zDA-1rp6r-BacNbJHWDzvW86YPSQ",
+        authDomain: "sccic-dashboard.firebaseapp.com",
+        projectId: "sccic-dashboard",
+        storageBucket: "sccic-dashboard.appspot.com",
+        messagingSenderId: "207809639364",
+        appId: "1:207809639364:web:da61ad713b2b04c3ed6a91",
+        measurementId: "G-51QQRT656L"
       };
 
       // init firebase
@@ -349,80 +380,6 @@
 
       var plusnomor = 0;
       var targetList = [];
-
-      const targetListin = document.querySelector("#tabel-target");
-      function renderTarget(doc) {
-        let trow = document.createElement("tr");
-        var nomor = document.createElement("td");
-        let organisasitd = document.createElement("td"); 
-        let targettd = document.createElement("td"); 
-        let targetQ1td = document.createElement("td"); 
-        let realisasiQ1td = document.createElement("td"); 
-        let targetQ2td = document.createElement("td"); 
-        let realisasiQ2td = document.createElement("td"); 
-        let ControlDivTarget = document.createElement("td");
-
-        targetList.push([doc.data().organisasi, doc.data().target, doc.data().targetQ1, doc.data().realisasiQ1, doc.data().targetQ2, doc.data().realisasiQ2, doc.id]);
-
-        trow.setAttribute("data-id", doc.id);
-        nomor.innerHTML = ++plusnomor;  
-        nomor.style.display = "none";
-        organisasitd.textContent = doc.data().organisasi;
-        targettd.textContent = formatRupiah(doc.data().target.toString());
-        targetQ1td.textContent = formatRupiah( doc.data().targetQ1.toString());
-        realisasiQ1td.textContent = doc.data().realisasiQ1;
-        targetQ2td.textContent = formatRupiah( doc.data().targetQ2.toString());
-        realisasiQ2td.textContent = doc.data().realisasiQ2;
-
-        ControlDivTarget.innerHTML +=
-          '<button style="background-color:#87CEEB; padding: 5px 25px; border: none; border-radius: 10px; border: none; cursor: pointer" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes(' +
-          plusnomor +
-          ')">Edit</button>';
-
-        // Append cells to table row
-        trow.appendChild(nomor);
-        trow.appendChild(organisasitd);
-        trow.appendChild(targettd);
-        trow.appendChild(targetQ1td);
-        trow.appendChild(realisasiQ1td);
-        trow.appendChild(targetQ2td);
-        trow.appendChild(realisasiQ2td);
-        trow.appendChild(ControlDivTarget);
-
-        targetListin.appendChild(trow);
-      }
-      
-      var idTarget= document.getElementById("idTarget");
-      var organisasitb = document.getElementById("nama");
-      var targettb = document.getElementById("target");
-      var targetq1tb = document.getElementById("targetQ1");
-      var realisasiQ1tb = document.getElementById("realisasiQ1");
-      var targetQ2tb = document.getElementById("targetQ2");
-      var realisasiQ2tb = document.getElementById("realisasiQ1");
-
-      window.Fillboxes = (index) => {
-        if (index == null) {
-          organisasitb.value = "";
-          targettb.value = "";
-          targetq1tb.value = "";
-          realisasiQ1tb.value = "";
-          targetQ2tb.value = "";
-          realisasiQ2tb.value = "";
-          idTarget.value = "";
-        } else {
-          --index;
-          organisasitb.value = targetList[index][0];
-          targettb.value = +targetList[index][1];
-          targetq1tb.value = +targetList[index][2];
-          realisasiQ1tb.value = targetList[index][3];
-          targetQ2tb.value = +targetList[index][4];
-          realisasiQ2tb.value = targetList[index][5];
-          idTarget.value = targetList[index][6];
-          console.log("ini target" + organisasitb.value)
-          console.log("ini target" + idTarget.value)
-        }
-      };
-
 
       //database target
       const dbListTarget = collection(db, "target");
@@ -492,11 +449,18 @@
     }
 
     // Panggil fungsi sumPriceByStatusAndDisplay untuk menampilkan total harga pada elemen HTML
+
+
     sumPriceByStatusAndDisplay("sccic", "", "", "", "sccic-dana");
+    sumPriceByStatusAndDisplay("sccic", "", "", "", "realisasi-sccic");
     sumPriceByStatusAndDisplay("ids", "", "", "", "ids-dana");
+    sumPriceByStatusAndDisplay("ids", "", "", "", "realisasi-ids");
     sumPriceByStatusAndDisplay("lci", "", "", "", "lci-dana");
+    sumPriceByStatusAndDisplay("lci", "", "", "", "realisasi-lci");
     sumPriceByStatusAndDisplay("msp", "", "", "", "msp-dana");
+    sumPriceByStatusAndDisplay("msp", "", "", "", "realisasi-msp");
     sumPriceByStatusAndDisplay("idh", "", "", "", "idh-dana");
+    sumPriceByStatusAndDisplay("idh", "", "", "", "realisasi-idh");
 
     sumPriceByStatusAndDisplay("sccic", "kontrak", "sccic-kontrak", "");
     sumPriceByStatusAndDisplay("sccic", "penawaran", "sccic-penawaran", "");
@@ -548,29 +512,10 @@
     sumPriceByStatusAndDisplay("idh", "proposal", "", "idh-proposalk");
     sumPriceByStatusAndDisplay("idh", "inisiasi", "", "idh-inisiasik");
 
+
     //jumlah klien
 
-
-
-
-
-
-
-
-
-
-
-
-
-
       UpDatadoc.addEventListener("click", UpdDoc);
-
-
-      
-
-
-
-
 
     // end of database
 </script>
