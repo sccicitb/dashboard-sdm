@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scrollbar-width: none;
 }
 
 body::before {
@@ -106,6 +107,7 @@ body::before {
 .img-logo {
   max-width: 3em;
 }
+
 .navbar-brand {
   display: flex;
 }
@@ -125,6 +127,7 @@ body::before {
 .signin a {
   text-decoration: none;
 }
+
 .signup p:first-child {
   font-size: 0.9em;
   color: rgb(216, 216, 216);
@@ -210,6 +213,7 @@ body::before {
 .user {
   margin-top: 50px;
 }
+
 .user ul li {
   list-style: none;
 }
@@ -237,6 +241,7 @@ body::before {
   margin-bottom: 20px;
   margin-top: 10px;
 }
+
 .linesatu {
   width: 100%;
   background-color: rgb(65, 63, 63);
@@ -270,7 +275,11 @@ body::before {
 }
 
 .doctorlist-title {
-  margin-right: 20px;
+  margin-right: 0px;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  border-top: 1px solid #dee2e6;
 }
 
 .doctorlist-title td {
@@ -321,6 +330,7 @@ body::before {
   color: white;
   font-size: 1.1em;
 }
+
 /* alat */
 .maindoc .title h1 {
   color: whitesmoke;
@@ -394,7 +404,8 @@ body::before {
   border-radius: 5px;
 }
 
-.target-realisasi, .status-proyek {
+.target-realisasi,
+.status-proyek {
   background-color: #a9a9a9be;
   border-radius: 10px;
   padding: 20px;
@@ -408,39 +419,78 @@ body::before {
   margin-right: 15px;
 }
 
-#sccic-kontrak, #ids-kontrak, #idh-kontrak, #lci-kontrak, #msp-kontrak,
-#sccic-kontrakk, #ids-kontrakk, #idh-kontrakk, #lci-kontrakk, #msp-kontrakk{
+#sccic-kontrak,
+#ids-kontrak,
+#idh-kontrak,
+#lci-kontrak,
+#msp-kontrak,
+#sccic-kontrakk,
+#ids-kontrakk,
+#idh-kontrakk,
+#lci-kontrakk,
+#msp-kontrakk {
   background-color: green;
 }
 
-#sccic-penawaran, #ids-penawaran, #idh-penawaran, #lci-penawaran, #msp-penawaran,
-#sccic-penawarank, #ids-penawarank, #idh-penawarank, #lci-penawarank, #msp-penawarank {
+#sccic-penawaran,
+#ids-penawaran,
+#idh-penawaran,
+#lci-penawaran,
+#msp-penawaran,
+#sccic-penawarank,
+#ids-penawarank,
+#idh-penawarank,
+#lci-penawarank,
+#msp-penawarank {
   background-color: blue;
 }
 
-#sccic-proposal, #ids-proposal, #idh-proposal, #lci-proposal, #msp-proposal,
-#sccic-proposalk, #ids-proposalk, #idh-proposalk, #lci-proposalk, #msp-proposalk {
+#sccic-proposal,
+#ids-proposal,
+#idh-proposal,
+#lci-proposal,
+#msp-proposal,
+#sccic-proposalk,
+#ids-proposalk,
+#idh-proposalk,
+#lci-proposalk,
+#msp-proposalk {
   background-color: yellow;
   color: black;
 }
 
-#sccic-inisiasi, #ids-inisiasi, #idh-inisiasi, #lci-inisiasi, #msp-inisiasi,
-#sccic-inisiasik, #ids-inisiasik, #idh-inisiasik, #lci-inisiasik, #msp-inisiasik {
+#sccic-inisiasi,
+#ids-inisiasi,
+#idh-inisiasi,
+#lci-inisiasi,
+#msp-inisiasi,
+#sccic-inisiasik,
+#ids-inisiasik,
+#idh-inisiasik,
+#lci-inisiasik,
+#msp-inisiasik {
   background-color: white;
   color: black;
 }
 
 
 .btn-no-style {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	outline: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
 }
 
 .a-disabled {
   pointer-events: none;
   cursor: pointer;
+}
+
+thead tr:nth-child(1) th {
+  background: #6a070c;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }

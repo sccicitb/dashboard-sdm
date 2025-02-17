@@ -24,7 +24,7 @@ function getFormattedDate(date = new Date()) {
 }
 
 function sortByStatus(data) {
-  const statusOrder = ['kontrak', 'proposal', 'negosiasi', 'inisiasi'];
+  const statusOrder = ['kontrak','negosiasi', 'proposal', 'inisiasi'];
 
   return data.sort((a, b) => {
     return statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status);
@@ -42,13 +42,21 @@ const formState = {
 function App() {
   const [action, setAction] = useQueryState('action', { defaultValue: 'view' })
   const [organization, setOrganization] = useQueryState('org', { defaultValue: 'SCCIC' })
+  const [search, setSearch] = useQueryState('search', { defaultValue: '' })
   const [form, setForm] = useState({ ...formState })
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
 
   const getData = async () => {
     setLoading(true)
-    const { data } = await supabase.from('t_project').select().eq('organization', organization.toLocaleLowerCase()).order('updated_at', { ascending: true })
+    let query = supabase.from('t_project').select().eq('organization', organization.toLocaleLowerCase()).order('updated_at', { ascending: true })
+    
+    if (search) {
+      const searchTerm = `name.ilike.%${search}%,partner.ilike.%${search}%,status.ilike.%${search}%,pic.ilike.%${search}%`
+      query = query.or(searchTerm);
+    }
+
+    const {data} = await query
     setData(sortByStatus(data))
     setLoading(false)
   }
@@ -171,7 +179,7 @@ function App() {
         <div className="row all-content">
 
           {/* sidebar */}
-          <div className="col-lg-2 col-md-2 col-sm-4 list">
+          {/* <div className="col-lg-2 col-md-2 col-sm-4 list">
             <div className="row icon-dash">
               <div className="col">
                 <img src="img/logo.png" alt="" />
@@ -237,140 +245,142 @@ function App() {
               <hr />
               <br /> <br />
             </div>
-          </div>
+          </div> */}
 
           {/* main content */}
-          {
-            action === 'add' ? (
-              <div className="col-lg-10 col-md-10 col-sm-8 maindoc">
-                <div className="row">
-                  <div className="col title">
-                    <h1>ADD NEW DATA</h1>
-                    <p>Create a new data and add them to this site.</p>
+          <div className='container-fluid'>
+            {
+              action === 'add' ? (
+                <div className="col-lg-12 col-md-10 col-sm-8 maindoc">
+                  <div className="row">
+                    <div className="col title">
+                      <h1>ADD NEW DATA</h1>
+                      <p>Create a new data and add them to this site.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="row">
-                  <div className="col">
-                    <section className="pagetambahdokter">
-                      <div className="container">
-                        <div className="row">
-                          <div className="col">
-                            <form className="add" onSubmit={handleSubmit}>
-                              <div className="form-group">
-                                <label htmlFor="email" style={{ color: "rgb(216, 216, 216)" }} >Proyek</label>
-                                <input type="text" className="form-control" id="email" aria-describedby="emailHelp" name="name" value={form.name} onChange={handleInputChange} required />
-                              </div>
-                              <div className="form-group">
-                                <label htmlFor="specialist" style={{ color: "rgb(216, 216, 216)" }} >Mitra</label>
-                                <input type="text" className="form-control" id="specialist" name="partner" value={form.partner} onChange={handleInputChange} required />
-                              </div>
-                              <div className="form-group">
-                                <label htmlFor="phone" style={{ color: "rgb(216, 216, 216)" }} >Nilai Dana</label>
-                                <input type="text" className="form-control" id="phone" name="value" value={form.value} onChange={handleInputChange} required />
-                              </div>
-                              <div className="form-group">
-                                <label htmlFor="status" style={{ color: "rgb(216, 216, 216)" }} >Status</label>
-                                <select name="status" value={form.status} onChange={handleInputChange} id="status">
-                                  <option value="inisiasi">Inisiasi</option>
-                                  <option value="proposal">Proposal</option>
-                                  <option value="penawaran">Penawaran</option>
-                                  <option value="kontrak">Kontrak</option>
-                                </select>
-                              </div>
-                              <div className="form-group">
-                                <label htmlFor="alamat" style={{ color: "rgb(216, 216, 216)" }} >PIC</label>
-                                <input type="text" className="form-control" id="alamat" name="pic" value={form.pic} onChange={handleInputChange} required />
-                              </div>
-                              <div className="button">
-                                <button type="submit" className="btn submit" style={{ marginTop: "10px" }}>Submit</button>
-                              </div>
-                            </form>
+                  <div className="row">
+                    <div className="col">
+                      <section className="pagetambahdokter">
+                        <div className="container">
+                          <div className="row">
+                            <div className="col">
+                              <form className="add" onSubmit={handleSubmit}>
+                                <div className="form-group">
+                                  <label htmlFor="email" style={{ color: "rgb(216, 216, 216)" }} >Proyek</label>
+                                  <input type="text" className="form-control" id="email" aria-describedby="emailHelp" name="name" value={form.name} onChange={handleInputChange} required />
+                                </div>
+                                <div className="form-group">
+                                  <label htmlFor="specialist" style={{ color: "rgb(216, 216, 216)" }} >Mitra</label>
+                                  <input type="text" className="form-control" id="specialist" name="partner" value={form.partner} onChange={handleInputChange} required />
+                                </div>
+                                <div className="form-group">
+                                  <label htmlFor="phone" style={{ color: "rgb(216, 216, 216)" }} >Nilai Dana</label>
+                                  <input type="text" className="form-control" id="phone" name="value" value={form.value} onChange={handleInputChange} required />
+                                </div>
+                                <div className="form-group">
+                                  <label htmlFor="status" style={{ color: "rgb(216, 216, 216)" }} >Status</label>
+                                  <select name="status" value={form.status} onChange={handleInputChange} id="status">
+                                    <option value="inisiasi">Inisiasi</option>
+                                    <option value="proposal">Proposal</option>
+                                    <option value="penawaran">Penawaran</option>
+                                    <option value="kontrak">Kontrak</option>
+                                  </select>
+                                </div>
+                                <div className="form-group">
+                                  <label htmlFor="alamat" style={{ color: "rgb(216, 216, 216)" }} >PIC</label>
+                                  <input type="text" className="form-control" id="alamat" name="pic" value={form.pic} onChange={handleInputChange} required />
+                                </div>
+                                <div className="button">
+                                  <button type="submit" className="btn submit" style={{ marginTop: "10px" }}>Submit</button>
+                                </div>
+                              </form>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </section>
+                      </section>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              <div className="col-lg-10 col-md-10 col-sm-8 main">
-                <div className="row">
-                  <div className="col title">
-                    <h1>{organization}</h1>
+              ) : (
+                <div className="col-lg-12 col-md-10 col-sm-8 main container-fluid">
+                  <div className="row">
+                    <div className="col title">
+                      <h1>{organization}</h1>
+                    </div>
                   </div>
-                </div>
-                <div className="row doctor">
-                  <div className="col buttonupdate">
+                  <div className="row doctor">
+                    <div className="col buttonupdate">
 
-                    <button onClick={() => setAction("add")}>
-                      <span className="fa fa-plus-circle" style={{ fontSize: "20px" }}></span>
-                      Add New Data
-                    </button>
+                      <button onClick={() => setAction("add")}>
+                        <span className="fa fa-plus-circle" style={{ fontSize: "20px" }}></span>
+                        Add New Data
+                      </button>
+                    </div>
+                  </div>
+                  <br />
+                  <div className="doctorlist-title">
+                    <table className="table table-borderless">
+                      <thead>
+                        <tr>
+                          <th>No.</th>
+                          <th>Proyek</th>
+                          <th>Mitra</th>
+                          <th>Dana (Rp)</th>
+                          <th>Status</th>
+                          <th>PIC</th>
+                          <th>Update</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody id="dokterList" style={{ borderTop: "1px #dee2e6 solid" }}>
+                        {!loading &&
+                          data.map((el, idx) => (
+                            <tr key={idx} style={{ backgroundColor: StatusColors[el.status], borderBottom: "1px #dee2e6 solid" }}>
+                              <td style={{ color: StatusTextColors[el.status] }} >{idx + 1}</td>
+                              <td style={{ color: StatusTextColors[el.status] }} >{el.name}</td>
+                              <td style={{ color: StatusTextColors[el.status] }} >{el.partner}</td>
+                              <td style={{ color: StatusTextColors[el.status] }} >{FormatRupiah(el.value)}</td>
+                              <td style={{ color: StatusTextColors[el.status] }} >{el.status}</td>
+                              <td style={{ color: StatusTextColors[el.status] }} >{el.pic}</td>
+                              <td style={{ color: StatusTextColors[el.status] }} >{getFormattedDate(new Date(el.updated_at))}</td>
+                              <td>
+                                <button
+                                  style={{
+                                    backgroundColor: "Transparent",
+                                    backgroundRepeat: "no-repeat",
+                                    border: "none",
+                                    cursor: "pointer",
+                                    overflow: "hidden",
+                                    marginRight: "12px",
+                                  }}
+                                  onClick={() => handleEdit(el)}
+                                >
+                                  <i className="fa fa-pencil" style={{ fontSize: "24px", color: StatusTextColors[el.status], marginLeft: "5px" }} ></i>
+                                </button>
+                                <button
+                                  style={{
+                                    backgroundColor: "Transparent",
+                                    backgroundRepeat: "no-repeat",
+                                    border: "none",
+                                    cursor: "pointer",
+                                    overflow: "hidden",
+                                    marginRight: "12px",
+                                  }}
+                                  onClick={() => handleDelete(el)}
+                                >
+                                  <i className="fa fa-trash" style={{ fontSize: "24px", color: StatusTextColors[el.status] }}></i>
+                                </button>
+                              </td>
+                            </tr>
+                          ))
+                        }
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-                <br />
-                <div className="doctorlist-title">
-                  <table className="table">
-                    <thead>
-                      <tr>
-                        <th>No.</th>
-                        <th>Proyek</th>
-                        <th>Mitra</th>
-                        <th>Dana (Rp)</th>
-                        <th>Status</th>
-                        <th>PIC</th>
-                        <th>Update</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody id="dokterList">
-                      {!loading &&
-                        data.map((el, idx) => (
-                          <tr key={idx} style={{ backgroundColor: StatusColors[el.status] }}>
-                            <td style={{ color: StatusTextColors[el.status] }} >{idx + 1}</td>
-                            <td style={{ color: StatusTextColors[el.status] }} >{el.name}</td>
-                            <td style={{ color: StatusTextColors[el.status] }} >{el.partner}</td>
-                            <td style={{ color: StatusTextColors[el.status] }} >{FormatRupiah(el.value)}</td>
-                            <td style={{ color: StatusTextColors[el.status] }} >{el.status}</td>
-                            <td style={{ color: StatusTextColors[el.status] }} >{el.pic}</td>
-                            <td style={{ color: StatusTextColors[el.status] }} >{getFormattedDate(new Date(el.updated_at))}</td>
-                            <td>
-                              <button
-                                style={{
-                                  backgroundColor: "Transparent",
-                                  backgroundRepeat: "no-repeat",
-                                  border: "none",
-                                  cursor: "pointer",
-                                  overflow: "hidden",
-                                  marginRight: "12px",
-                                }}
-                                onClick={() => handleEdit(el)}
-                              >
-                                <i className="fa fa-pencil" style={{ fontSize: "24px", color: StatusTextColors[el.status], marginLeft: "5px" }} ></i>
-                              </button>
-                              <button
-                                style={{
-                                  backgroundColor: "Transparent",
-                                  backgroundRepeat: "no-repeat",
-                                  border: "none",
-                                  cursor: "pointer",
-                                  overflow: "hidden",
-                                  marginRight: "12px",
-                                }}
-                                onClick={() => handleDelete(el)}
-                              >
-                                <i className="fa fa-trash" style={{ fontSize: "24px", color: StatusTextColors[el.status] }}></i>
-                              </button>
-                            </td>
-                          </tr>
-                        ))
-                      }
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            )
-          }
+              )
+            }
+          </div>
 
           {/* Update Modal */}
           <div className="modal fade" id="editModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
