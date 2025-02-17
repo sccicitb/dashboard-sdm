@@ -1781,6 +1781,7 @@ for collection_id, nested_objects in data.items():
             "pic": obj_data.get("alamat"),
             "name": obj_data.get("nama"),
             "value": obj_data.get("phone"),
+            "status": obj_data.get("status"),
             "updated_at": convert_to_datetime_format(obj_data.get("timestamp")),
             # "id": obj_id,
             "organization": collection_id

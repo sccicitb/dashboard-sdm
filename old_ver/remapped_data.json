@@ -4,6 +4,7 @@
         "pic": "Gitarja",
         "name": "Smart X Healtcare Simulator (Layanan Kesehatan)",
         "value": 650000000,
+        "status": "negosiasi",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "idh"
     },
@@ -12,6 +13,7 @@
         "pic": "Alawi, Niko",
         "name": "Telemedicine ",
         "value": 100000000,
+        "status": "proposal",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "idh"
     },
@@ -20,6 +22,7 @@
         "pic": "Alawi, Budi",
         "name": "SIMRS",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-10-21 00:00:00",
         "organization": "idh"
     },
@@ -28,6 +31,7 @@
         "pic": "Gitarja",
         "name": "Development IT Product",
         "value": 0,
+        "status": "proposal",
         "updated_at": "2024-12-09 00:00:00",
         "organization": "idh"
     },
@@ -36,6 +40,7 @@
         "pic": "Gitardja, Alawi",
         "name": "RME Hospital",
         "value": 0,
+        "status": "proposal",
         "updated_at": "2024-12-09 00:00:00",
         "organization": "idh"
     },
@@ -44,6 +49,7 @@
         "pic": "Alawi, Anton",
         "name": "DianeshaCare",
         "value": 100000000,
+        "status": "proposal",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "idh"
     },
@@ -52,6 +58,7 @@
         "pic": "Alawi",
         "name": "SIM RS T.A 2025",
         "value": 492454000,
+        "status": "inisiasi",
         "updated_at": "2024-12-16 00:00:00",
         "organization": "idh"
     },
@@ -60,6 +67,7 @@
         "pic": "Alawi",
         "name": "DianeshaCare (+Smart Watch & Blood Pressure Tools)",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-09-02 00:00:00",
         "organization": "idh"
     },
@@ -68,6 +76,7 @@
         "pic": "Alawi",
         "name": "Shelfa",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-09-23 00:00:00",
         "organization": "idh"
     },
@@ -76,6 +85,7 @@
         "pic": "Dona, Alawi",
         "name": "Smart Hospital + Telemedicine",
         "value": 64500000,
+        "status": "inisiasi",
         "updated_at": "2024-09-02 00:00:00",
         "organization": "idh"
     },
@@ -84,6 +94,7 @@
         "pic": "Alawi, Anton",
         "name": "Shelfa",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-10-07 00:00:00",
         "organization": "idh"
     },
@@ -92,6 +103,7 @@
         "pic": "Alawi",
         "name": "SIM RS + RME",
         "value": 150000000,
+        "status": "inisiasi",
         "updated_at": "2024-11-25 00:00:00",
         "organization": "idh"
     },
@@ -100,6 +112,7 @@
         "pic": "Alawi",
         "name": "Shelfa",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-09-23 00:00:00",
         "organization": "idh"
     },
@@ -108,6 +121,7 @@
         "pic": "Alawi",
         "name": "All Produk",
         "value": 64500000,
+        "status": "inisiasi",
         "updated_at": "2024-08-12 00:00:00",
         "organization": "idh"
     },
@@ -116,6 +130,7 @@
         "pic": "Gitarja",
         "name": "NTU WP-4 (Use Case Air Polution)",
         "value": 186896250,
+        "status": "kontrak",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "idh"
     },
@@ -124,6 +139,7 @@
         "pic": "Alawi, Budi",
         "name": "SIM RS RME",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-09-17 00:00:00",
         "organization": "idh"
     },
@@ -132,6 +148,7 @@
         "pic": "Alawi",
         "name": "Smart Parking Hospital",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-09-23 00:00:00",
         "organization": "idh"
     },
@@ -140,6 +157,7 @@
         "pic": "Andhika (Mitra PMI jawa Barat)",
         "name": "Awan Kesehatan T.A 2025",
         "value": 200000000,
+        "status": "proposal",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "idh"
     },
@@ -148,6 +166,7 @@
         "pic": "Anton, Alawi",
         "name": "All Produk",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-12-23 00:00:00",
         "organization": "idh"
     },
@@ -156,6 +175,7 @@
         "pic": "Alawi",
         "name": "HR Management ",
         "value": 4500000,
+        "status": "inisiasi",
         "updated_at": "2024-07-01 00:00:00",
         "organization": "idh"
     },
@@ -164,6 +184,7 @@
         "pic": "Andhika (Mitra)",
         "name": "DianeshaCare",
         "value": 9750000,
+        "status": "inisiasi",
         "updated_at": "2024-09-02 00:00:00",
         "organization": "idh"
     },
@@ -172,6 +193,7 @@
         "pic": "Alawi",
         "name": "All Produk",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-10-15 00:00:00",
         "organization": "idh"
     },
@@ -180,6 +202,7 @@
         "pic": "Alawi",
         "name": "Aplikasi WA Blast Reminder Kontrol Pasien + Dashboard",
         "value": 150000000,
+        "status": "negosiasi",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "idh"
     },
@@ -188,6 +211,7 @@
         "pic": "Alawi, Anton",
         "name": "Shelfa",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-10-07 00:00:00",
         "organization": "idh"
     },
@@ -196,6 +220,7 @@
         "pic": "Alawi",
         "name": "Awan Kesehatan T.A 2025",
         "value": 200000000,
+        "status": "proposal",
         "updated_at": "2024-12-02 00:00:00",
         "organization": "idh"
     },
@@ -204,6 +229,7 @@
         "pic": "Alawi",
         "name": "Awarness Penyakit Diabetik",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-08-26 00:00:00",
         "organization": "idh"
     },
@@ -212,6 +238,7 @@
         "pic": "Alawi",
         "name": "Telemedicine T.A 2025",
         "value": 376400000,
+        "status": "inisiasi",
         "updated_at": "2024-09-02 00:00:00",
         "organization": "idh"
     },
@@ -220,6 +247,7 @@
         "pic": "Alawi, Anton",
         "name": "Shelfa",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-10-07 00:00:00",
         "organization": "idh"
     },
@@ -228,6 +256,7 @@
         "pic": "Alawi, Budi",
         "name": "SIM RS",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-10-21 00:00:00",
         "organization": "idh"
     },
@@ -236,6 +265,7 @@
         "pic": "EIU, Alawi",
         "name": "Telemedicine ",
         "value": 425332000,
+        "status": "inisiasi",
         "updated_at": "2024-08-12 00:00:00",
         "organization": "idh"
     },
@@ -244,6 +274,7 @@
         "pic": "Andhika (Mitra PMI jawa Barat)",
         "name": "HR Management T.A 2025",
         "value": 376400000,
+        "status": "inisiasi",
         "updated_at": "2024-09-02 00:00:00",
         "organization": "idh"
     },
@@ -252,6 +283,7 @@
         "pic": "Alawi",
         "name": "Shelfa",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-09-23 00:00:00",
         "organization": "idh"
     },
@@ -260,6 +292,7 @@
         "pic": "Alawi, Budi",
         "name": "Smart Hospital RME",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-09-17 00:00:00",
         "organization": "idh"
     },
@@ -268,6 +301,7 @@
         "pic": "Alawi, Niko",
         "name": "Telemedicine T.A 2025",
         "value": 264000000,
+        "status": "negosiasi",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "idh"
     },
@@ -276,6 +310,7 @@
         "pic": "Alawi, Anton",
         "name": "Shelfa",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-11-04 00:00:00",
         "organization": "idh"
     },
@@ -284,6 +319,7 @@
         "pic": "Alawi",
         "name": "Indicare-Vet",
         "value": 100000000,
+        "status": "proposal",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "idh"
     },
@@ -292,6 +328,7 @@
         "pic": "Okyza",
         "name": "VIANA/INARA",
         "value": 250000000,
+        "status": "proposal",
         "updated_at": "2024-08-12 00:00:00",
         "organization": "ids"
     },
@@ -300,6 +337,7 @@
         "pic": "Ardjaka",
         "name": "VIANA HSE",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-08-05 00:00:00",
         "organization": "ids"
     },
@@ -308,6 +346,7 @@
         "pic": "Ardjaka",
         "name": "Kajian Big Data Survey-ID",
         "value": 500000000,
+        "status": "inisiasi",
         "updated_at": "2024-08-05 00:00:00",
         "organization": "ids"
     },
@@ -316,6 +355,7 @@
         "pic": "ardjaka",
         "name": "VIANA Vehicle, crowd detection",
         "value": 70000000,
+        "status": "negosiasi",
         "updated_at": "2024-12-23 00:00:00",
         "organization": "ids"
     },
@@ -324,6 +364,7 @@
         "pic": "Ardjaka",
         "name": "VIANA HSE",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-08-12 00:00:00",
         "organization": "ids"
     },
@@ -332,6 +373,7 @@
         "pic": "Ardjaka",
         "name": "VIANA HSE",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-08-19 00:00:00",
         "organization": "ids"
     },
@@ -340,6 +382,7 @@
         "pic": "Ardjaka",
         "name": "HSE Viana",
         "value": 250000000,
+        "status": "inisiasi",
         "updated_at": "2024-08-12 00:00:00",
         "organization": "ids"
     },
@@ -348,6 +391,7 @@
         "pic": "Ardjaka",
         "name": "HSE VIANA",
         "value": 250000000,
+        "status": "inisiasi",
         "updated_at": "2024-07-15 00:00:00",
         "organization": "ids"
     },
@@ -356,6 +400,7 @@
         "pic": "Siti Insani",
         "name": "Viana HSE",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-07-08 00:00:00",
         "organization": "ids"
     },
@@ -364,6 +409,7 @@
         "pic": "Ardjaka",
         "name": "MIND-ID Safety Platform",
         "value": 500000000,
+        "status": "proposal",
         "updated_at": "2024-08-26 00:00:00",
         "organization": "ids"
     },
@@ -372,6 +418,7 @@
         "pic": "ardjaka",
         "name": "BIM & VIANA Integration, SAP & BIM Integration",
         "value": 600000000,
+        "status": "inisiasi",
         "updated_at": "2024-08-12 00:00:00",
         "organization": "ids"
     },
@@ -380,6 +427,7 @@
         "pic": "sccic",
         "name": "PUPR",
         "value": 200000000,
+        "status": "kontrak",
         "updated_at": "2024-07-08 00:00:00",
         "organization": "ids"
     },
@@ -388,6 +436,7 @@
         "pic": "ardjaka",
         "name": "VIANA Pertamina Cepu",
         "value": 186000000,
+        "status": "negosiasi",
         "updated_at": "2024-12-23 00:00:00",
         "organization": "ids"
     },
@@ -396,6 +445,7 @@
         "pic": "Ardjaka",
         "name": "Chat-bot NLP UNDP",
         "value": 2200000000,
+        "status": "inisiasi",
         "updated_at": "2024-08-12 00:00:00",
         "organization": "ids"
     },
@@ -404,6 +454,7 @@
         "pic": "Ardjaka",
         "name": "Samudera Indonesia, PT (Viana Number & Logo Recognition)",
         "value": 103125000,
+        "status": "negosiasi",
         "updated_at": "2024-12-31 00:00:00",
         "organization": "ids"
     },
@@ -412,6 +463,7 @@
         "pic": "Ardjaka",
         "name": "Viana Absensi",
         "value": 3360000,
+        "status": "kontrak",
         "updated_at": "2024-07-15 00:00:00",
         "organization": "ids"
     },
@@ -420,6 +472,7 @@
         "pic": "Ardjaka",
         "name": "VIANA SHE",
         "value": 200000000,
+        "status": "negosiasi",
         "updated_at": "2024-12-23 00:00:00",
         "organization": "ids"
     },
@@ -428,6 +481,7 @@
         "pic": "Ardjaka",
         "name": "VIANA",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "",
         "organization": "ids"
     },
@@ -436,6 +490,7 @@
         "pic": "Ardjaka",
         "name": "Deteksi via LIDAR",
         "value": 250000000,
+        "status": "proposal",
         "updated_at": "2024-12-13 00:00:00",
         "organization": "ids"
     },
@@ -444,6 +499,7 @@
         "pic": "Ardjaka",
         "name": "Transportasi Jakarta, PT (Viana passanger counting)",
         "value": 138000000,
+        "status": "proposal",
         "updated_at": "2024-11-04 00:00:00",
         "organization": "ids"
     },
@@ -452,6 +508,7 @@
         "pic": "Siti Insani",
         "name": "Simulator X IIP Smart Mobility",
         "value": 840000000,
+        "status": "proposal",
         "updated_at": "2024-12-31 00:00:00",
         "organization": "ids"
     },
@@ -460,6 +517,7 @@
         "pic": "sccic",
         "name": "NTU WP-1 Dashboard Smart Mobility-Jasa",
         "value": 228000000,
+        "status": "proposal",
         "updated_at": "2024-10-21 00:00:00",
         "organization": "ids"
     },
@@ -468,6 +526,7 @@
         "pic": "Ardjaka ",
         "name": "VIANA/INARA",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "",
         "organization": "ids"
     },
@@ -476,6 +535,7 @@
         "pic": "Ardjaka",
         "name": "Smart Campus PPU",
         "value": 1000000000,
+        "status": "proposal",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "ids"
     },
@@ -484,6 +544,7 @@
         "pic": "Ardjaka",
         "name": "PT. Putra Perkasa Abadi VIANA Counting",
         "value": 147900000,
+        "status": "negosiasi",
         "updated_at": "2024-12-31 00:00:00",
         "organization": "ids"
     },
@@ -492,6 +553,7 @@
         "pic": "Ardjaka",
         "name": "VIANA HSE",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-07-22 00:00:00",
         "organization": "ids"
     },
@@ -500,6 +562,7 @@
         "pic": "Ardjaka (Emir)",
         "name": "Smart Lighting, Viana B2B",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-06-19 00:00:00",
         "organization": "ids"
     },
@@ -508,6 +571,7 @@
         "pic": "ardjaka",
         "name": "HSE Viana",
         "value": 159500000,
+        "status": "kontrak",
         "updated_at": "2024-09-30 00:00:00",
         "organization": "ids"
     },
@@ -516,6 +580,7 @@
         "pic": "Ardjaka",
         "name": "VIANA HSE",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-07-29 00:00:00",
         "organization": "ids"
     },
@@ -524,6 +589,7 @@
         "pic": "Siti Insani & Okyza",
         "name": "NTU WP 0",
         "value": 250000000,
+        "status": "proposal",
         "updated_at": "2024-12-23 00:00:00",
         "organization": "ids"
     },
@@ -532,6 +598,7 @@
         "pic": "Siti Insani & Okyza",
         "name": "Smart Building",
         "value": 850000000,
+        "status": "proposal",
         "updated_at": "2024-12-31 00:00:00",
         "organization": "ids"
     },
@@ -540,6 +607,7 @@
         "pic": "Ardjaka",
         "name": "VIANA HSE",
         "value": 200000000,
+        "status": "proposal",
         "updated_at": "2024-10-14 00:00:00",
         "organization": "ids"
     },
@@ -548,6 +616,7 @@
         "pic": "Ardjaka",
         "name": "VIANA HSE",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-08-19 00:00:00",
         "organization": "ids"
     },
@@ -556,6 +625,7 @@
         "pic": "Ardjaka",
         "name": "VIANA ",
         "value": 250000000,
+        "status": "proposal",
         "updated_at": "2024-09-30 00:00:00",
         "organization": "ids"
     },
@@ -564,6 +634,7 @@
         "pic": "Ardjaka",
         "name": "VIANA HSE",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-07-22 00:00:00",
         "organization": "ids"
     },
@@ -572,6 +643,7 @@
         "pic": "Ardjaka",
         "name": "VIANA",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-08-26 00:00:00",
         "organization": "ids"
     },
@@ -580,6 +652,7 @@
         "pic": "Ardjaka",
         "name": "VIANA HSE",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-07-22 00:00:00",
         "organization": "ids"
     },
@@ -588,6 +661,7 @@
         "pic": "ardjaka",
         "name": "VIANA HSE",
         "value": 150000000,
+        "status": "inisiasi",
         "updated_at": "2024-10-21 00:00:00",
         "organization": "ids"
     },
@@ -596,6 +670,7 @@
         "pic": "Ardjaka",
         "name": "VIANA Smart Ritase",
         "value": 169150000,
+        "status": "kontrak",
         "updated_at": "2024-12-31 00:00:00",
         "organization": "ids"
     },
@@ -604,6 +679,7 @@
         "pic": "Ardjaka",
         "name": "VIANA/INARA",
         "value": 250000000,
+        "status": "proposal",
         "updated_at": "2024-08-05 00:00:00",
         "organization": "ids"
     },
@@ -612,6 +688,7 @@
         "pic": "ardjaka",
         "name": "Viana absensi",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-08-12 00:00:00",
         "organization": "ids"
     },
@@ -620,6 +697,7 @@
         "pic": "Sani",
         "name": "Face Recognition",
         "value": 50000000,
+        "status": "proposal",
         "updated_at": "2024-09-23 00:00:00",
         "organization": "ids"
     },
@@ -628,6 +706,7 @@
         "pic": "Ardjaka",
         "name": "VIANA",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "",
         "organization": "ids"
     },
@@ -636,6 +715,7 @@
         "pic": "Ardjaka",
         "name": "Viana",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "",
         "organization": "ids"
     },
@@ -644,6 +724,7 @@
         "pic": "Ardjaka",
         "name": "VIANA Body Behavior ",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-08-26 00:00:00",
         "organization": "ids"
     },
@@ -652,6 +733,7 @@
         "pic": "Ardjaka",
         "name": "VIANA/INARA, Smart Building",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "",
         "organization": "ids"
     },
@@ -660,6 +742,7 @@
         "pic": "Ardjaka",
         "name": "Kajian e-govt 2025",
         "value": 350000000,
+        "status": "inisiasi",
         "updated_at": "2024-10-07 00:00:00",
         "organization": "ids"
     },
@@ -668,6 +751,7 @@
         "pic": "Ardjaka",
         "name": "VIANA",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-08-12 00:00:00",
         "organization": "ids"
     },
@@ -676,6 +760,7 @@
         "pic": "Alda",
         "name": "Maintenance & Servie",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-08-05 00:00:00",
         "organization": "lci"
     },
@@ -684,6 +769,7 @@
         "pic": "Alda",
         "name": "Arvis (QHSE)",
         "value": 150000000,
+        "status": "inisiasi",
         "updated_at": "2024-07-29 00:00:00",
         "organization": "lci"
     },
@@ -692,6 +778,7 @@
         "pic": "alda/anton",
         "name": "Smart Home",
         "value": 100000000,
+        "status": "inisiasi",
         "updated_at": "2024-08-19 00:00:00",
         "organization": "lci"
     },
@@ -700,6 +787,7 @@
         "pic": "alda",
         "name": "Tripisia (maintenance&upgrade)",
         "value": 180000000,
+        "status": "kontrak",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "lci"
     },
@@ -708,6 +796,7 @@
         "pic": "Alda",
         "name": "Intrusion Prevention Detection",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-10-28 00:00:00",
         "organization": "lci"
     },
@@ -716,6 +805,7 @@
         "pic": "alda",
         "name": "AntrianQu",
         "value": 38000000,
+        "status": "kontrak",
         "updated_at": "2024-12-02 00:00:00",
         "organization": "lci"
     },
@@ -724,6 +814,7 @@
         "pic": "alda",
         "name": "Arvis (counting)",
         "value": 150000000,
+        "status": "negosiasi",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "lci"
     },
@@ -732,6 +823,7 @@
         "pic": "Alda",
         "name": "costumize apps",
         "value": 50000000,
+        "status": "kontrak",
         "updated_at": "",
         "organization": "lci"
     },
@@ -740,6 +832,7 @@
         "pic": "Alda",
         "name": "SWB",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-08-26 00:00:00",
         "organization": "lci"
     },
@@ -748,6 +841,7 @@
         "pic": "Alda",
         "name": "Smart Building",
         "value": 250000000,
+        "status": "proposal",
         "updated_at": "2024-12-09 00:00:00",
         "organization": "lci"
     },
@@ -756,6 +850,7 @@
         "pic": "alda",
         "name": "Arvis",
         "value": 70000000,
+        "status": "proposal",
         "updated_at": "2024-12-05 00:00:00",
         "organization": "lci"
     },
@@ -764,6 +859,7 @@
         "pic": "Alda",
         "name": "software keamanan ",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-11-18 00:00:00",
         "organization": "lci"
     },
@@ -772,6 +868,7 @@
         "pic": "alda",
         "name": "E-Akademik",
         "value": 103000000,
+        "status": "kontrak",
         "updated_at": "2024-07-29 00:00:00",
         "organization": "lci"
     },
@@ -780,6 +877,7 @@
         "pic": "alda",
         "name": "Penguatan Innovasi",
         "value": 30000000,
+        "status": "kontrak",
         "updated_at": "2024-12-02 00:00:00",
         "organization": "lci"
     },
@@ -788,6 +886,7 @@
         "pic": "Alda",
         "name": "Arvis (counting)",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-08-12 00:00:00",
         "organization": "lci"
     },
@@ -796,6 +895,7 @@
         "pic": "alda",
         "name": "Smart Wastebin",
         "value": 199000000,
+        "status": "kontrak",
         "updated_at": "2024-12-24 00:00:00",
         "organization": "lci"
     },
@@ -804,6 +904,7 @@
         "pic": "Alda",
         "name": "costumize apps",
         "value": 50000000,
+        "status": "kontrak",
         "updated_at": "",
         "organization": "lci"
     },
@@ -812,6 +913,7 @@
         "pic": "Alda",
         "name": "Air Quality Sensor",
         "value": 225000000,
+        "status": "proposal",
         "updated_at": "2024-12-05 00:00:00",
         "organization": "lci"
     },
@@ -820,6 +922,7 @@
         "pic": "Alda",
         "name": "AntrianQu",
         "value": 170000000,
+        "status": "proposal",
         "updated_at": "2024-12-09 00:00:00",
         "organization": "lci"
     },
@@ -828,6 +931,7 @@
         "pic": "alda",
         "name": "Smart X - Simulator (Payment Simulator)",
         "value": 840000000,
+        "status": "proposal",
         "updated_at": "2024-10-21 00:00:00",
         "organization": "lci"
     },
@@ -836,6 +940,7 @@
         "pic": "Alda",
         "name": "Arvis (counting)",
         "value": 200000000,
+        "status": "proposal",
         "updated_at": "2024-08-19 00:00:00",
         "organization": "lci"
     },
@@ -844,6 +949,7 @@
         "pic": "Alda",
         "name": "AWS (upgrade)",
         "value": 190000000,
+        "status": "kontrak",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "lci"
     },
@@ -852,6 +958,7 @@
         "pic": "Alda",
         "name": "Arvis (QHSE)",
         "value": 150000000,
+        "status": "inisiasi",
         "updated_at": "2024-07-29 00:00:00",
         "organization": "lci"
     },
@@ -860,6 +967,7 @@
         "pic": "alda",
         "name": "Smart Farming",
         "value": 200000000,
+        "status": "proposal",
         "updated_at": "2024-07-22 00:00:00",
         "organization": "lci"
     },
@@ -868,6 +976,7 @@
         "pic": "alda",
         "name": "SWB",
         "value": 211000000,
+        "status": "negosiasi",
         "updated_at": "2024-12-23 00:00:00",
         "organization": "lci"
     },
@@ -876,6 +985,7 @@
         "pic": "alda",
         "name": "Prototype Smart Building",
         "value": 33000000,
+        "status": "kontrak",
         "updated_at": "2024-12-24 00:00:00",
         "organization": "lci"
     },
@@ -884,6 +994,7 @@
         "pic": "fahri",
         "name": "Aset Management",
         "value": 250000000,
+        "status": "inisiasi",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "msp"
     },
@@ -892,6 +1003,7 @@
         "pic": "Fahri",
         "name": "Smart X Simulator (smart building-kenyamanan ruang)",
         "value": 650000000,
+        "status": "proposal",
         "updated_at": "2024-12-09 00:00:00",
         "organization": "msp"
     },
@@ -900,6 +1012,7 @@
         "pic": "haqi",
         "name": "Kajian relokasi industri",
         "value": 100000000,
+        "status": "inisiasi",
         "updated_at": "2024-11-20 00:00:00",
         "organization": "msp"
     },
@@ -908,6 +1021,7 @@
         "pic": "Robby",
         "name": "EO Blankspot",
         "value": 22367250,
+        "status": "kontrak",
         "updated_at": "2024-12-24 00:00:00",
         "organization": "msp"
     },
@@ -916,6 +1030,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -924,6 +1039,7 @@
         "pic": "haqi",
         "name": "Platform WebGis untuk Visualisasi RTH",
         "value": 100000000,
+        "status": "proposal",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -932,6 +1048,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -940,6 +1057,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -948,6 +1066,7 @@
         "pic": "Haqi",
         "name": "FGD UMKM 20 Des",
         "value": 10000000,
+        "status": "kontrak",
         "updated_at": "2025-01-08 00:00:00",
         "organization": "msp"
     },
@@ -956,6 +1075,7 @@
         "pic": "Fakhri",
         "name": "Kajian Smart Station",
         "value": 398700900,
+        "status": "kontrak",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "msp"
     },
@@ -964,6 +1084,7 @@
         "pic": "haqi",
         "name": "Modul Training",
         "value": 35000000,
+        "status": "inisiasi",
         "updated_at": "2024-12-23 00:00:00",
         "organization": "msp"
     },
@@ -972,6 +1093,7 @@
         "pic": "Haqi",
         "name": "Simderek Android & IoS",
         "value": 90000000,
+        "status": "inisiasi",
         "updated_at": "2024-11-20 00:00:00",
         "organization": "msp"
     },
@@ -980,6 +1102,7 @@
         "pic": "fahri",
         "name": "Pembuatan DED untuk BAS di Stasiun BNI City",
         "value": 350000000,
+        "status": "inisiasi",
         "updated_at": "2024-12-23 00:00:00",
         "organization": "msp"
     },
@@ -988,6 +1111,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -996,6 +1120,7 @@
         "pic": "Haqi",
         "name": "Modul Training",
         "value": 39375000,
+        "status": "kontrak",
         "updated_at": "2024-12-23 00:00:00",
         "organization": "msp"
     },
@@ -1004,6 +1129,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1012,6 +1138,7 @@
         "pic": "Fahri",
         "name": "NTU Sensor ",
         "value": 175071108,
+        "status": "kontrak",
         "updated_at": "2024-11-18 00:00:00",
         "organization": "msp"
     },
@@ -1020,6 +1147,7 @@
         "pic": "Haqi",
         "name": "VAIA VISITOR",
         "value": 12500000,
+        "status": "inisiasi",
         "updated_at": "2024-12-02 00:00:00",
         "organization": "msp"
     },
@@ -1028,6 +1156,7 @@
         "pic": "Haqi",
         "name": "Event Business Competition",
         "value": 195000000,
+        "status": "negosiasi",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "msp"
     },
@@ -1036,6 +1165,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1044,6 +1174,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1052,6 +1183,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1060,6 +1192,7 @@
         "pic": "Haqi",
         "name": "EO Workshop ADB",
         "value": 2000000,
+        "status": "kontrak",
         "updated_at": "2024-11-18 00:00:00",
         "organization": "msp"
     },
@@ -1068,6 +1201,7 @@
         "pic": "Fahri",
         "name": "NTU Platform Water ",
         "value": 267510000,
+        "status": "inisiasi",
         "updated_at": "2024-12-23 00:00:00",
         "organization": "msp"
     },
@@ -1076,6 +1210,7 @@
         "pic": "Haqi",
         "name": "Seminar Silver MICE",
         "value": 30697917,
+        "status": "kontrak",
         "updated_at": "2025-01-08 00:00:00",
         "organization": "msp"
     },
@@ -1084,6 +1219,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1092,6 +1228,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1100,6 +1237,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1108,6 +1246,7 @@
         "pic": "Valdi",
         "name": "Smart Building IIP (Water)",
         "value": 500000000,
+        "status": "proposal",
         "updated_at": "2024-11-25 00:00:00",
         "organization": "msp"
     },
@@ -1116,6 +1255,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1124,6 +1264,7 @@
         "pic": "fahri",
         "name": "Sustainable & Smart Residensial",
         "value": 70000000,
+        "status": "kontrak",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "msp"
     },
@@ -1132,6 +1273,7 @@
         "pic": "Haqi",
         "name": "Kajian RPIK",
         "value": 100000000,
+        "status": "inisiasi",
         "updated_at": "2024-09-27 00:00:00",
         "organization": "msp"
     },
@@ -1140,6 +1282,7 @@
         "pic": "haqi",
         "name": "Modul BKPSDM Indramayu",
         "value": 175000000,
+        "status": "inisiasi",
         "updated_at": "2024-12-23 00:00:00",
         "organization": "msp"
     },
@@ -1148,6 +1291,7 @@
         "pic": "Robby",
         "name": "EO Seminar Internasional",
         "value": 80000000,
+        "status": "kontrak",
         "updated_at": "2024-11-18 00:00:00",
         "organization": "msp"
     },
@@ -1156,6 +1300,7 @@
         "pic": "Haqi",
         "name": "Disaster Risk Apps",
         "value": 9900000,
+        "status": "kontrak",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1164,6 +1309,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1172,6 +1318,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1180,6 +1327,7 @@
         "pic": "haqi",
         "name": "Platform data analitik - Gen AI ",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-11-04 00:00:00",
         "organization": "msp"
     },
@@ -1188,6 +1336,7 @@
         "pic": "Haqi",
         "name": "Jasa Outsourching Kajian Bakti",
         "value": 7000000,
+        "status": "kontrak",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "msp"
     },
@@ -1196,6 +1345,7 @@
         "pic": "Nuri",
         "name": "EO Seminar Internasional",
         "value": 90000000,
+        "status": "kontrak",
         "updated_at": "2024-11-18 00:00:00",
         "organization": "msp"
     },
@@ -1204,6 +1354,7 @@
         "pic": "Haqi",
         "name": "Event FGD & Survei Bakti",
         "value": 25000000,
+        "status": "kontrak",
         "updated_at": "2024-12-16 00:00:00",
         "organization": "msp"
     },
@@ -1212,6 +1363,7 @@
         "pic": "Haqi",
         "name": "SSO Data Kepegawaian",
         "value": 150000000,
+        "status": "inisiasi",
         "updated_at": "2024-11-20 00:00:00",
         "organization": "msp"
     },
@@ -1220,6 +1372,7 @@
         "pic": "Fahri",
         "name": "Kajian Smart Residential ",
         "value": 70000000,
+        "status": "kontrak",
         "updated_at": "2025-01-08 00:00:00",
         "organization": "msp"
     },
@@ -1228,6 +1381,7 @@
         "pic": "Haqi",
         "name": "FGD UMKM 9 Des",
         "value": 10000000,
+        "status": "kontrak",
         "updated_at": "2025-01-08 00:00:00",
         "organization": "msp"
     },
@@ -1236,6 +1390,7 @@
         "pic": "Fahri",
         "name": "Web Water Platform",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2024-12-02 00:00:00",
         "organization": "msp"
     },
@@ -1244,6 +1399,7 @@
         "pic": "Haqi",
         "name": "Disaster risk Management",
         "value": 300000,
+        "status": "inisiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "msp"
     },
@@ -1252,6 +1408,7 @@
         "pic": "Donna",
         "name": "Konsultasi Perorangan Swakelola type I",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2025-02-17 00:00:00",
         "organization": "sccic"
     },
@@ -1260,6 +1417,7 @@
         "pic": "Donna",
         "name": "Smart Campus",
         "value": 1000000000,
+        "status": "proposal",
         "updated_at": "2024-07-08 00:00:00",
         "organization": "sccic"
     },
@@ -1268,6 +1426,7 @@
         "pic": "Sandhi",
         "name": "Sistem Manajemen By Objektif",
         "value": 450000000,
+        "status": "negosiasi",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "sccic"
     },
@@ -1276,6 +1435,7 @@
         "pic": "Donna",
         "name": "Pengembangan dan Implementasi Sistem Data Internal KKIP",
         "value": 2000000000,
+        "status": "negosiasi",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "sccic"
     },
@@ -1284,6 +1444,7 @@
         "pic": "Anton",
         "name": "Master Plan Smart City",
         "value": 250000000,
+        "status": "negosiasi",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "sccic"
     },
@@ -1292,6 +1453,7 @@
         "pic": "Donna",
         "name": "Maintenance & Update Monita Dishub Prov Jabar",
         "value": 200000000,
+        "status": "negosiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "sccic"
     },
@@ -1300,6 +1462,7 @@
         "pic": "Anton Arifin",
         "name": "SMART CITY PROVINSI BANTEN",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "sccic"
     },
@@ -1308,6 +1471,7 @@
         "pic": "Donna",
         "name": "Viana dan Monita Provinsi Banten RKA 2025",
         "value": 1300000000,
+        "status": "inisiasi",
         "updated_at": "2024-12-16 00:00:00",
         "organization": "sccic"
     },
@@ -1316,6 +1480,7 @@
         "pic": "Donna",
         "name": "Kajian lanjutan BGC",
         "value": 1000000000,
+        "status": "inisiasi",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "sccic"
     },
@@ -1324,6 +1489,7 @@
         "pic": "Anton",
         "name": "Master Plan Smart City",
         "value": 250000000,
+        "status": "inisiasi",
         "updated_at": "2025-01-31 00:00:00",
         "organization": "sccic"
     },
@@ -1332,6 +1498,7 @@
         "pic": "Anton Arifin",
         "name": "LITERASI DIGITAL 2025 DPD JAWA BARAT",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "sccic"
     },
@@ -1340,6 +1507,7 @@
         "pic": "Donna",
         "name": "Reliability Analysis",
         "value": 400000000,
+        "status": "inisiasi",
         "updated_at": "",
         "organization": "sccic"
     },
@@ -1348,6 +1516,7 @@
         "pic": "Donna",
         "name": "Smart Building",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "",
         "organization": "sccic"
     },
@@ -1356,6 +1525,7 @@
         "pic": "Anton Arifin",
         "name": "PENGEMBANGAN INFRASTRUKTUR TIK",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "sccic"
     },
@@ -1364,6 +1534,7 @@
         "pic": "Donna",
         "name": "Ocean Big Data",
         "value": 700000000,
+        "status": "inisiasi",
         "updated_at": "",
         "organization": "sccic"
     },
@@ -1372,6 +1543,7 @@
         "pic": "Sandhi",
         "name": "Roadmap pengembangan ekosistim digital",
         "value": 500000000,
+        "status": "proposal",
         "updated_at": "2024-10-07 00:00:00",
         "organization": "sccic"
     },
@@ -1380,6 +1552,7 @@
         "pic": "Donna",
         "name": "SmartCity Kominfo",
         "value": 1000000000,
+        "status": "proposal",
         "updated_at": "",
         "organization": "sccic"
     },
@@ -1388,6 +1561,7 @@
         "pic": "Donna",
         "name": "VIANA 200 titik",
         "value": 2400000000,
+        "status": "negosiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "sccic"
     },
@@ -1396,6 +1570,7 @@
         "pic": "Anton Arifin",
         "name": "Review Smart City ",
         "value": 100000000,
+        "status": "proposal",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "sccic"
     },
@@ -1404,6 +1579,7 @@
         "pic": "Donna",
         "name": "Sistem Data Angkatan",
         "value": 1700000000,
+        "status": "proposal",
         "updated_at": "2024-12-09 00:00:00",
         "organization": "sccic"
     },
@@ -1412,6 +1588,7 @@
         "pic": "Anton Arifin",
         "name": "TO BE ARSITEKTUR SPBE DISKOMINFO ",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "sccic"
     },
@@ -1420,6 +1597,7 @@
         "pic": "Anton Arifin",
         "name": "Smart Maritime Smart Rural dan Aplikasi AI berbasis Satelit",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "sccic"
     },
@@ -1428,6 +1606,7 @@
         "pic": "Sandhi",
         "name": "Kelanjutan SPBE 3T",
         "value": 3504100000,
+        "status": "proposal",
         "updated_at": "2025-01-20 00:00:00",
         "organization": "sccic"
     },
@@ -1436,6 +1615,7 @@
         "pic": "Sandhi",
         "name": "RTDI dan RKCI 2025",
         "value": 2000000000,
+        "status": "proposal",
         "updated_at": "2025-01-20 00:00:00",
         "organization": "sccic"
     },
@@ -1444,6 +1624,7 @@
         "pic": "Donna",
         "name": "Smart Building",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "",
         "organization": "sccic"
     },
@@ -1452,6 +1633,7 @@
         "pic": "Donna",
         "name": "Viana 4 ruas x 3 wilayah RKA 2025",
         "value": 97500000,
+        "status": "kontrak",
         "updated_at": "2025-02-10 00:00:00",
         "organization": "sccic"
     },
@@ -1460,6 +1642,7 @@
         "pic": "Fadhil",
         "name": "Pengembangan SKPJ Swakelola type I",
         "value": 200000000,
+        "status": "inisiasi",
         "updated_at": "2025-02-17 00:00:00",
         "organization": "sccic"
     },
@@ -1468,6 +1651,7 @@
         "pic": "Fadhil",
         "name": "Studi Review Bisnis Data Center",
         "value": 689920200,
+        "status": "inisiasi",
         "updated_at": "2024-12-16 00:00:00",
         "organization": "sccic"
     },
@@ -1476,6 +1660,7 @@
         "pic": "Anton",
         "name": "Master Plan Smart City",
         "value": 250000000,
+        "status": "inisiasi",
         "updated_at": "2025-01-31 00:00:00",
         "organization": "sccic"
     },
@@ -1484,6 +1669,7 @@
         "pic": "Donna",
         "name": "Kajian Skema Single Billing ",
         "value": 170000000,
+        "status": "negosiasi",
         "updated_at": "2025-02-17 00:00:00",
         "organization": "sccic"
     },
@@ -1492,6 +1678,7 @@
         "pic": "Fadhil",
         "name": "Building Information Modelling",
         "value": 1000000000,
+        "status": "inisiasi",
         "updated_at": "2025-02-03 00:00:00",
         "organization": "sccic"
     },
@@ -1500,6 +1687,7 @@
         "pic": "Donna",
         "name": "Potensi Kajian Pengukuran BGH",
         "value": 1600000000,
+        "status": "negosiasi",
         "updated_at": "2025-01-20 00:00:00",
         "organization": "sccic"
     },
@@ -1508,6 +1696,7 @@
         "pic": "Donna",
         "name": "Penyusunan masterplan dan transformasi digital Kab. Padang Sidempuan",
         "value": 400000000,
+        "status": "inisiasi",
         "updated_at": "",
         "organization": "sccic"
     },
@@ -1516,6 +1705,7 @@
         "pic": "Anton",
         "name": "Master Plan Smart City",
         "value": 250000000,
+        "status": "inisiasi",
         "updated_at": "2025-01-31 00:00:00",
         "organization": "sccic"
     },
@@ -1524,6 +1714,7 @@
         "pic": "Donna",
         "name": "Smarcity (Kajian)",
         "value": 400000000,
+        "status": "inisiasi",
         "updated_at": "",
         "organization": "sccic"
     },
@@ -1532,6 +1723,7 @@
         "pic": "Anton",
         "name": "Master Plan Smart City",
         "value": 250000000,
+        "status": "inisiasi",
         "updated_at": "2025-01-31 00:00:00",
         "organization": "sccic"
     },
@@ -1540,6 +1732,7 @@
         "pic": "Donna",
         "name": "Smart Living Lab Maritime utk Pemberdayaan Masyarakat Pesisir Guna Meningkatkan Kesejahteraan Keberlanjutan",
         "value": 400000000,
+        "status": "negosiasi",
         "updated_at": "2025-01-15 00:00:00",
         "organization": "sccic"
     },
@@ -1548,6 +1741,7 @@
         "pic": "Donna",
         "name": "Review Bisnis Fiber Optic Kota Mandiri",
         "value": 500000000,
+        "status": "proposal",
         "updated_at": "2024-08-05 00:00:00",
         "organization": "sccic"
     },
@@ -1556,6 +1750,7 @@
         "pic": "Anton Arifin",
         "name": "Kajian Smart City",
         "value": 0,
+        "status": "inisiasi",
         "updated_at": "2024-11-11 00:00:00",
         "organization": "sccic"
     }

@@ -23,6 +23,14 @@ function getFormattedDate(date = new Date()) {
   return `${day}-${month}-${year}`;
 }
 
+function sortByStatus(data) {
+  const statusOrder = ['kontrak', 'proposal', 'negosiasi', 'inisiasi'];
+
+  return data.sort((a, b) => {
+    return statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status);
+  });
+}
+
 const formState = {
   name: "",
   partner: "",
@@ -40,8 +48,8 @@ function App() {
 
   const getData = async () => {
     setLoading(true)
-    const { data } = await supabase.from('t_project').select().eq('organization', organization.toLocaleLowerCase())
-    setData(data)
+    const { data } = await supabase.from('t_project').select().eq('organization', organization.toLocaleLowerCase()).order('updated_at', { ascending: true })
+    setData(sortByStatus(data))
     setLoading(false)
   }
 
@@ -316,7 +324,7 @@ function App() {
                       </tr>
                     </thead>
                     <tbody id="dokterList">
-                      {!loading && 
+                      {!loading &&
                         data.map((el, idx) => (
                           <tr key={idx} style={{ backgroundColor: StatusColors[el.status] }}>
                             <td style={{ color: StatusTextColors[el.status] }} >{idx + 1}</td>
