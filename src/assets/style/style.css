@@ -17,7 +17,7 @@ body::before {
   height: 100%;
   background-size: cover;
   z-index: -1;
-  background: linear-gradient(30deg, #740c15, rgb(96, 3, 3));
+  /* background: linear-gradient(30deg, #fcfcfc, rgb(96, 3, 3)); */
 }
 
 /* style for index */
@@ -169,6 +169,7 @@ body::before {
 }
 
 .main {
+  /* background: linear-gradient(30deg, #740c15, rgb(96, 3, 3)); */
   background: linear-gradient(30deg, #740c15, rgb(96, 3, 3));
 }
 
@@ -179,7 +180,7 @@ body::before {
 }
 
 .icon-dash img {
-  max-width: 180px;
+  max-width: 120px;
   width: 100%;
 }
 

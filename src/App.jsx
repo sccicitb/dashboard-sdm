@@ -24,7 +24,7 @@ function getFormattedDate(date = new Date()) {
 }
 
 function sortByStatus(data) {
-  const statusOrder = ['kontrak','negosiasi', 'proposal', 'inisiasi'];
+  const statusOrder = ['kontrak', 'negosiasi', 'proposal', 'inisiasi'];
 
   return data.sort((a, b) => {
     return statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status);
@@ -39,10 +39,13 @@ const formState = {
   pic: ""
 }
 
+const periodYear = ['2025', '2024', '2023', '2022', '2021', '2020']
+
 function App() {
   const [action, setAction] = useQueryState('action', { defaultValue: 'view' })
   const [organization, setOrganization] = useQueryState('org', { defaultValue: 'SCCIC' })
   const [search, setSearch] = useQueryState('search', { defaultValue: '' })
+  const [periode, setPeriode] = useQueryState('periode', { defaultValue: 'all' })
   const [form, setForm] = useState({ ...formState })
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
@@ -50,13 +53,17 @@ function App() {
   const getData = async () => {
     setLoading(true)
     let query = supabase.from('t_project').select().eq('organization', organization.toLocaleLowerCase()).order('updated_at', { ascending: true })
-    
+
     if (search) {
       const searchTerm = `name.ilike.%${search}%,partner.ilike.%${search}%,status.ilike.%${search}%,pic.ilike.%${search}%`
       query = query.or(searchTerm);
     }
 
-    const {data} = await query
+    if (periode !== 'all') {
+      query = query.eq('year_updated', periode)
+    }
+
+    const { data } = await query
     setData(sortByStatus(data))
     setLoading(false)
   }
@@ -66,10 +73,6 @@ function App() {
 
     setOrganization(org)
     setAction("view")
-  }
-
-  const OpenModal = (modal) => {
-    $('#' + modal).modal('toggle')
   }
 
   const handleInputChange = (e) => {
@@ -167,7 +170,7 @@ function App() {
 
   useEffect(() => {
     getData()
-  }, [organization])
+  }, [organization, search, periode])
 
   useEffect(() => {
     setForm({ ...formState })
@@ -176,211 +179,176 @@ function App() {
   return (
     <>
       <div className="dashboard section">
-        <div className="row all-content">
+        <div className="col p-0">
 
           {/* sidebar */}
-          {/* <div className="col-lg-2 col-md-2 col-sm-4 list">
-            <div className="row icon-dash">
-              <div className="col">
-                <img src="img/logo.png" alt="" />
-              </div>
+          <nav className="navbar navbar-expand-lg" style={{ background: "#fcfcfc" }}>
+            <div className="navbar-brand icon-dash">
+              <img src="img/logo.png" alt="" />
             </div>
-            <hr />
-            <div className="all-list">
-              <div className="row patient">
-                <div className="col">
-                  <a href="#" onClick={(e) => NavClick(e, "SCCIC")}>
-                    <h6>SCCIC</h6>
-                  </a>
-                </div>
-              </div>
-              <hr />
-              <div className="row doctor">
-                <div className="col">
-                  <a href="#" onClick={(e) => NavClick(e, "IDS")}>
-                    <h6>IDS</h6>
-                  </a>
-                </div>
-              </div>
-              <hr />
-              <div className="row tool">
-                <div className="col">
-                  <a href="#" onClick={(e) => NavClick(e, "IDH")}>
-                    <h6>IDH</h6>
-                  </a>
-                </div>
-              </div>
-              <hr />
-              <div className="row tool">
-                <div className="col">
-                  <a href="#" onClick={(e) => NavClick(e, "MSP")}>
-                    <h6>MSP</h6>
-                  </a>
-                </div>
-              </div>
-              <hr />
-              <div className="row tool">
-                <div className="col">
-                  <a href="#" onClick={(e) => NavClick(e, "LCI")}>
-                    <h6>LCI</h6>
-                  </a>
-                </div>
-              </div>
-              <hr />
-              <div className="row tool">
-                <div className="col">
-                  <a href="#" className='a-disabled'>
-                    <h6>RESUME</h6>
-                  </a>
-                </div>
-              </div>
-              <hr />
-              <div className="row tool">
-                <div className="col">
-                  <a href="#" className='a-disabled'>
-                    <h6>SDM</h6>
-                  </a>
-                </div>
-              </div>
-              <hr />
-              <br /> <br />
+            <div className="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item active">
+                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, "SCCIC")} style={{ color: organization === "SCCIC" ? '#6a070c' : 'black' }}>SCCIC</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, "IDS")} style={{ color: organization === 'IDS' ? '#6a070c' : 'black' }}>IDS</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, "IDH")} style={{ color: organization === 'IDH' ? '#6a070c' : 'black' }}>IDH</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, "MSP")} style={{ color: organization === 'MSP' ? '#6a070c' : 'black' }}>MSP</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, "LCI")} style={{ color: organization === 'LCI' ? '#6a070c' : 'black' }}>LCI</a>
+                </li>
+              </ul>
             </div>
-          </div> */}
+          </nav>
 
           {/* main content */}
-          <div className='container-fluid'>
-            {
-              action === 'add' ? (
-                <div className="col-lg-12 col-md-10 col-sm-8 maindoc">
-                  <div className="row">
-                    <div className="col title">
-                      <h1>ADD NEW DATA</h1>
-                      <p>Create a new data and add them to this site.</p>
-                    </div>
+          {
+            action === 'add' ? (
+              <div className="col-lg-12 col-md-10 col-sm-8 maindoc">
+                <div className="row">
+                  <div className="col title">
+                    <h1>ADD NEW DATA</h1>
+                    <p>Create a new data and add them to this site.</p>
                   </div>
-                  <div className="row">
-                    <div className="col">
-                      <section className="pagetambahdokter">
-                        <div className="container">
-                          <div className="row">
-                            <div className="col">
-                              <form className="add" onSubmit={handleSubmit}>
-                                <div className="form-group">
-                                  <label htmlFor="email" style={{ color: "rgb(216, 216, 216)" }} >Proyek</label>
-                                  <input type="text" className="form-control" id="email" aria-describedby="emailHelp" name="name" value={form.name} onChange={handleInputChange} required />
-                                </div>
-                                <div className="form-group">
-                                  <label htmlFor="specialist" style={{ color: "rgb(216, 216, 216)" }} >Mitra</label>
-                                  <input type="text" className="form-control" id="specialist" name="partner" value={form.partner} onChange={handleInputChange} required />
-                                </div>
-                                <div className="form-group">
-                                  <label htmlFor="phone" style={{ color: "rgb(216, 216, 216)" }} >Nilai Dana</label>
-                                  <input type="text" className="form-control" id="phone" name="value" value={form.value} onChange={handleInputChange} required />
-                                </div>
-                                <div className="form-group">
-                                  <label htmlFor="status" style={{ color: "rgb(216, 216, 216)" }} >Status</label>
-                                  <select name="status" value={form.status} onChange={handleInputChange} id="status">
-                                    <option value="inisiasi">Inisiasi</option>
-                                    <option value="proposal">Proposal</option>
-                                    <option value="penawaran">Penawaran</option>
-                                    <option value="kontrak">Kontrak</option>
-                                  </select>
-                                </div>
-                                <div className="form-group">
-                                  <label htmlFor="alamat" style={{ color: "rgb(216, 216, 216)" }} >PIC</label>
-                                  <input type="text" className="form-control" id="alamat" name="pic" value={form.pic} onChange={handleInputChange} required />
-                                </div>
-                                <div className="button">
-                                  <button type="submit" className="btn submit" style={{ marginTop: "10px" }}>Submit</button>
-                                </div>
-                              </form>
-                            </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <section className="pagetambahdokter">
+                      <div className="container">
+                        <div className="row">
+                          <div className="col">
+                            <form className="add" onSubmit={handleSubmit}>
+                              <div className="form-group">
+                                <label htmlFor="email" style={{ color: "rgb(216, 216, 216)" }} >Proyek</label>
+                                <input type="text" className="form-control" id="email" aria-describedby="emailHelp" name="name" value={form.name} onChange={handleInputChange} required />
+                              </div>
+                              <div className="form-group">
+                                <label htmlFor="specialist" style={{ color: "rgb(216, 216, 216)" }} >Mitra</label>
+                                <input type="text" className="form-control" id="specialist" name="partner" value={form.partner} onChange={handleInputChange} required />
+                              </div>
+                              <div className="form-group">
+                                <label htmlFor="phone" style={{ color: "rgb(216, 216, 216)" }} >Nilai Dana</label>
+                                <input type="text" className="form-control" id="phone" name="value" value={form.value} onChange={handleInputChange} required />
+                              </div>
+                              <div className="form-group">
+                                <label htmlFor="status" style={{ color: "rgb(216, 216, 216)" }} >Status</label>
+                                <select name="status" value={form.status} onChange={handleInputChange} id="status">
+                                  <option value="inisiasi">Inisiasi</option>
+                                  <option value="proposal">Proposal</option>
+                                  <option value="penawaran">Penawaran</option>
+                                  <option value="kontrak">Kontrak</option>
+                                </select>
+                              </div>
+                              <div className="form-group">
+                                <label htmlFor="alamat" style={{ color: "rgb(216, 216, 216)" }} >PIC</label>
+                                <input type="text" className="form-control" id="alamat" name="pic" value={form.pic} onChange={handleInputChange} required />
+                              </div>
+                              <div className="button">
+                                <button type="submit" className="btn submit" style={{ marginTop: "10px" }}>Submit</button>
+                              </div>
+                            </form>
                           </div>
                         </div>
-                      </section>
-                    </div>
+                      </div>
+                    </section>
                   </div>
                 </div>
-              ) : (
-                <div className="col-lg-12 col-md-10 col-sm-8 main container-fluid">
-                  <div className="row">
-                    <div className="col title">
-                      <h1>{organization}</h1>
-                    </div>
-                  </div>
-                  <div className="row doctor">
-                    <div className="col buttonupdate">
-
-                      <button onClick={() => setAction("add")}>
-                        <span className="fa fa-plus-circle" style={{ fontSize: "20px" }}></span>
-                        Add New Data
-                      </button>
-                    </div>
-                  </div>
-                  <br />
-                  <div className="doctorlist-title">
-                    <table className="table table-borderless">
-                      <thead>
-                        <tr>
-                          <th>No.</th>
-                          <th>Proyek</th>
-                          <th>Mitra</th>
-                          <th>Dana (Rp)</th>
-                          <th>Status</th>
-                          <th>PIC</th>
-                          <th>Update</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody id="dokterList" style={{ borderTop: "1px #dee2e6 solid" }}>
-                        {!loading &&
-                          data.map((el, idx) => (
-                            <tr key={idx} style={{ backgroundColor: StatusColors[el.status], borderBottom: "1px #dee2e6 solid" }}>
-                              <td style={{ color: StatusTextColors[el.status] }} >{idx + 1}</td>
-                              <td style={{ color: StatusTextColors[el.status] }} >{el.name}</td>
-                              <td style={{ color: StatusTextColors[el.status] }} >{el.partner}</td>
-                              <td style={{ color: StatusTextColors[el.status] }} >{FormatRupiah(el.value)}</td>
-                              <td style={{ color: StatusTextColors[el.status] }} >{el.status}</td>
-                              <td style={{ color: StatusTextColors[el.status] }} >{el.pic}</td>
-                              <td style={{ color: StatusTextColors[el.status] }} >{getFormattedDate(new Date(el.updated_at))}</td>
-                              <td>
-                                <button
-                                  style={{
-                                    backgroundColor: "Transparent",
-                                    backgroundRepeat: "no-repeat",
-                                    border: "none",
-                                    cursor: "pointer",
-                                    overflow: "hidden",
-                                    marginRight: "12px",
-                                  }}
-                                  onClick={() => handleEdit(el)}
-                                >
-                                  <i className="fa fa-pencil" style={{ fontSize: "24px", color: StatusTextColors[el.status], marginLeft: "5px" }} ></i>
-                                </button>
-                                <button
-                                  style={{
-                                    backgroundColor: "Transparent",
-                                    backgroundRepeat: "no-repeat",
-                                    border: "none",
-                                    cursor: "pointer",
-                                    overflow: "hidden",
-                                    marginRight: "12px",
-                                  }}
-                                  onClick={() => handleDelete(el)}
-                                >
-                                  <i className="fa fa-trash" style={{ fontSize: "24px", color: StatusTextColors[el.status] }}></i>
-                                </button>
-                              </td>
-                            </tr>
-                          ))
-                        }
-                      </tbody>
-                    </table>
+              </div>
+            ) : (
+              <div className="col-lg-12 col-md-10 col-sm-8 main container-fluid">
+                <div className="row">
+                  <div className="col title">
+                    <h1>{organization}</h1>
                   </div>
                 </div>
-              )
-            }
-          </div>
+                <div className="row doctor">
+                  <div className="selected-year d-flex justify-content-end align-self-center mr-5 ml-4">
+                    <label htmlFor="search" >Search : </label>
+                    <input id='search' value={search} onChange={e => setSearch(e.target.value)} />
+                  </div>
+                  <div className="selected-year d-flex justify-content-end align-self-center mr-5 ml-4">
+                    <label htmlFor="periode">Periode : </label>
+                    <select id="periode" name="periode" value={periode} onChange={e => setPeriode(e.target.value)} >
+                      <option value="all">All</option>
+                      {periodYear.map((el, idx) => <option key={idx} value={el}>{el}</option>)}
+                    </select>
+                  </div>
+                  <div className="col buttonupdate">
+                    <button onClick={() => setAction("add")}>
+                      <span className="fa fa-plus-circle" style={{ fontSize: "20px" }}></span>
+                      Add New Data
+                    </button>
+                  </div>
+                </div>
+                <br />
+                <div className="doctorlist-title">
+                  <table className="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Proyek</th>
+                        <th>Mitra</th>
+                        <th>Dana (Rp)</th>
+                        <th>Status</th>
+                        <th>PIC</th>
+                        <th>Update</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dokterList" style={{ borderTop: "1px #dee2e6 solid" }}>
+                      {!loading &&
+                        data.map((el, idx) => (
+                          <tr key={idx} style={{ backgroundColor: StatusColors[el.status], borderBottom: "1px #dee2e6 solid" }}>
+                            <td style={{ color: StatusTextColors[el.status] }} >{idx + 1}</td>
+                            <td style={{ color: StatusTextColors[el.status] }} >{el.name}</td>
+                            <td style={{ color: StatusTextColors[el.status] }} >{el.partner}</td>
+                            <td style={{ color: StatusTextColors[el.status] }} >{FormatRupiah(el.value)}</td>
+                            <td style={{ color: StatusTextColors[el.status] }} >{el.status}</td>
+                            <td style={{ color: StatusTextColors[el.status] }} >{el.pic}</td>
+                            <td style={{ color: StatusTextColors[el.status] }} >{getFormattedDate(new Date(el.updated_at))}</td>
+                            <td>
+                              <button
+                                style={{
+                                  backgroundColor: "Transparent",
+                                  backgroundRepeat: "no-repeat",
+                                  border: "none",
+                                  cursor: "pointer",
+                                  overflow: "hidden",
+                                  marginRight: "12px",
+                                }}
+                                onClick={() => handleEdit(el)}
+                              >
+                                <i className="fa fa-pencil" style={{ fontSize: "24px", color: StatusTextColors[el.status], marginLeft: "5px" }} ></i>
+                              </button>
+                              <button
+                                style={{
+                                  backgroundColor: "Transparent",
+                                  backgroundRepeat: "no-repeat",
+                                  border: "none",
+                                  cursor: "pointer",
+                                  overflow: "hidden",
+                                  marginRight: "12px",
+                                }}
+                                onClick={() => handleDelete(el)}
+                              >
+                                <i className="fa fa-trash" style={{ fontSize: "24px", color: StatusTextColors[el.status] }}></i>
+                              </button>
+                            </td>
+                          </tr>
+                        ))
+                      }
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )
+          }
 
           {/* Update Modal */}
           <div className="modal fade" id="editModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
