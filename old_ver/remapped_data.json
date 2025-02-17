@@ -1,0 +1,1562 @@
+[
+    {
+        "partner": "ITB ",
+        "pic": "Gitarja",
+        "name": "Smart X Healtcare Simulator (Layanan Kesehatan)",
+        "value": 650000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "Holistik Wellness Consultant",
+        "pic": "Alawi, Niko",
+        "name": "Telemedicine ",
+        "value": 100000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Proklamasi Karawang",
+        "pic": "Alawi, Budi",
+        "name": "SIMRS",
+        "value": 200000000,
+        "updated_at": "2024-10-21 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "USTB",
+        "pic": "Gitarja",
+        "name": "Development IT Product",
+        "value": 0,
+        "updated_at": "2024-12-09 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "Intermedik",
+        "pic": "Gitardja, Alawi",
+        "name": "RME Hospital",
+        "value": 0,
+        "updated_at": "2024-12-09 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "Fazza Care, Pak cencen  (Rumah Perawatan Luka)",
+        "pic": "Alawi, Anton",
+        "name": "DianeshaCare",
+        "value": 100000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Lanud Sulaiman Bandung",
+        "pic": "Alawi",
+        "name": "SIM RS T.A 2025",
+        "value": 492454000,
+        "updated_at": "2024-12-16 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "Qimtronics ",
+        "pic": "Alawi",
+        "name": "DianeshaCare (+Smart Watch & Blood Pressure Tools)",
+        "value": 0,
+        "updated_at": "2024-09-02 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Melinda 2",
+        "pic": "Alawi",
+        "name": "Shelfa",
+        "value": 200000000,
+        "updated_at": "2024-09-23 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Intan Husada Garut",
+        "pic": "Dona, Alawi",
+        "name": "Smart Hospital + Telemedicine",
+        "value": 64500000,
+        "updated_at": "2024-09-02 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RSUD Gunung Djati Kota Cirebon",
+        "pic": "Alawi, Anton",
+        "name": "Shelfa",
+        "value": 200000000,
+        "updated_at": "2024-10-07 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RSUD Malangbong Garut",
+        "pic": "Alawi",
+        "name": "SIM RS + RME",
+        "value": 150000000,
+        "updated_at": "2024-11-25 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Santosa Kopo",
+        "pic": "Alawi",
+        "name": "Shelfa",
+        "value": 200000000,
+        "updated_at": "2024-09-23 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Al Ihsan Bandung",
+        "pic": "Alawi",
+        "name": "All Produk",
+        "value": 64500000,
+        "updated_at": "2024-08-12 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "ITB",
+        "pic": "Gitarja",
+        "name": "NTU WP-4 (Use Case Air Polution)",
+        "value": 186896250,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "Lab Kes. Prov Jabar",
+        "pic": "Alawi, Budi",
+        "name": "SIM RS RME",
+        "value": 0,
+        "updated_at": "2024-09-17 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Otista Soreang",
+        "pic": "Alawi",
+        "name": "Smart Parking Hospital",
+        "value": 200000000,
+        "updated_at": "2024-09-23 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "PMI Jawa Barat",
+        "pic": "Andhika (Mitra PMI jawa Barat)",
+        "name": "Awan Kesehatan T.A 2025",
+        "value": 200000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RSHS Bandung",
+        "pic": "Anton, Alawi",
+        "name": "All Produk",
+        "value": 0,
+        "updated_at": "2024-12-23 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "Stikes Karsa Husada",
+        "pic": "Alawi",
+        "name": "HR Management ",
+        "value": 4500000,
+        "updated_at": "2024-07-01 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "Sustainable Intelligence Dispenser",
+        "pic": "Andhika (Mitra)",
+        "name": "DianeshaCare",
+        "value": 9750000,
+        "updated_at": "2024-09-02 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Guntur Garut",
+        "pic": "Alawi",
+        "name": "All Produk",
+        "value": 0,
+        "updated_at": "2024-10-15 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Nurhayati Garut",
+        "pic": "Alawi",
+        "name": "Aplikasi WA Blast Reminder Kontrol Pasien + Dashboard",
+        "value": 150000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Mitra Plumbon",
+        "pic": "Alawi, Anton",
+        "name": "Shelfa",
+        "value": 200000000,
+        "updated_at": "2024-10-07 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "Dinkes Garut",
+        "pic": "Alawi",
+        "name": "Awan Kesehatan T.A 2025",
+        "value": 200000000,
+        "updated_at": "2024-12-02 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "MSJ dr. Agung",
+        "pic": "Alawi",
+        "name": "Awarness Penyakit Diabetik",
+        "value": 200000000,
+        "updated_at": "2024-08-26 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "PT. Natura Alamindo Utama",
+        "pic": "Alawi",
+        "name": "Telemedicine T.A 2025",
+        "value": 376400000,
+        "updated_at": "2024-09-02 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RSU Tk.III Ciremai",
+        "pic": "Alawi, Anton",
+        "name": "Shelfa",
+        "value": 200000000,
+        "updated_at": "2024-10-07 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Mitra keluarga Cileunyi",
+        "pic": "Alawi, Budi",
+        "name": "SIM RS",
+        "value": 200000000,
+        "updated_at": "2024-10-21 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Nahdatul Ulama Grup",
+        "pic": "EIU, Alawi",
+        "name": "Telemedicine ",
+        "value": 425332000,
+        "updated_at": "2024-08-12 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "PMI Jawa Barat",
+        "pic": "Andhika (Mitra PMI jawa Barat)",
+        "name": "HR Management T.A 2025",
+        "value": 376400000,
+        "updated_at": "2024-09-02 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RSUD Bandung Kiwari",
+        "pic": "Alawi",
+        "name": "Shelfa",
+        "value": 200000000,
+        "updated_at": "2024-09-23 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Unisba Rancaekek",
+        "pic": "Alawi, Budi",
+        "name": "Smart Hospital RME",
+        "value": 0,
+        "updated_at": "2024-09-17 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": " Owlexa (PT. Lintas Arta)",
+        "pic": "Alawi, Niko",
+        "name": "Telemedicine T.A 2025",
+        "value": 264000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "RS Permata Cirebon",
+        "pic": "Alawi, Anton",
+        "name": "Shelfa",
+        "value": 200000000,
+        "updated_at": "2024-11-04 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "Klinik drh. Eko Garut",
+        "pic": "Alawi",
+        "name": "Indicare-Vet",
+        "value": 100000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "idh"
+    },
+    {
+        "partner": "Pupuk Kujang",
+        "pic": "Okyza",
+        "name": "VIANA/INARA",
+        "value": 250000000,
+        "updated_at": "2024-08-12 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Jakarta Propertindo (Persero)",
+        "pic": "Ardjaka",
+        "name": "VIANA HSE",
+        "value": 0,
+        "updated_at": "2024-08-05 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Global Tekno Digital Solusi",
+        "pic": "Ardjaka",
+        "name": "Kajian Big Data Survey-ID",
+        "value": 500000000,
+        "updated_at": "2024-08-05 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "b3Sahabat, PT",
+        "pic": "ardjaka",
+        "name": "VIANA Vehicle, crowd detection",
+        "value": 70000000,
+        "updated_at": "2024-12-23 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Harbour Energy Indonesia",
+        "pic": "Ardjaka",
+        "name": "VIANA HSE",
+        "value": 0,
+        "updated_at": "2024-08-12 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Cabot Corporation",
+        "pic": "Ardjaka",
+        "name": "VIANA HSE",
+        "value": 0,
+        "updated_at": "2024-08-19 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Pamapersada Nusantara",
+        "pic": "Ardjaka",
+        "name": "HSE Viana",
+        "value": 250000000,
+        "updated_at": "2024-08-12 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "MRT Jakarta",
+        "pic": "Ardjaka",
+        "name": "HSE VIANA",
+        "value": 250000000,
+        "updated_at": "2024-07-15 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Titan Infra Energy",
+        "pic": "Siti Insani",
+        "name": "Viana HSE",
+        "value": 0,
+        "updated_at": "2024-07-08 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Global Tekno Digital Solusi",
+        "pic": "Ardjaka",
+        "name": "MIND-ID Safety Platform",
+        "value": 500000000,
+        "updated_at": "2024-08-26 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Adhi Karya",
+        "pic": "ardjaka",
+        "name": "BIM & VIANA Integration, SAP & BIM Integration",
+        "value": 600000000,
+        "updated_at": "2024-08-12 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "SCCIC",
+        "pic": "sccic",
+        "name": "PUPR",
+        "value": 200000000,
+        "updated_at": "2024-07-08 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Berkah Hidup Amanah, PT",
+        "pic": "ardjaka",
+        "name": "VIANA Pertamina Cepu",
+        "value": 186000000,
+        "updated_at": "2024-12-23 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "PT. Cipta Reksa Solusindo",
+        "pic": "Ardjaka",
+        "name": "Chat-bot NLP UNDP",
+        "value": 2200000000,
+        "updated_at": "2024-08-12 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Lintasarta",
+        "pic": "Ardjaka",
+        "name": "Samudera Indonesia, PT (Viana Number & Logo Recognition)",
+        "value": 103125000,
+        "updated_at": "2024-12-31 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "SCCIC ITB",
+        "pic": "Ardjaka",
+        "name": "Viana Absensi",
+        "value": 3360000,
+        "updated_at": "2024-07-15 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "PT. PP Persero",
+        "pic": "Ardjaka",
+        "name": "VIANA SHE",
+        "value": 200000000,
+        "updated_at": "2024-12-23 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Jasamarga",
+        "pic": "Ardjaka",
+        "name": "VIANA",
+        "value": 0,
+        "updated_at": "",
+        "organization": "ids"
+    },
+    {
+        "partner": "PP (Persero), PT",
+        "pic": "Ardjaka",
+        "name": "Deteksi via LIDAR",
+        "value": 250000000,
+        "updated_at": "2024-12-13 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Lintasarta",
+        "pic": "Ardjaka",
+        "name": "Transportasi Jakarta, PT (Viana passanger counting)",
+        "value": 138000000,
+        "updated_at": "2024-11-04 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "SCCIC",
+        "pic": "Siti Insani",
+        "name": "Simulator X IIP Smart Mobility",
+        "value": 840000000,
+        "updated_at": "2024-12-31 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "ITB",
+        "pic": "sccic",
+        "name": "NTU WP-1 Dashboard Smart Mobility-Jasa",
+        "value": 228000000,
+        "updated_at": "2024-10-21 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "PT. Nusa Alfa Solusi",
+        "pic": "Ardjaka ",
+        "name": "VIANA/INARA",
+        "value": 0,
+        "updated_at": "",
+        "organization": "ids"
+    },
+    {
+        "partner": "Politeknik PU",
+        "pic": "Ardjaka",
+        "name": "Smart Campus PPU",
+        "value": 1000000000,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Eterno Global Technologies, PT",
+        "pic": "Ardjaka",
+        "name": "PT. Putra Perkasa Abadi VIANA Counting",
+        "value": 147900000,
+        "updated_at": "2024-12-31 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Waskita Beton Precast",
+        "pic": "Ardjaka",
+        "name": "VIANA HSE",
+        "value": 0,
+        "updated_at": "2024-07-22 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "TKDN",
+        "pic": "Ardjaka (Emir)",
+        "name": "Smart Lighting, Viana B2B",
+        "value": 0,
+        "updated_at": "2024-06-19 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Elnusa",
+        "pic": "ardjaka",
+        "name": "HSE Viana",
+        "value": 159500000,
+        "updated_at": "2024-09-30 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "PLN (Persero)",
+        "pic": "Ardjaka",
+        "name": "VIANA HSE",
+        "value": 0,
+        "updated_at": "2024-07-29 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "SCCIC ITB",
+        "pic": "Siti Insani & Okyza",
+        "name": "NTU WP 0",
+        "value": 250000000,
+        "updated_at": "2024-12-23 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "IIP Summarecon",
+        "pic": "Siti Insani & Okyza",
+        "name": "Smart Building",
+        "value": 850000000,
+        "updated_at": "2024-12-31 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Unilever Indonesia, PT",
+        "pic": "Ardjaka",
+        "name": "VIANA HSE",
+        "value": 200000000,
+        "updated_at": "2024-10-14 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "KIDECO",
+        "pic": "Ardjaka",
+        "name": "VIANA HSE",
+        "value": 0,
+        "updated_at": "2024-08-19 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Enterprise Global Project, PT",
+        "pic": "Ardjaka",
+        "name": "VIANA ",
+        "value": 250000000,
+        "updated_at": "2024-09-30 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Rekayasa Engineering",
+        "pic": "Ardjaka",
+        "name": "VIANA HSE",
+        "value": 0,
+        "updated_at": "2024-07-22 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Amanin Inteligensia International",
+        "pic": "Ardjaka",
+        "name": "VIANA",
+        "value": 0,
+        "updated_at": "2024-08-26 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Baker Hughes",
+        "pic": "Ardjaka",
+        "name": "VIANA HSE",
+        "value": 0,
+        "updated_at": "2024-07-22 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Jasamarga Jakarta Cikampek II Selatan",
+        "pic": "ardjaka",
+        "name": "VIANA HSE",
+        "value": 150000000,
+        "updated_at": "2024-10-21 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "PT. Kalimantan Prima Persada",
+        "pic": "Ardjaka",
+        "name": "VIANA Smart Ritase",
+        "value": 169150000,
+        "updated_at": "2024-12-31 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Pertamina",
+        "pic": "Ardjaka",
+        "name": "VIANA/INARA",
+        "value": 250000000,
+        "updated_at": "2024-08-05 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Brawijaya Clinic",
+        "pic": "ardjaka",
+        "name": "Viana absensi",
+        "value": 0,
+        "updated_at": "2024-08-12 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Universitas Kristen Maranatha",
+        "pic": "Sani",
+        "name": "Face Recognition",
+        "value": 50000000,
+        "updated_at": "2024-09-23 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Waskita Karya",
+        "pic": "Ardjaka",
+        "name": "VIANA",
+        "value": 0,
+        "updated_at": "",
+        "organization": "ids"
+    },
+    {
+        "partner": "Berca Hardayaperkasa, PT",
+        "pic": "Ardjaka",
+        "name": "Viana",
+        "value": 0,
+        "updated_at": "",
+        "organization": "ids"
+    },
+    {
+        "partner": "KARLA Bionics",
+        "pic": "Ardjaka",
+        "name": "VIANA Body Behavior ",
+        "value": 0,
+        "updated_at": "2024-08-26 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "PT. Wijaya Karya",
+        "pic": "Ardjaka",
+        "name": "VIANA/INARA, Smart Building",
+        "value": 0,
+        "updated_at": "",
+        "organization": "ids"
+    },
+    {
+        "partner": "KBB",
+        "pic": "Ardjaka",
+        "name": "Kajian e-govt 2025",
+        "value": 350000000,
+        "updated_at": "2024-10-07 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "Surya Semesta Internusa Tbk",
+        "pic": "Ardjaka",
+        "name": "VIANA",
+        "value": 0,
+        "updated_at": "2024-08-12 00:00:00",
+        "organization": "ids"
+    },
+    {
+        "partner": "CAA",
+        "pic": "Alda",
+        "name": "Maintenance & Servie",
+        "value": 0,
+        "updated_at": "2024-08-05 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Autoplastik Indonesia",
+        "pic": "Alda",
+        "name": "Arvis (QHSE)",
+        "value": 150000000,
+        "updated_at": "2024-07-29 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Trusmi Land",
+        "pic": "alda/anton",
+        "name": "Smart Home",
+        "value": 100000000,
+        "updated_at": "2024-08-19 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "PT KAI",
+        "pic": "alda",
+        "name": "Tripisia (maintenance&upgrade)",
+        "value": 180000000,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Nodeflux",
+        "pic": "Alda",
+        "name": "Intrusion Prevention Detection",
+        "value": 200000000,
+        "updated_at": "2024-10-28 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "UNPAD",
+        "pic": "alda",
+        "name": "AntrianQu",
+        "value": 38000000,
+        "updated_at": "2024-12-02 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Kota Baru Parahyangan",
+        "pic": "alda",
+        "name": "Arvis (counting)",
+        "value": 150000000,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Artistek (TTE Apps)",
+        "pic": "Alda",
+        "name": "costumize apps",
+        "value": 50000000,
+        "updated_at": "",
+        "organization": "lci"
+    },
+    {
+        "partner": "Bersih Hijau Lestari",
+        "pic": "Alda",
+        "name": "SWB",
+        "value": 0,
+        "updated_at": "2024-08-26 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "IIP",
+        "pic": "Alda",
+        "name": "Smart Building",
+        "value": 250000000,
+        "updated_at": "2024-12-09 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "RSHS",
+        "pic": "alda",
+        "name": "Arvis",
+        "value": 70000000,
+        "updated_at": "2024-12-05 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Kementrian Sektretaris Negara",
+        "pic": "Alda",
+        "name": "software keamanan ",
+        "value": 0,
+        "updated_at": "2024-11-18 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Poltek PUPR",
+        "pic": "alda",
+        "name": "E-Akademik",
+        "value": 103000000,
+        "updated_at": "2024-07-29 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "ITB (Bp Fahdil)",
+        "pic": "alda",
+        "name": "Penguatan Innovasi",
+        "value": 30000000,
+        "updated_at": "2024-12-02 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Pratama Mitra Sejati",
+        "pic": "Alda",
+        "name": "Arvis (counting)",
+        "value": 0,
+        "updated_at": "2024-08-12 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Pemkot Madiun",
+        "pic": "alda",
+        "name": "Smart Wastebin",
+        "value": 199000000,
+        "updated_at": "2024-12-24 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Artistek (Mojang Apps)",
+        "pic": "Alda",
+        "name": "costumize apps",
+        "value": 50000000,
+        "updated_at": "",
+        "organization": "lci"
+    },
+    {
+        "partner": "City Sensing",
+        "pic": "Alda",
+        "name": "Air Quality Sensor",
+        "value": 225000000,
+        "updated_at": "2024-12-05 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "BAPENDA Kab. Merauke",
+        "pic": "Alda",
+        "name": "AntrianQu",
+        "value": 170000000,
+        "updated_at": "2024-12-09 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "IIP",
+        "pic": "alda",
+        "name": "Smart X - Simulator (Payment Simulator)",
+        "value": 840000000,
+        "updated_at": "2024-10-21 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "TELKOM",
+        "pic": "Alda",
+        "name": "Arvis (counting)",
+        "value": 200000000,
+        "updated_at": "2024-08-19 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Ditbun",
+        "pic": "Alda",
+        "name": "AWS (upgrade)",
+        "value": 190000000,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Pepsico Indonesia",
+        "pic": "Alda",
+        "name": "Arvis (QHSE)",
+        "value": 150000000,
+        "updated_at": "2024-07-29 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "RNI",
+        "pic": "alda",
+        "name": "Smart Farming",
+        "value": 200000000,
+        "updated_at": "2024-07-22 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "NTU WP-2",
+        "pic": "alda",
+        "name": "SWB",
+        "value": 211000000,
+        "updated_at": "2024-12-23 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Urbansolve",
+        "pic": "alda",
+        "name": "Prototype Smart Building",
+        "value": 33000000,
+        "updated_at": "2024-12-24 00:00:00",
+        "organization": "lci"
+    },
+    {
+        "partner": "Citavis",
+        "pic": "fahri",
+        "name": "Aset Management",
+        "value": 250000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "SCCIC",
+        "pic": "Fahri",
+        "name": "Smart X Simulator (smart building-kenyamanan ruang)",
+        "value": 650000000,
+        "updated_at": "2024-12-09 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "Disperindag",
+        "pic": "haqi",
+        "name": "Kajian relokasi industri",
+        "value": 100000000,
+        "updated_at": "2024-11-20 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "SCCIC",
+        "pic": "Robby",
+        "name": "EO Blankspot",
+        "value": 22367250,
+        "updated_at": "2024-12-24 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "DLH Garut ",
+        "pic": "haqi",
+        "name": "Platform WebGis untuk Visualisasi RTH",
+        "value": 100000000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "SCCIC",
+        "pic": "Haqi",
+        "name": "FGD UMKM 20 Des",
+        "value": 10000000,
+        "updated_at": "2025-01-08 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KCI ",
+        "pic": "Fakhri",
+        "name": "Kajian Smart Station",
+        "value": 398700900,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "Dinas BKPSDM Kabupaten Kuningan ",
+        "pic": "haqi",
+        "name": "Modul Training",
+        "value": 35000000,
+        "updated_at": "2024-12-23 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "Dishub Kota Bandung",
+        "pic": "Haqi",
+        "name": "Simderek Android & IoS",
+        "value": 90000000,
+        "updated_at": "2024-11-20 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KCI ",
+        "pic": "fahri",
+        "name": "Pembuatan DED untuk BAS di Stasiun BNI City",
+        "value": 350000000,
+        "updated_at": "2024-12-23 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "BKPSDM Indramayu",
+        "pic": "Haqi",
+        "name": "Modul Training",
+        "value": 39375000,
+        "updated_at": "2024-12-23 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "SCCIC ",
+        "pic": "Fahri",
+        "name": "NTU Sensor ",
+        "value": 175071108,
+        "updated_at": "2024-11-18 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "BATIK TRUSMI CIREBON",
+        "pic": "Haqi",
+        "name": "VAIA VISITOR",
+        "value": 12500000,
+        "updated_at": "2024-12-02 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "ICESCO",
+        "pic": "Haqi",
+        "name": "Event Business Competition",
+        "value": 195000000,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "SCCIC",
+        "pic": "Haqi",
+        "name": "EO Workshop ADB",
+        "value": 2000000,
+        "updated_at": "2024-11-18 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "SCCIC",
+        "pic": "Fahri",
+        "name": "NTU Platform Water ",
+        "value": 267510000,
+        "updated_at": "2024-12-23 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "SCCIC",
+        "pic": "Haqi",
+        "name": "Seminar Silver MICE",
+        "value": 30697917,
+        "updated_at": "2025-01-08 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "IIP",
+        "pic": "Valdi",
+        "name": "Smart Building IIP (Water)",
+        "value": 500000000,
+        "updated_at": "2024-11-25 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "PT Infrahomeproperty",
+        "pic": "fahri",
+        "name": "Sustainable & Smart Residensial",
+        "value": 70000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "Dinas UMKM Kuningan",
+        "pic": "Haqi",
+        "name": "Kajian RPIK",
+        "value": 100000000,
+        "updated_at": "2024-09-27 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "BKPSDM Indramayu",
+        "pic": "haqi",
+        "name": "Modul BKPSDM Indramayu",
+        "value": 175000000,
+        "updated_at": "2024-12-23 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "Yandex",
+        "pic": "Robby",
+        "name": "EO Seminar Internasional",
+        "value": 80000000,
+        "updated_at": "2024-11-18 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "Pak baskara",
+        "pic": "Haqi",
+        "name": "Disaster Risk Apps",
+        "value": 9900000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "Disperindag",
+        "pic": "haqi",
+        "name": "Platform data analitik - Gen AI ",
+        "value": 0,
+        "updated_at": "2024-11-04 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "SCCIC",
+        "pic": "Haqi",
+        "name": "Jasa Outsourching Kajian Bakti",
+        "value": 7000000,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "SCCIC ICISS",
+        "pic": "Nuri",
+        "name": "EO Seminar Internasional",
+        "value": 90000000,
+        "updated_at": "2024-11-18 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "SCCIC",
+        "pic": "Haqi",
+        "name": "Event FGD & Survei Bakti",
+        "value": 25000000,
+        "updated_at": "2024-12-16 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "BKSDM Indramayu",
+        "pic": "Haqi",
+        "name": "SSO Data Kepegawaian",
+        "value": 150000000,
+        "updated_at": "2024-11-20 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "PT ARS",
+        "pic": "Fahri",
+        "name": "Kajian Smart Residential ",
+        "value": 70000000,
+        "updated_at": "2025-01-08 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "SCCIC",
+        "pic": "Haqi",
+        "name": "FGD UMKM 9 Des",
+        "value": 10000000,
+        "updated_at": "2025-01-08 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "Dumai Tirta Persada",
+        "pic": "Fahri",
+        "name": "Web Water Platform",
+        "value": 200000000,
+        "updated_at": "2024-12-02 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KMMB",
+        "pic": "Haqi",
+        "name": "Disaster risk Management",
+        "value": 300000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "msp"
+    },
+    {
+        "partner": "KOMINFO (Bpk. Ismail)",
+        "pic": "Donna",
+        "name": "Konsultasi Perorangan Swakelola type I",
+        "value": 200000000,
+        "updated_at": "2025-02-17 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "POLTEK ATK",
+        "pic": "Donna",
+        "name": "Smart Campus",
+        "value": 1000000000,
+        "updated_at": "2024-07-08 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Pemkab Bogor",
+        "pic": "Sandhi",
+        "name": "Sistem Manajemen By Objektif",
+        "value": 450000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "KKIP",
+        "pic": "Donna",
+        "name": "Pengembangan dan Implementasi Sistem Data Internal KKIP",
+        "value": 2000000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "DISKOMINFO KOTA CIREBON",
+        "pic": "Anton",
+        "name": "Master Plan Smart City",
+        "value": 250000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Dishub Prov Jabar",
+        "pic": "Donna",
+        "name": "Maintenance & Update Monita Dishub Prov Jabar",
+        "value": 200000000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "BAPPEDA PROVINSI BANTEN",
+        "pic": "Anton Arifin",
+        "name": "SMART CITY PROVINSI BANTEN",
+        "value": 0,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Dishub Prov Banten",
+        "pic": "Donna",
+        "name": "Viana dan Monita Provinsi Banten RKA 2025",
+        "value": 1300000000,
+        "updated_at": "2024-12-16 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "KEMEN PUPR",
+        "pic": "Donna",
+        "name": "Kajian lanjutan BGC",
+        "value": 1000000000,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "DISKOMINFO Kota Bandung",
+        "pic": "Anton",
+        "name": "Master Plan Smart City",
+        "value": 250000000,
+        "updated_at": "2025-01-31 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "DEWAN PERWAKILAN DAERAH JAWA BARAT",
+        "pic": "Anton Arifin",
+        "name": "LITERASI DIGITAL 2025 DPD JAWA BARAT",
+        "value": 0,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "KAI Direktorat Prasarana/Business",
+        "pic": "Donna",
+        "name": "Reliability Analysis",
+        "value": 400000000,
+        "updated_at": "",
+        "organization": "sccic"
+    },
+    {
+        "partner": "RS JIH Purwokerto",
+        "pic": "Donna",
+        "name": "Smart Building",
+        "value": 0,
+        "updated_at": "",
+        "organization": "sccic"
+    },
+    {
+        "partner": "DISKOMINFO KOTA BANDUNG",
+        "pic": "Anton Arifin",
+        "name": "PENGEMBANGAN INFRASTRUKTUR TIK",
+        "value": 0,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "KKP",
+        "pic": "Donna",
+        "name": "Ocean Big Data",
+        "value": 700000000,
+        "updated_at": "",
+        "organization": "sccic"
+    },
+    {
+        "partner": "KOMINFO (Bpk Aries)",
+        "pic": "Sandhi",
+        "name": "Roadmap pengembangan ekosistim digital",
+        "value": 500000000,
+        "updated_at": "2024-10-07 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Ditjen Aptika KOMINFO",
+        "pic": "Donna",
+        "name": "SmartCity Kominfo",
+        "value": 1000000000,
+        "updated_at": "",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Kemen Perhubungan",
+        "pic": "Donna",
+        "name": "VIANA 200 titik",
+        "value": 2400000000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Kota Depok",
+        "pic": "Anton Arifin",
+        "name": "Review Smart City ",
+        "value": 100000000,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "POTHAN KEMENHAN",
+        "pic": "Donna",
+        "name": "Sistem Data Angkatan",
+        "value": 1700000000,
+        "updated_at": "2024-12-09 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "KOTA CIREBON",
+        "pic": "Anton Arifin",
+        "name": "TO BE ARSITEKTUR SPBE DISKOMINFO ",
+        "value": 0,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Telkomsat",
+        "pic": "Anton Arifin",
+        "name": "Smart Maritime Smart Rural dan Aplikasi AI berbasis Satelit",
+        "value": 0,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "BAKTI KOMIDIGI",
+        "pic": "Sandhi",
+        "name": "Kelanjutan SPBE 3T",
+        "value": 3504100000,
+        "updated_at": "2025-01-20 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "BAKTI KOMIDIGI",
+        "pic": "Sandhi",
+        "name": "RTDI dan RKCI 2025",
+        "value": 2000000000,
+        "updated_at": "2025-01-20 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Bali International Hospital",
+        "pic": "Donna",
+        "name": "Smart Building",
+        "value": 0,
+        "updated_at": "",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Dishub Prov Yogyakarta",
+        "pic": "Donna",
+        "name": "Viana 4 ruas x 3 wilayah RKA 2025",
+        "value": 97500000,
+        "updated_at": "2025-02-10 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "BMPR",
+        "pic": "Fadhil",
+        "name": "Pengembangan SKPJ Swakelola type I",
+        "value": 200000000,
+        "updated_at": "2025-02-17 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "ICON+",
+        "pic": "Fadhil",
+        "name": "Studi Review Bisnis Data Center",
+        "value": 689920200,
+        "updated_at": "2024-12-16 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "DISKOMINFO Kab Kuningan",
+        "pic": "Anton",
+        "name": "Master Plan Smart City",
+        "value": 250000000,
+        "updated_at": "2025-01-31 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "ICONNET",
+        "pic": "Donna",
+        "name": "Kajian Skema Single Billing ",
+        "value": 170000000,
+        "updated_at": "2025-02-17 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "KEMEN PUPR",
+        "pic": "Fadhil",
+        "name": "Building Information Modelling",
+        "value": 1000000000,
+        "updated_at": "2025-02-03 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "KEMEN PUPR",
+        "pic": "Donna",
+        "name": "Potensi Kajian Pengukuran BGH",
+        "value": 1600000000,
+        "updated_at": "2025-01-20 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Diskominfo Kab. Padang Sidempuan",
+        "pic": "Donna",
+        "name": "Penyusunan masterplan dan transformasi digital Kab. Padang Sidempuan",
+        "value": 400000000,
+        "updated_at": "",
+        "organization": "sccic"
+    },
+    {
+        "partner": "DISKOMINFO Kab Indramayu",
+        "pic": "Anton",
+        "name": "Master Plan Smart City",
+        "value": 250000000,
+        "updated_at": "2025-01-31 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Diskominfo Kab. Gunungsitoli",
+        "pic": "Donna",
+        "name": "Smarcity (Kajian)",
+        "value": 400000000,
+        "updated_at": "",
+        "organization": "sccic"
+    },
+    {
+        "partner": "DISKOMINFO Kota Cimahi",
+        "pic": "Anton",
+        "name": "Master Plan Smart City",
+        "value": 250000000,
+        "updated_at": "2025-01-31 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "TELKOMSEL",
+        "pic": "Donna",
+        "name": "Smart Living Lab Maritime utk Pemberdayaan Masyarakat Pesisir Guna Meningkatkan Kesejahteraan Keberlanjutan",
+        "value": 400000000,
+        "updated_at": "2025-01-15 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Summarecon",
+        "pic": "Donna",
+        "name": "Review Bisnis Fiber Optic Kota Mandiri",
+        "value": 500000000,
+        "updated_at": "2024-08-05 00:00:00",
+        "organization": "sccic"
+    },
+    {
+        "partner": "Diskominfo Tangerang Selatan",
+        "pic": "Anton Arifin",
+        "name": "Kajian Smart City",
+        "value": 0,
+        "updated_at": "2024-11-11 00:00:00",
+        "organization": "sccic"
+    }
+]
