@@ -27,7 +27,15 @@ function sortByStatus(data) {
   const statusOrder = ['kontrak', 'negosiasi', 'proposal', 'inisiasi'];
 
   return data.sort((a, b) => {
-    return statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status);
+    // First sort by status
+    const statusComparison = statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status);
+    
+    // If status is the same, sort by updated_at descending
+    if (statusComparison === 0) {
+      return new Date(b.updated_at) - new Date(a.updated_at);
+    }
+    
+    return statusComparison;
   });
 }
 
@@ -35,8 +43,11 @@ const formState = {
   name: "",
   partner: "",
   value: "",
+  tax: "",
   status: "inisiasi",
-  pic: ""
+  pic: "",
+  note: "",
+  outsource: ""
 }
 
 const periodYear = ['2025', '2024', '2023', '2022', '2021', '2020']
@@ -51,7 +62,8 @@ const constant = {
   },
   action: {
     VIEW: 'view',
-    ADD: 'add'
+    ADD: 'add',
+    RESUME: 'resume'
   }
 }
 
@@ -100,7 +112,14 @@ function App() {
     e.preventDefault();
 
     setOrganization(org)
-    setAction("view")
+    setAction(constant.action.VIEW)
+  }
+  
+  const ViewResume = (e) => {
+    e.preventDefault();
+
+    setOrganization("")
+    setAction(constant.action.RESUME)
   }
 
   const handleInputChange = (e) => {
@@ -114,13 +133,16 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const { error } = await supabase.from('t_project').insert({
       name: form.name,
       partner: form.partner,
       value: form.value,
+      tax: form.tax,
       status: form.status,
       pic: form.pic,
+      note: form.note,
+      outsource: form.outsource,
       organization: organization.toLocaleLowerCase(),
       updated_at: new Date()
     })
@@ -131,7 +153,7 @@ function App() {
     }
 
     getData()
-    setAction('view')
+    setAction(constant.action.VIEW)
     setForm({ ...formState })
   };
 
@@ -146,8 +168,11 @@ function App() {
       name: form.name,
       partner: form.partner,
       value: form.value,
+      tax: form.tax,
       status: form.status,
       pic: form.pic,
+      note: form.note,
+      outsource: form.outsource,
       updated_at: new Date()
     }).eq('id', form.id)
 
@@ -157,7 +182,7 @@ function App() {
     }
 
     getData()
-    setAction('view')
+    setAction(constant.action.VIEW)
     setForm({ ...formState })
     $('#editModal').modal('toggle')
   }
@@ -177,12 +202,10 @@ function App() {
     }
 
     getData()
-    setAction('view')
+    setAction(constant.action.VIEW)
     setForm({ ...formState })
     $('#deleteModal').modal('toggle')
   }
-
-
 
   useEffect(() => {
     if (action === constant.action.VIEW) {
@@ -218,9 +241,9 @@ function App() {
                 <li className="nav-item">
                   <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.IDH)} style={{ color: organization === constant.org.IDH ? '#6a070c' : 'black' }}>IDH</a>
                 </li>
-                {/* <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.RESUME)} style={{ color: organization === constant.org.RESUME ? '#6a070c' : 'black' }}>Resume</a>
-                </li> */}
+                <li className="nav-item">
+                  <a className="nav-link h4" href="#" onClick={ViewResume} style={{ color: action === constant.action.RESUME ? '#6a070c' : 'black' }}>Resume</a>
+                </li>
               </ul>
             </div>
           </nav>
@@ -251,8 +274,12 @@ function App() {
                                 <input type="text" className="form-control" id="specialist" name="partner" value={form.partner} onChange={handleInputChange} required />
                               </div>
                               <div className="form-group">
-                                <label htmlFor="phone" style={{ color: "rgb(216, 216, 216)" }} >Nilai Dana</label>
+                                <label htmlFor="phone" style={{ color: "rgb(216, 216, 216)" }} >Dana Kontrak</label>
                                 <input type="text" className="form-control" id="phone" name="value" value={form.value} onChange={handleInputChange} required />
+                              </div>
+                              <div className="form-group">
+                                <label htmlFor="tax" style={{ color: "rgb(216, 216, 216)" }} >Estimasi Pajak</label>
+                                <input type="text" className="form-control" id="tax" name="tax" value={form.tax} onChange={handleInputChange} required />
                               </div>
                               <div className="form-group">
                                 <label htmlFor="status" style={{ color: "rgb(216, 216, 216)" }} >Status</label>
@@ -266,6 +293,20 @@ function App() {
                               <div className="form-group">
                                 <label htmlFor="alamat" style={{ color: "rgb(216, 216, 216)" }} >PIC</label>
                                 <input type="text" className="form-control" id="alamat" name="pic" value={form.pic} onChange={handleInputChange} required />
+                              </div>
+                              <div className="form-group">
+                                <label htmlFor="note" style={{ color: "rgb(216, 216, 216)" }} >Catatan</label>
+                                <input type="text" className="form-control" id="note" name="note" value={form.note} onChange={handleInputChange} />
+                              </div>
+                              <div className="form-group">
+                                <label htmlFor="outsource" style={{ color: "rgb(216, 216, 216)" }} >Outsource</label>
+                                <select name="outsource" className="form-control" id="outsource" value={form.outsource} onChange={handleInputChange}>
+                                  <option value="">Select Outsource</option>
+                                  <option value="SCCIC">SCCIC</option>
+                                  <option value="IDSxLCI">IDSxLCI</option>
+                                  <option value="Urban">Urban</option>
+                                  <option value="IDH">IDH</option>
+                                </select>
                               </div>
                               <div className="button">
                                 <button type="submit" className="btn submit" style={{ marginTop: "10px" }}>Submit</button>
@@ -315,9 +356,12 @@ function App() {
                         <th>No.</th>
                         <th>Proyek</th>
                         <th>Mitra</th>
-                        <th>Dana (Rp)</th>
+                        <th>Dana Kontrak</th>
+                        <th>Estimasi Pajak</th>
                         <th>Status</th>
                         <th>PIC</th>
+                        <th>Catatan</th>
+                        <th>Outsource</th>
                         <th>Update</th>
                         <th>Action</th>
                       </tr>
@@ -330,8 +374,11 @@ function App() {
                             <td style={{ color: StatusTextColors[el.status] }} >{el.name}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{el.partner}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{FormatRupiah(el.value)}</td>
+                            <td style={{ color: StatusTextColors[el.status] }} >{FormatRupiah(el.tax)}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{el.status}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{el.pic}</td>
+                            <td style={{ color: StatusTextColors[el.status] }} >{el.note}</td>
+                            <td style={{ color: StatusTextColors[el.status] }} >{el.outsource}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{getFormattedDate(new Date(el.updated_at))}</td>
                             <td>
                               <button
@@ -386,8 +433,10 @@ function App() {
                   <input type="text" id='name' name="name" value={form.name} onChange={handleInputChange} /> <br />
                   <label htmlFor="partner" className="labs">Mitra</label>
                   <input type="text" id='partner' name="partner" value={form.partner} onChange={handleInputChange} /> <br />
-                  <label htmlFor="value" className="labs">Dana (Rp)</label>
+                  <label htmlFor="value" className="labs">Dana Kontrak</label>
                   <input type="text" id="value" name="value" value={form.value} onChange={handleInputChange} required /> <br />
+                  <label htmlFor="tax" className="labs">Estimasi Pajak</label>
+                  <input type="text" id="tax" name="tax" value={form.tax} onChange={handleInputChange} required /> <br />
                   <label htmlFor="status" className="labs">Status:</label>
                   <select name="status" id="status" style={{ width: "100%" }} value={form.status} onChange={handleInputChange}>
                     <option value="inisiasi" style={{ backgroundColor: "white" }}>Inisiasi</option>
@@ -397,6 +446,16 @@ function App() {
                   </select>
                   <label htmlFor="pic" className="labs">PIC</label>
                   <input type="text" id="pic" name='pic' value={form.pic} onChange={handleInputChange} /> <br />
+                  <label htmlFor="note" className="labs">Catatan</label>
+                  <input type="text" id="note" name='note' value={form.note} onChange={handleInputChange} /> <br />
+                  <label htmlFor="outsource" className="labs">Outsource</label>
+                  <select name="outsource" id="outsource" style={{ width: "100%" }} value={form.outsource} onChange={handleInputChange}>
+                    <option value="">Select Outsource</option>
+                    <option value="SCCIC">SCCIC</option>
+                    <option value="IDSxLCI">IDSxLCI</option>
+                    <option value="Urban">Urban</option>
+                    <option value="IDH">IDH</option>
+                  </select>
                   <br />
                 </div>
                 <div className="modal-footer">
