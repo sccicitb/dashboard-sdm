@@ -57,7 +57,7 @@ const constant = {
     SCCIC: 'SCCIC',
     IDS_LCI: 'IDSxLCI',
     IDH: 'IDH',
-    MSP: 'MSP',
+    MSP: 'Urbansolv',
     RESUME: 'RESUME',
   },
   action: {
@@ -230,16 +230,16 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item active">
-                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.SCCIC)} style={{ color: organization === constant.org.SCCIC ? '#6a070c' : 'black' }}>SCCIC</a>
+                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.SCCIC)} style={{ color: organization === constant.org.SCCIC ? '#6a070c' : 'black' }}>{constant.org.SCCIC}</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.IDS_LCI)} style={{ color: organization === constant.org.IDS_LCI ? '#6a070c' : 'black' }}>IDSxLCI</a>
+                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.IDS_LCI)} style={{ color: organization === constant.org.IDS_LCI ? '#6a070c' : 'black' }}>{constant.org.IDS_LCI}</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.MSP)} style={{ color: organization === constant.org.MSP ? '#6a070c' : 'black' }}>MSP</a>
+                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.MSP)} style={{ color: organization === constant.org.MSP ? '#6a070c' : 'black' }}>{constant.org.MSP}</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.IDH)} style={{ color: organization === constant.org.IDH ? '#6a070c' : 'black' }}>IDH</a>
+                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.IDH)} style={{ color: organization === constant.org.IDH ? '#6a070c' : 'black' }}>{constant.org.IDH}</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link h4" href="#" onClick={ViewResume} style={{ color: action === constant.action.RESUME ? '#6a070c' : 'black' }}>Resume</a>
@@ -277,8 +277,9 @@ function App() {
                                 <label htmlFor="phone" style={{ color: "rgb(216, 216, 216)" }} >Dana Kontrak</label>
                                 <input type="text" className="form-control" id="phone" name="value" value={form.value} onChange={handleInputChange} required />
                               </div>
+                              // In the add form
                               <div className="form-group">
-                                <label htmlFor="tax" style={{ color: "rgb(216, 216, 216)" }} >Estimasi Pajak</label>
+                                <label htmlFor="tax" style={{ color: "rgb(216, 216, 216)" }} >Estimasi Pendapatan</label>
                                 <input type="text" className="form-control" id="tax" name="tax" value={form.tax} onChange={handleInputChange} required />
                               </div>
                               <div className="form-group">
@@ -357,7 +358,7 @@ function App() {
                         <th>Proyek</th>
                         <th>Mitra</th>
                         <th>Dana Kontrak</th>
-                        <th>Estimasi Pajak</th>
+                        <th>Estimasi Pendapatan</th>
                         <th>Status</th>
                         <th>PIC</th>
                         <th>Catatan</th>
@@ -435,7 +436,7 @@ function App() {
                   <input type="text" id='partner' name="partner" value={form.partner} onChange={handleInputChange} /> <br />
                   <label htmlFor="value" className="labs">Dana Kontrak</label>
                   <input type="text" id="value" name="value" value={form.value} onChange={handleInputChange} required /> <br />
-                  <label htmlFor="tax" className="labs">Estimasi Pajak</label>
+                  <label htmlFor="tax" className="labs">Estimasi Pendapatan</label>
                   <input type="text" id="tax" name="tax" value={form.tax} onChange={handleInputChange} required /> <br />
                   <label htmlFor="status" className="labs">Status:</label>
                   <select name="status" id="status" style={{ width: "100%" }} value={form.status} onChange={handleInputChange}>

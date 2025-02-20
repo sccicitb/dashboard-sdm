@@ -496,6 +496,7 @@ body::before {
 thead tr:nth-child(1) th {
   background: #6a070c;
   position: sticky;
+  vertical-align: middle;
   top: 0;
   z-index: 10;
 }
