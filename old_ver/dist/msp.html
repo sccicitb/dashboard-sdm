@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCCIC</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body>
+    <div class="dashboard section">
+      <div class="row all-content">
+        <!-- list -->
+        <div class="col-lg-2 col-md-2 col-sm-4 list">
+          <div class="row icon-dash">
+            <div class="col">
+              <img src="img/logo.png" alt="" />
+            </div>
+          </div>
+          <hr />
+          <div class="all-list">
+            <div class="row patient">
+              <div class="col">
+                <a href="index.html">
+                  <h6 class="">SCCIC</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row doctor">
+              <div class="col">
+                <a href="ids.html">
+                  <h6>IDS</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+              <div class="col">
+                <a href="idh.html">
+                  <h6>IDH</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+              <div class="col">
+                <a href="msp.html">
+                  <h6>MSP</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+              <div class="col">
+                <a href="lci.html">
+                  <h6>LCI</h6>
+                </a>
+              </div>
+            </div>
+            <hr />
+            <div class="row tool">
+              <div class="col">
+                <a href="resume.html">
+                  <h6>RESUME</h6>
+                </a>
+              </div>
+            </div>
+            <hr>
+            <div class="row tool">
+              <div class="col">
+                <a href="https://citylab.itb.ac.id/sccic-dashmgmt/projects">
+                  <h6>SDM</h6>
+                </a>
+              </div>
+            </div>
+            <hr>
+            <br> <br> 
+          </div>
+        </div>
+        <!-- end of list -->
+
+        <!-- main content for doctor list -->
+        <div class="col-lg-10 col-md-10 col-sm-8 main">
+          <div class="row">
+            <div class="col title">
+              <h1>MSP</h1>
+            </div>
+          </div>
+          <div class="row doctor">
+            <div class="col buttonupdate">
+              <a href="tambahdata.html?collection=msp">
+                <button>
+                  <span class="fa fa-plus-circle" style="font-size: 20px"></span>
+                  Add New Data
+                </button>
+              </a>
+            </div>
+          </div>
+          <br />
+          <!-- list dokter -->
+          <div class="doctorlist-title">
+            <table class="table">
+              <thead>
+                <th>No.</th>
+                <th>Proyek</th>
+                <th>Mitra</th>
+                <th>Dana (Rp)</th>
+                <th>Status</th>
+                <th>PIC</th>
+                <th>Update</th>
+                <th>Action</th>
+              </thead>
+              <tbody id="dokterList"></tbody>
+            </table>
+          </div>
+
+          <!-- end of main content for doctor list -->
+
+          <!-- Modal 1 -->
+          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Update Data </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="" class="labs">Proyek</label>
+                  <input type="text" id="namadokter" /> <br />
+                  <label for="" class="labs">Mitra</label>
+                  <input type="text" id="spedokter" /> <br />
+                  <label for="" class="labs">Dana (Rp)</label>
+                  <input type="text" id="phodokter" required /> <br />
+                  <label for="status" class="labs">Status:</label>
+                  <select name="status" id="status" style="width: 100%">
+                    <option value="inisiasi" style="background-color:white ;">Inisiasi</option>
+                    <option value="proposal" style="background-color:yellow ;">Proposal</option>
+                    <option value="negosiasi" style="background-color:blue ; color: white;">Negosiasi</option>
+                    <option value="kontrak" style="background-color:green ; color: white;" >Kontrak</option>
+                  </select>
+
+                  <label for="" class="labs">PIC</label>
+                  <input type="text" id="aldokter" /> <br />
+                 
+                  <label for="" class="labs" style="display: none">ID Dokument</label>
+                  <input type="text" id="iddocdok" style="display: none" />
+                  <br />
+                </div>
+                <div class="modal-footer">
+                  <button id="UpDatadoc" class="UpDatadoc btn btn-success" type="button">Update Data</button>
+                  <!-- <button id="Deldoc" class="DelDoc btn btn-danger" type="button">Delete Data</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of modal 1 -->
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Are You Sure to Delete Data?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="namadokter" class="labs" style="display: none">Namaa:</label>
+                  <input type="text" id="namadokter" style="display: none" />
+                  <label for="spedokter" class="labs" style="display: none">Spesialisasi:</label>
+                  <input type="text" id="spedokter" style="display: none" />
+                  <label for="aldokter" class="labs" style="display: none">Alamat:</label>
+                  <input type="text" id="aldokter" style="display: none" />
+                  <label for="phodokter" class="labs" style="display: none">Phone:</label>
+                  <input type="text" id="phodokter" style="display: none" />
+                  <label for="" class="labs" style="display: none">ID Dokument</label>
+                  <input type="text" id="iddocdok" style="display: none" />
+                </div>
+                <div class="modal-btn">
+                  <button id="Deldoc" class="DelDoc btn btn-danger" type="button">Delete Data</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of modal -->
+        </div>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script src="../bootstrap/js/jquery-3.6.0.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <!-- end of script -->
+
+    <!-- script of firestore -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+      import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc, query, where } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAUoy9zDA-1rp6r-BacNbJHWDzvW86YPSQ",
+        authDomain: "sccic-dashboard.firebaseapp.com",
+        projectId: "sccic-dashboard",
+        storageBucket: "sccic-dashboard.appspot.com",
+        messagingSenderId: "207809639364",
+        appId: "1:207809639364:web:da61ad713b2b04c3ed6a91",
+        measurementId: "G-51QQRT656L"
+      };
+
+      // init firebase
+      initializeApp(firebaseConfig);
+
+      // init services
+      const db = getFirestore();
+      const auth = getAuth();
+
+      // backgournd status style
+      function updateStyle() {
+            var select = document.getElementById("status");
+            var selectedOption = select.options[select.selectedIndex];
+            select.style.backgroundColor = selectedOption.style.backgroundColor;
+            select.style.color = selectedOption.style.color;
+        }
+
+      // Panggil fungsi saat opsi berubah
+      document.getElementById("status").addEventListener("change", updateStyle);
+      
+      // Panggil fungsi untuk mengatur latar belakang secara awal
+      updateStyle();
+      // end of update background style for status
+
+      // Dengan Rupiah
+      var dengan_rupiah = document.getElementById('phodokter');
+      dengan_rupiah.addEventListener('keyup', function(e) {
+      // Menghapus semua karakter non-digit
+      var cleanValue = this.value.replace(/\D/g, '');
+      dengan_rupiah.value = formatRupiah(cleanValue, 'Rp. ');
+      });
+      // End of dengan rupiah 
+
+      // format rupiah
+      function formatRupiah(angka, prefix) {
+          var number_string = angka.toString(),
+              split = number_string.split(','),
+              sisa = split[0].length % 3,
+              rupiah = split[0].substr(0, sisa),
+              ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+          if (ribuan) {
+              var separator = sisa ? '.' : '';
+              rupiah += separator + ribuan.join('.');
+          }
+
+          rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+          return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+      }
+      // end of rupiah
+
+      /*membuat tabel untuk dokter*/
+      var plusnomor = 0;
+      var docList = [];
+      let trowRefs = [];
+
+      const rowsByStatus = {
+      kontrak: [],
+      negosiasi: [],
+      proposal: [],
+      inisiasi: []
+      };
+
+      const dokterList = document.querySelector("#dokterList");
+      function renderDokter(doc) {
+        let trow = document.createElement("tr");
+        let namaDokter = document.createElement("td"); //proyek
+        let spesialisasiDokter = document.createElement("td"); ///mitra
+        let phoneDokter = document.createElement("td"); //nilai dana
+        let status = document.createElement("td"); //status
+        let alamatDokter = document.createElement("td"); // pic
+        let createdAt = document.createElement("td"); // createdAt
+
+
+        docList.push([doc.data().nama, doc.data().specialist, doc.data().phone, doc.data().status, doc.data().alamat, doc.id, doc.data().timestamp]);
+
+        trow.setAttribute("data-id", doc.id);
+        // nomor.innerHTML = ++plusnomor;
+        const nama = doc.data().nama;
+        const spesialisasi = doc.data().specialist;
+        const phoneValue = doc.data().phone;
+        const phone = formatRupiah(phoneValue.toString());
+        const statusValue = doc.data().status.toLowerCase();
+        const alamat = doc.data().alamat;
+        const timetime = doc.data().timestamp;
+        
+        
+        namaDokter.textContent = nama;
+        spesialisasiDokter.textContent = spesialisasi;
+        phoneDokter.textContent = phone;
+        status.textContent = statusValue;
+        alamatDokter.textContent = alamat;
+        createdAt.textContent = timetime;
+        
+       
+        if (doc.data().status.toLowerCase() === "inisiasi" || doc.data().status.toLowerCase() === "proposal" ) {
+        namaDokter.style.color = "black";
+        spesialisasiDokter.style.color = "black";
+        phoneDokter.style.color = "black";
+        status.style.color = "black";
+        alamatDokter.style.color = "black";
+        createdAt.style.color = "black";
+        }
+
+        const row = [ namaDokter, spesialisasiDokter, phoneDokter, status, alamatDokter , createdAt, doc.id ];
+        rowsByStatus[statusValue].push(row);
+      }
+      /*end of membuat tabel untuk dokter*/
+
+      var dokterdocid = document.getElementById("iddocdok");
+      var dokternama = document.getElementById("namadokter");
+      var dokterspe = document.getElementById("spedokter");
+      var dokterpho = document.getElementById("phodokter");
+      var doktersta = document.getElementById("status");
+      var dokteral = document.getElementById("aldokter");
+
+      let Deldoc = document.getElementById("Deldoc");
+
+      /* Fungsi CRUD*/
+      window.Fillboxes = (docId) => {
+          const index = docList.findIndex(doc => doc[5] === docId);
+          console.log(docList[index])
+          if (index == null) {
+              dokternama.value = ""; 
+              dokterspe.value = ""; 
+              dokterpho.value = "";
+              doktersta.value = "";
+              dokteral.value = ""; 
+              dokterdocid.value = "";
+              
+          } else {
+              dokternama.value = docList[index][0];
+              dokterspe.value = docList[index][1];
+              dokterpho.value = formatRupiah(docList[index][2].toString());
+              doktersta.value = docList[index][3];
+              dokteral.value = docList[index][4];
+              dokterdocid.value = docList[index][5];
+          }
+      };
+
+      /* get collection data dokter */
+      //dblist dokter
+      const dbListDokter = collection(db, "msp");
+      getDocs(dbListDokter)
+        .then((snapshot) => {
+          let listDokter = [];
+          let listid = [];
+          let totalDana = 0;
+          const now = new Date();
+          const formattedDate = `${String(now.getDate()).padStart(2, '0')}-${String(now.getMonth() + 1).padStart(2, '0')}-${now.getFullYear()}`;
+          snapshot.docs.forEach((doc) => {
+            listDokter.push({ ...doc.data(), id: doc.id });
+            listid.push({ idini: doc.id });
+            renderDokter(doc);
+            const dana = doc.data().phone || 0;
+            totalDana += dana;
+          });
+          console.log("Total Harga Semua in Collection:", totalDana);
+          console.log("Number of documents in collection: ", snapshot.size);
+          // console.log(listDokter);
+          // console.log(listid);
+
+          // Render baris-baris ke dalam tabel sesuai urutan status
+          ["kontrak", "negosiasi", "proposal", "inisiasi"].forEach((status) => {
+            const rows = rowsByStatus[status];
+            // console.log(rows)
+            rows.forEach((row, index) => {
+              plusnomor++;
+              const trow = document.createElement("tr");
+              let ControlDiv = document.createElement("td");
+              const nomorTD = document.createElement("td");
+              nomorTD.textContent = plusnomor;
+              row.unshift(nomorTD); // Sisipkan nomorTD sebagai elemen pertama di dalam array row
+
+              // Tombol Edit
+              ControlDiv.innerHTML +=
+                    `<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes('${row[7]}')"><i class="fa fa-pencil" style="font-size:24px; color: ${status === 'inisiasi' || status === 'proposal' ? 'black' : 'white'}; margin-left:5px"></i></button>`;
+                // Tombol Hapus
+              ControlDiv.innerHTML +=
+                    `<button style="background-color: Transparent; background-repeat: no-repeat; border: none; cursor: pointer; overflow: hidden;" data-toggle="modal" data-target="#exampleModal2" onclick="Fillboxes('${row[7]}')"><i class="fa fa-trash" style="font-size:24px; color: ${status === 'inisiasi' || status === 'proposal' ? 'black' : 'white'};"></i></button>`;
+
+              row.pop()
+              row.push(ControlDiv);
+
+              if (status === "proposal") {
+                trow.style.backgroundColor = "yellow";
+                nomorTD.style.color = "black";
+              } else if (status === "kontrak") {
+                trow.style.backgroundColor = "green";
+              } else if (status === "negosiasi") {
+                trow.style.backgroundColor = "blue";
+              } else if (status === "inisiasi") {
+                trow.style.backgroundColor = "white";
+                nomorTD.style.color = "black";
+              }
+
+              row.forEach((td) => {
+                trow.appendChild(td);
+              });
+              dokterList.appendChild(trow);
+              trowRefs.push(trow);
+            });
+          });
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      /* end of get collection data dokter */
+
+      //update
+      async function UpdDoc() {
+        const now = new Date();
+        const formattedDate = `${String(now.getDate()).padStart(2, '0')}-${String(now.getMonth() + 1).padStart(2, '0')}-${now.getFullYear()}`;
+        const updatedatadoc = doc(db, "msp", dokterdocid.value);
+        updateDoc(updatedatadoc, {
+          nama: dokternama.value,
+          specialist: dokterspe.value,
+          phone: parseFloat(dokterpho.value.replace(/\D/g, '')),
+          status: doktersta.value,
+          alamat: dokteral.value,
+          timestamp: formattedDate
+        })
+          .then(() => {
+            console.log("add data sukses");
+            alert("Data Berhasil Update");
+            window.location.href = "msp.html";
+          })
+          .catch((error) => {
+            console.log("unsesesful" + error);
+          });
+      }
+
+      //delete
+      async function delDoc() {
+        const deletedatadoc = doc(db, "msp", dokterdocid.value);
+        await deleteDoc(deletedatadoc)
+          .then(() => {
+            console.log("add data sukses");
+            alert("Data Berhasil Dihapus");
+            window.location.href = "msp.html";
+          })
+          .catch((error) => {
+            console.log("unsesesful" + error);
+          });
+      }
+
+      // assign button
+      Deldoc.addEventListener("click", delDoc);
+      UpDatadoc.addEventListener("click", UpdDoc);
+      // }
+
+      
+      // filter by status
+      function countStatusDocument(status) {
+        const q = query(collection(db, "msp"), where("status", "==", status));
+
+        getDocs(q)
+        .then((querySnapshot) => {
+          console.log("Number of documents with status '" + status + "': ", querySnapshot.size);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      }
+
+      countStatusDocument("kontrak");
+      countStatusDocument("negosiasi");
+      countStatusDocument("inisiasi");
+      countStatusDocument("proposal");
+      // end of filter by status 
+
+      // filter for sum dana
+      function sumPriceByStatusA(status, callback) {
+      const q = query(collection(db, "ids"), where("status", "==", status));
+
+      getDocs(q)
+        .then((querySnapshot) => {
+          let total = 0;
+          querySnapshot.forEach((doc) => {
+            total += doc.data().phone;
+          });
+          callback(total);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      }
+
+
+      // end of filter sum dana 
+      function sumPriceByStatus(status, callback) {
+      const q = query(collection(db, "msp"), where("status", "==", status));
+
+      getDocs(q)
+        .then((querySnapshot) => {
+          let total = 0;
+          querySnapshot.forEach((doc) => {
+            total += doc.data().phone;
+          });
+          callback(total);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      }
+
+      // Menggunakan fungsi untuk menjumlahkan nilai price dari dokumen dengan status "kontrak"
+      sumPriceByStatus("kontrak", (sum) => {
+        console.log("Total price of documents with status 'kontrak': ", sum);
+      });
+
+      sumPriceByStatusA("kontrak", (sum) => {
+        console.log("Total price of documents with status 'kontrak': ", sum);
+      });
+
+
+    </script>
+    <!-- end of list of firestore -->
+  </body>
+</html>

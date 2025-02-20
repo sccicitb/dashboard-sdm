@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCCIC</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <div class="dashboard section">
+    <div class="row all-content">
+      <!-- list -->
+      <div class="col-lg-2 col-md-2 col-sm-4 list">
+        <div class="row icon-dash">
+          <div class="col">
+            <img src="img/logo.png" alt="" />
+          </div>
+        </div>
+        <hr />
+        <div class="all-list">
+          <div class="row patient">
+            <div class="col">
+              <a href="index.html">
+                <h6 class="">SCCIC</h6>
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div class="row doctor">
+            <div class="col">
+              <a href="ids.html">
+                <h6>IDS</h6>
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div class="row tool">
+            <div class="col">
+              <a href="idh.html">
+                <h6>IDH</h6>
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div class="row tool">
+            <div class="col">
+              <a href="msp.html">
+                <h6>MSP</h6>
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div class="row tool">
+            <div class="col">
+              <a href="lci.html">
+                <h6>LCI</h6>
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div class="row tool">
+            <div class="col">
+              <a href="resume.html">
+                <h6>RESUME</h6>
+              </a>
+            </div>
+          </div>
+          <hr>
+          <div class="row tool">
+            <div class="col">
+              <a href="https://citylab.itb.ac.id/sccic-dashmgmt/projects">
+                <h6>SDM</h6>
+              </a>
+            </div>
+          </div>
+          <hr>
+          <br> <br>
+        </div>
+      </div>
+      <!-- end of list -->
+
+      <!-- main content for doctor list -->
+      <div class="col-lg-10 col-md-10 col-sm-8 main">
+        <div class="row">
+          <div class="col title">
+            <h1>RESUME</h1>
+          </div>
+        </div>
+        <br />
+
+        <!-- select year -->
+        <div class="selected-year d-flex justify-content-end align-self-center mr-5">
+          <label for="">Periode : </label>
+          <select name="" id="">
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+          </select>
+        </div>
+        <!-- end of select year -->
+        <br>
+
+        <!-- target and realisasi -->
+        <div class="target-realisasi">
+          <div class="doctorlist-title" onload="ReadAll()">
+            <table class="table">
+              <thead>
+                <th>Organisasi</th>
+                <th>Target</th>
+                <th>Realisasi (Q1)</th>
+                <th>Target (Q1)</th>
+                <th>Realisasi (Q2)</th>
+                <th>Target (Q2)</th>
+                <th>Action</th>
+              </thead>
+              <!-- <tbody id="dataList"></tbody> -->
+              <tbody id="tabel-target">
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- end of target and realisasi -->
+        <br>
+
+        <!-- target and realisasi -->
+        <div class="status-proyek">
+          <div class="doctorlist-title">
+            <table class="table">
+              <thead>
+                <th>Organisasi</th>
+                <th>Kontrak</th>
+                <th>Negosiasi</th>
+                <th>Proposal</th>
+                <th>Inisiasi</th>
+              </thead>
+              <!-- <tbody id="dataList"></tbody> -->
+              <tbody id="tabel-proyek">
+                <tr>
+                  <td>SCCIC</td>
+                  <td id="sccic-kontrak"></td>
+                  <td id="sccic-penawaran"></td>
+                  <td id="sccic-proposal"></td>
+                  <td id="sccic-inisiasi"></td>
+                </tr>
+                <tr>
+                  <td>INDISMART</td>
+                  <td id="ids-kontrak"></td>
+                  <td id="ids-penawaran"></td>
+                  <td id="ids-proposal"></td>
+                  <td id="ids-inisiasi"></td>
+                </tr>
+                <tr>
+                  <td>LCI</td>
+                  <td id="lci-kontrak"></td>
+                  <td id="lci-penawaran"></td>
+                  <td id="lci-proposal"></td>
+                  <td id="lci-inisiasi"></td>
+                </tr>
+                <tr>
+                  <td>INDIHEALTH</td>
+                  <td id="idh-kontrak"></td>
+                  <td id="idh-penawaran"></td>
+                  <td id="idh-proposal"></td>
+                  <td id="idh-inisiasi"></td>
+                </tr>
+                <tr>
+                  <td>MSP</td>
+                  <td id="msp-kontrak"></td>
+                  <td id="msp-penawaran"></td>
+                  <td id="msp-proposal"></td>
+                  <td id="msp-inisiasi"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- end of target and realisasi -->
+        <br>
+
+        <!-- jumlah proyek -->
+        <div class="row d-flex justify-content-center">
+          <div class="doctorlist-title status-proyek col-lg-5">
+            <table class="table">
+              <thead>
+                <th>Organisasi</th>
+                <th colspan="4" class="text-center">Jumlah Client</th>
+              </thead>
+              <!-- <tbody id="dataList"></tbody> -->
+              <tbody id="tabel-proyek">
+                <tr>
+                  <td>SCCIC</td>
+                  <td id="sccic-kontrakk"></td>
+                  <td id="sccic-penawarank"></td>
+                  <td id="sccic-proposalk"></td>
+                  <td id="sccic-inisiasik"></td>
+                </tr>
+                <tr>
+                  <td>INDISMART</td>
+                  <td id="ids-kontrakk"></td>
+                  <td id="ids-penawarank"></td>
+                  <td id="ids-proposalk"></td>
+                  <td id="ids-inisiasik"></td>
+                </tr>
+                <tr>
+                  <td>LCI</td>
+                  <td id="lci-kontrakk"></td>
+                  <td id="lci-penawarank"></td>
+                  <td id="lci-proposalk"></td>
+                  <td id="lci-inisiasik"></td>
+                </tr>
+                <tr>
+                  <td>INDIHEALTH</td>
+                  <td id="idh-kontrakk"></td>
+                  <td id="idh-penawarank"></td>
+                  <td id="idh-proposalk"></td>
+                  <td id="idh-inisiasik"></td>
+                </tr>
+                <tr>
+                  <td>MSP</td>
+                  <td id="msp-kontrakk"></td>
+                  <td id="msp-penawarank"></td>
+                  <td id="msp-proposalk"></td>
+                  <td id="msp-inisiasik"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="doctorlist-title status-proyek col-lg-5">
+            <table class="table">
+              <thead>
+                <th>Organisasi</th>
+                <th>Total Dana</th>
+              </thead>
+              <!-- <tbody id="dataList"></tbody> -->
+              <tbody id="tabel-proyek">
+                <tr>
+                  <td>SCCIC</td>
+                  <td id="sccic-dana"></td>
+                </tr>
+                <tr>
+                  <td>INDISMART</td>
+                  <td id="ids-dana"></td>
+                </tr>
+                <tr>
+                  <td>LCI</td>
+                  <td id="lci-dana"></td>
+                </tr>
+                <tr>
+                  <td>INDIHEALTH</td>
+                  <td id="idh-dana"></td>
+                </tr>
+                <tr>
+                  <td>MSP</td>
+                  <td id="msp-dana"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- end of jumlah proyek -->
+        <br>
+
+        <!-- index organisasi -->
+        <div class="status-proyek ">
+          <div class="doctorlist-title ">
+            <table class="table">
+              <thead>
+                <th>Organisasi</th>
+                <th>Profitability Index (PI)</th>
+                <th>Solvability Index (SI)</th>
+                <th>Liquidity Index (LI)</th>
+              </thead>
+              <!-- <tbody id="dataList"></tbody> -->
+              <tbody id="tabel-proyek">
+                <!-- <tr>
+                  <td>SCCIC</td>
+                  <td id="pi-index-sccic" class="pi-select">
+                    <select id="dropdown-sccic">
+                      <option value="PI1">PI > 1</option>
+                      <option value="PI2">PI = 1</option>
+                      <option value="PI3">PI < 1</option>
+                    </select>
+                  </td>
+                  <td id="si-index-sccic" class="si-select">
+                    <select id="dropdown-sccic-si">
+                      <option value="SI1">SI > 1</option>
+                      <option value="SI2">SI = 1</option>
+                      <option value="SI3">SI < 1</option>
+                    </select>
+                  </td>
+                  <td id="li-index-sccic" class="li-select">
+                    <select id="dropdown-sccic-li">
+                      <option value="LI1">LI > 1</option>
+                      <option value="LI2">LI = 1</option>
+                      <option value="LI3">LI < 1</option>
+                    </select>
+                  </td>
+                </tr> -->
+                <tr>
+                  <td>INDISMART</td>
+                  <td id="pi-index-ids" class="pi-select">
+                    <select id="dropdown-ids">
+                      <option value="PI1">PI > 1</option>
+                      <option value="PI2">PI = 1</option>
+                      <option value="PI3">PI < 1</option>
+                    </select>
+                  </td>
+                  <td id="si-index-ids" class="si-select">
+                    <select id="dropdown-ids-si">
+                      <option value="SI1">SI > 1</option>
+                      <option value="SI2">SI = 1</option>
+                      <option value="SI3">SI < 1</option>
+                    </select>
+                  </td>
+                  <td id="li-index-ids" class="li-select">
+                    <select id="dropdown-ids-li">
+                      <option value="LI1">LI > 1</option>
+                      <option value="LI2">LI = 1</option>
+                      <option value="LI3">LI < 1</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>LCI</td>
+                  <td id="pi-index-lci" class="pi-select">
+                    <select id="dropdown-lci">
+                      <option value="PI1">PI > 1</option>
+                      <option value="PI2">PI = 1</option>
+                      <option value="PI3">PI < 1</option>
+                    </select>
+                  </td>
+                  <td id="si-index-lci" class="si-select">
+                    <select id="dropdown-lci-si">
+                      <option value="SI1">SI > 1</option>
+                      <option value="SI2">SI = 1</option>
+                      <option value="SI3">SI < 1</option>
+                    </select>
+                  </td>
+                  <td id="li-index-lci" class="li-select">
+                    <select id="dropdown-lci-li">
+                      <option value="LI1">LI > 1</option>
+                      <option value="LI2">LI = 1</option>
+                      <option value="LI3">LI < 1</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>INDIHEALTH</td>
+                  <td id="pi-index-idh" class="pi-select">
+                    <select id="dropdown-idh">
+                      <option value="PI1">PI > 1</option>
+                      <option value="PI2">PI = 1</option>
+                      <option value="PI3">PI < 1</option>
+                    </select>
+                  </td>
+                  <td id="si-index-idh" class="si-select">
+                    <select id="dropdown-idh-si">
+                      <option value="SI1">SI > 1</option>
+                      <option value="SI2">SI = 1</option>
+                      <option value="SI3">SI < 1</option>
+                    </select>
+                  </td>
+                  <td id="li-index-idh" class="li-select">
+                    <select id="dropdown-idh-li">
+                      <option value="LI1">LI > 1</option>
+                      <option value="LI2">LI = 1</option>
+                      <option value="LI3">LI < 1</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>MSP</td>
+                  <td id="pi-index-msp" class="pi-select">
+                    <select id="dropdown-msp">
+                      <option value="PI1">PI > 1</option>
+                      <option value="PI2">P1 = 1</option>
+                      <option value="PI3">P1 < 1</option>
+                    </select>
+                  </td>
+                  <td id="si-index-msp" class="si-select">
+                    <select id="dropdown-msp-si">
+                      <option value="SI1">SI > 1</option>
+                      <option value="SI2">SI = 1</option>
+                      <option value="SI3">SI < 1</option>
+                    </select>
+                  </td>
+                  <td id="li-index-msp" class="li-select">
+                    <select id="dropdown-msp-li">
+                      <option value="LI1">LI > 1</option>
+                      <option value="LI2">LI = 1</option>
+                      <option value="LI3">LI < 1</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+         </div>
+        <!-- end of index organisasi -->
+         <br>
+         <br>
+
+        <!-- modal -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Data </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                  <label for="" class="labs">Organisasi/PT: </label>
+                  <input type="text" id="nama" /> <br />
+                  <label for="" class="labs">Target: </label>
+                  <input type="text" id="target" /> <br />
+                  <label for="" class="labs">Target Q1: </label>
+                  <input type="text" id="targetQ1" /> <br />
+                  <label for="" class="labs">Target Q2: </label>
+                  <input type="text" id="targetQ2" /> <br />
+                  <label for="" class="labs" style="display: none">ID Dokument</label>
+                  <input type="text" id="idTarget" style="display: none" />
+                  <br />
+                </div>
+                <div class="modal-footer">
+                  <button id="UpDatadoc" class="UpDatadoc btn btn-success" type="button">Update Data</button>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of modal edit -->
+
+      </div>
+    </div>
+  </div>
+
+  <!-- script -->
+  <script src="../bootstrap/js/jquery-3.6.0.min.js"></script>
+  <script src="../bootstrap/js/bootstrap.js"></script>
+  <!-- end of script -->
+
+  <!-- script of firestore -->
+  <!-- Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+    import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc, query, where } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAUoy9zDA-1rp6r-BacNbJHWDzvW86YPSQ",
+      authDomain: "sccic-dashboard.firebaseapp.com",
+      projectId: "sccic-dashboard",
+      storageBucket: "sccic-dashboard.appspot.com",
+      messagingSenderId: "207809639364",
+      appId: "1:207809639364:web:da61ad713b2b04c3ed6a91",
+      measurementId: "G-51QQRT656L"
+    };
+
+    // init firebase
+    initializeApp(firebaseConfig);
+
+    // init services
+    const db = getFirestore();
+    const auth = getAuth();
+
+    //get PI database
+    $(document).ready(function() {
+    // Fungsi untuk mengupdate background color berdasarkan nilai yang disimpan di localStorage
+    function updateBackgroundColor() {
+        $('.pi-select select').each(function() {
+            var selectElement = $(this);
+            var parentTd = selectElement.closest('.pi-select');
+            var storedValue = localStorage.getItem(selectElement.attr('id'));
+
+            // Jika ada nilai yang disimpan, set nilai dropdown dan ubah warna background
+            if (storedValue) {
+                selectElement.val(storedValue);
+            } else {
+                // Set nilai default jika tidak ada nilai yang disimpan
+                selectElement.val("PI1");
+                localStorage.setItem(selectElement.attr('id'), "PI1");
+            }
+
+            // Ubah warna background sesuai dengan nilai yang dipilih
+            changeBackgroundColor(parentTd, selectElement.val());
+
+            // Ketika dropdown berubah, simpan nilai dan ubah warna background
+            selectElement.change(function() {
+                var selectedValue = selectElement.val();
+                localStorage.setItem(selectElement.attr('id'), selectedValue);
+                changeBackgroundColor(parentTd, selectedValue);
+            });
+        });
+    }
+
+    // Fungsi untuk mengubah warna latar belakang
+    function changeBackgroundColor(parentTd, selectedValue) {
+        parentTd.css("background-color", ""); // Reset background color
+
+        // Mengubah warna berdasarkan nilai yang dipilih
+        if (selectedValue === "PI1") {
+            parentTd.css("background-color", "green");
+        } else if (selectedValue === "PI2") {
+            parentTd.css("background-color", "blue");
+        } else if (selectedValue === "PI3") {
+            parentTd.css("background-color", "red");
+        }
+    }
+
+    // Panggil fungsi untuk inisialisasi
+    updateBackgroundColor();
+});
+
+// SI
+$(document).ready(function() {
+    // Fungsi untuk mengupdate background color berdasarkan nilai yang disimpan di localStorage
+    function updateBackgroundColorSi() {
+        $('.si-select select').each(function() {
+            var selectElement = $(this);
+            var parentTd = selectElement.closest('.si-select');
+            var storedValue = localStorage.getItem(selectElement.attr('id'));
+
+            // Jika ada nilai yang disimpan, set nilai dropdown dan ubah warna background
+            if (storedValue) {
+                selectElement.val(storedValue);
+            } else {
+                // Set nilai default jika tidak ada nilai yang disimpan
+                selectElement.val("SI1");
+                localStorage.setItem(selectElement.attr('id'), "SI1");
+            }
+
+            // Ubah warna background sesuai dengan nilai yang dipilih
+            changeBackgroundColor(parentTd, selectElement.val());
+
+            // Ketika dropdown berubah, simpan nilai dan ubah warna background
+            selectElement.change(function() {
+                var selectedValue = selectElement.val();
+                localStorage.setItem(selectElement.attr('id'), selectedValue);
+                changeBackgroundColor(parentTd, selectedValue);
+            });
+        });
+    }
+
+    // Fungsi untuk mengubah warna latar belakang
+    function changeBackgroundColor(parentTd, selectedValue) {
+        parentTd.css("background-color", ""); // Reset background color
+
+        // Mengubah warna berdasarkan nilai yang dipilih
+        if (selectedValue === "SI1") {
+            parentTd.css("background-color", "red");
+        } else if (selectedValue === "SI2") {
+            parentTd.css("background-color", "blue");
+        } else if (selectedValue === "SI3") {
+            parentTd.css("background-color", "green");
+        }
+    }
+
+    // Panggil fungsi untuk inisialisasi
+    updateBackgroundColorSi();
+});
+// end of SI
+
+// Li
+    //get PI database
+    $(document).ready(function() {
+    // Fungsi untuk mengupdate background color berdasarkan nilai yang disimpan di localStorage
+    function updateBackgroundColorLi() {
+        $('.li-select select').each(function() {
+            var selectElement = $(this);
+            var parentTd = selectElement.closest('.li-select');
+            var storedValue = localStorage.getItem(selectElement.attr('id'));
+
+            // Jika ada nilai yang disimpan, set nilai dropdown dan ubah warna background
+            if (storedValue) {
+                selectElement.val(storedValue);
+            } else {
+                // Set nilai default jika tidak ada nilai yang disimpan
+                selectElement.val("LI1");
+                localStorage.setItem(selectElement.attr('id'), "LI1");
+            }
+
+            // Ubah warna background sesuai dengan nilai yang dipilih
+            changeBackgroundColor(parentTd, selectElement.val());
+
+            // Ketika dropdown berubah, simpan nilai dan ubah warna background
+            selectElement.change(function() {
+                var selectedValue = selectElement.val();
+                localStorage.setItem(selectElement.attr('id'), selectedValue);
+                changeBackgroundColor(parentTd, selectedValue);
+            });
+        });
+    }
+
+    // Fungsi untuk mengubah warna latar belakang
+    function changeBackgroundColor(parentTd, selectedValue) {
+        parentTd.css("background-color", ""); // Reset background color
+
+        // Mengubah warna berdasarkan nilai yang dipilih
+        if (selectedValue === "LI1") {
+            parentTd.css("background-color", "green");
+        } else if (selectedValue === "LI2") {
+            parentTd.css("background-color", "blue");
+        } else if (selectedValue === "LI3") {
+            parentTd.css("background-color", "red");
+        }
+    }
+
+    // Panggil fungsi untuk inisialisasi
+    updateBackgroundColorLi();
+});
+
+// end of li
+
+
+
+    //Fungsi formatRupiah
+    function formatRupiah(angka) {
+        var reverse = angka.toString().split('').reverse().join('');
+        var ribuan = reverse.match(/\d{1,3}/g);
+        var hasil = ribuan.join('.').split('').reverse().join('');
+        return hasil + ',00';
+    }
+
+    var plusnomor = 0;
+    var targetList = [];
+
+    //database target
+    const dbListTarget = collection(db, "target");
+    getDocs(dbListTarget)
+      .then((snapshot) => {
+        let listTarget = [];
+        let listidTarget = [];
+        snapshot.docs.forEach((doc) => {
+          listTarget.push({ ...doc.data(), id: doc.id });
+          listidTarget.push({ idini: doc.id });
+          renderTarget(doc);
+        });   
+      })
+      .catch((err) => {
+        console.log(err.message);
+    });
+
+      //update
+      async function UpdDoc() {
+      const updatedatatarget = doc(db, "target", idTarget.value);
+      // console.log("ini id target" + idTarget.value)
+      updateDoc(updatedatatarget, {
+        organisasi: organisasitb.value,
+        target: +targettb.value,
+        targetQ1: +targetq1tb,
+        realisasiQ1tb: realisasiQ1tb,
+        targetQ2: +targetQ2tb,
+        realisasiQ2: realisasiQ2tb
+      })
+        .then(() => {
+          alert("Data Berhasil Update");
+          window.location.href = "resumecopy.html";
+        })
+        .catch((error) => {
+          console.log("unsesesful" + error);
+        });
+    }
+
+    // filter data target
+
+    let kontrakprice = 0;
+
+    function sumPriceByStatusAndDisplay(collectionName, status, elementId, elemenK, elemenD, elemenR) {
+    console.log("Searching for status:", status, "in collection:", collectionName);
+    const q = status ? query(collection(db, collectionName), where("status", "==", status)) : collection(db, collectionName);
+    getDocs(q)
+        .then((querySnapshot) => {
+            let total = 0;
+            let target = 0;
+            querySnapshot.forEach((doc) => {
+                total += doc.data().phone;
+            });
+            if (elementId) {
+                document.getElementById(elementId).textContent = formatRupiah(total);
+                if(status == "kontrak") {
+                  kontrakprice = total;
+                }
+                // return(kontrakprice);
+            } else if (elemenK) {
+                document.getElementById(elemenK).textContent = querySnapshot.size;
+            } else if (elemenD) {
+                document.getElementById(elemenD).textContent = formatRupiah(total);
+                console.log("total sum price" + collectionName + ": " + total);
+            }
+            else {
+              console.log("none");
+            }
+
+        })
+        .catch((err) => {
+            console.log(err.message);
+        });
+}
+
+
+  // Panggil fungsi sumPriceByStatusAndDisplay untuk menampilkan total harga pada elemen HTML
+  sumPriceByStatusAndDisplay("sccic", "", "", "", "sccic-dana");
+  sumPriceByStatusAndDisplay("sccic", "kontrak", "realisasisccic", "");
+  sumPriceByStatusAndDisplay("ids", "", "", "", "ids-dana");
+  sumPriceByStatusAndDisplay("ids", "kontrak", "realisasiids", "");
+  sumPriceByStatusAndDisplay("lci", "", "", "", "lci-dana");
+  sumPriceByStatusAndDisplay("lci", "kontrak", "realisasilci", "");
+  sumPriceByStatusAndDisplay("msp", "", "", "", "msp-dana");
+  sumPriceByStatusAndDisplay("msp", "kontrak", "realisasimsp", "");
+  sumPriceByStatusAndDisplay("idh", "", "", "", "idh-dana");
+  sumPriceByStatusAndDisplay("idh", "kontrak", "realisasiidh", "");
+
+  sumPriceByStatusAndDisplay("sccic", "kontrak", "sccic-kontrak", "");
+  sumPriceByStatusAndDisplay("sccic", "negosiasi", "sccic-penawaran", "");
+  sumPriceByStatusAndDisplay("sccic", "proposal", "sccic-proposal", "");
+  sumPriceByStatusAndDisplay("sccic", "inisiasi", "sccic-inisiasi", "");
+
+  sumPriceByStatusAndDisplay("sccic", "kontrak", "", "sccic-kontrakk");
+  sumPriceByStatusAndDisplay("sccic", "negosiasi", "", "sccic-penawarank");
+  sumPriceByStatusAndDisplay("sccic", "proposal", "", "sccic-proposalk");
+  sumPriceByStatusAndDisplay("sccic", "inisiasi", "", "sccic-inisiasik");
+
+  sumPriceByStatusAndDisplay("ids", "kontrak", "ids-kontrak", "");
+  sumPriceByStatusAndDisplay("ids", "negosiasi", "ids-penawaran","");
+  sumPriceByStatusAndDisplay("ids", "proposal", "ids-proposal","");
+  sumPriceByStatusAndDisplay("ids", "inisiasi", "ids-inisiasi","");
+
+  sumPriceByStatusAndDisplay("ids", "kontrak", "", "ids-kontrakk");
+  sumPriceByStatusAndDisplay("ids", "negosiasi", "","ids-penawarank");
+  sumPriceByStatusAndDisplay("ids", "proposal", "","ids-proposalk");
+  sumPriceByStatusAndDisplay("ids", "inisiasi", "","ids-inisiasik");
+
+  sumPriceByStatusAndDisplay("lci", "kontrak", "lci-kontrak", "");
+  sumPriceByStatusAndDisplay("lci", "negosiasi", "lci-penawaran","");
+  sumPriceByStatusAndDisplay("lci", "proposal", "lci-proposal", "");
+  sumPriceByStatusAndDisplay("lci", "inisiasi", "lci-inisiasi", "");
+
+  sumPriceByStatusAndDisplay("lci", "kontrak", "", "lci-kontrakk");
+  sumPriceByStatusAndDisplay("lci", "negosiasi", "","lci-penawarank");
+  sumPriceByStatusAndDisplay("lci", "proposal", "", "lci-proposalk");
+  sumPriceByStatusAndDisplay("lci", "inisiasi", "", "lci-inisiasik");
+
+  sumPriceByStatusAndDisplay("msp", "kontrak", "msp-kontrak", "");
+  sumPriceByStatusAndDisplay("msp", "negosiasi", "msp-penawaran", "");
+  sumPriceByStatusAndDisplay("msp", "proposal", "msp-proposal", "");
+  sumPriceByStatusAndDisplay("msp", "inisiasi", "msp-inisiasi", "");
+
+  sumPriceByStatusAndDisplay("msp", "kontrak", "", "msp-kontrakk");
+  sumPriceByStatusAndDisplay("msp", "negosiasi", "", "msp-penawarank");
+  sumPriceByStatusAndDisplay("msp", "proposal", "", "msp-proposalk");
+  sumPriceByStatusAndDisplay("msp", "inisiasi", "", "msp-inisiasik");
+
+  sumPriceByStatusAndDisplay("idh", "kontrak", "idh-kontrak", "");
+  sumPriceByStatusAndDisplay("idh", "negosiasi", "idh-penawaran", "");
+  sumPriceByStatusAndDisplay("idh", "proposal", "idh-proposal", "");
+  sumPriceByStatusAndDisplay("idh", "inisiasi", "idh-inisiasi", "");
+
+  sumPriceByStatusAndDisplay("idh", "kontrak", "", "idh-kontrakk");
+  sumPriceByStatusAndDisplay("idh", "negosiasi", "", "idh-penawarank");
+  sumPriceByStatusAndDisplay("idh", "proposal", "", "idh-proposalk");
+  sumPriceByStatusAndDisplay("idh", "inisiasi", "", "idh-inisiasik");
+
+
+  //table target
+  const tagetTable = document.querySelector("#tabel-target");
+  function renderTarget(doc) {
+    targetList.push([doc.data().organisasi, doc.data().target, doc.data().targetQ1, doc.data().targetQ2, doc.id]);
+    let trow = document.createElement("tr");
+    var nomor = document.createElement("td");
+    let organisasi = document.createElement("td");
+    let target = document.createElement("td");
+    let realisasiQ1 = document.createElement("td");
+    realisasiQ1.id = doc.data().realisasiQ1;
+    let targetQ1 = document.createElement("td");
+    let realisasiQ2 = document.createElement("td");
+    let targetQ2 = document.createElement("td");
+    let action = document.createElement("td");
+
+    // console.log("ini kontrak price: " + kontrakprice);
+
+    //doc list hanya -> organisasi target realisasi (perhitungan dari atas) target persentase
+
+    //set inner html
+    trow.setAttribute("data-id", doc.id);
+    nomor.innerHTML = ++plusnomor;  
+    nomor.style.display = "none";
+    // nomor.innerHTML = ++plusnomor
+    organisasi.textContent = doc.data().organisasi;
+    target.textContent = formatRupiah(doc.data().target);
+    realisasiQ1.textContent = realisasiQ1.id;
+    targetQ1.textContent = formatRupiah(doc.data().targetQ1);
+    realisasiQ2.textContent = doc.data().realisasiQ2;
+    targetQ2.textContent = doc.data().targetQ2;
+    action.innerHTML +=
+        '<button style="background-color: blue; color: white; padding: 5px 15px;  background-repeat: no-repeat; border-radius: 10px; border: none; cursor: pointer; overflow: hidden; margin-right:12px" data-toggle="modal" data-target="#exampleModal1" onclick="Fillboxes(' +
+        plusnomor +
+        ')">Edit</button>';
+
+    trow.appendChild(nomor);
+    trow.appendChild(organisasi);
+    trow.appendChild(target);
+    trow.appendChild(realisasiQ1);
+    trow.appendChild(targetQ1);
+    trow.appendChild(realisasiQ2);
+    trow.appendChild(targetQ2);
+    trow.appendChild(action);
+
+    tagetTable.appendChild(trow);
+  }
+
+
+
+    UpDatadoc.addEventListener("click", UpdDoc);
+
+  // end of database
+</script>
+  <!-- end of list of firestore -->
+</body>
+
+</html>
