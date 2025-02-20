@@ -41,9 +41,24 @@ const formState = {
 
 const periodYear = ['2025', '2024', '2023', '2022', '2021', '2020']
 
+const constant = {
+  org: {
+    SCCIC: 'SCCIC',
+    IDS: 'IDS',
+    IDH: 'IDH',
+    MSP: 'MSP',
+    LCI: 'LCI',
+    RESUME: 'RESUME',
+  },
+  action: {
+    VIEW: 'view',
+    ADD: 'add'
+  }
+}
+
 function App() {
   const [action, setAction] = useQueryState('action', { defaultValue: 'view' })
-  const [organization, setOrganization] = useQueryState('org', { defaultValue: 'SCCIC' })
+  const [organization, setOrganization] = useQueryState('org', { defaultValue: constant.org.SCCIC })
   const [search, setSearch] = useQueryState('search', { defaultValue: '' })
   const [periode, setPeriode] = useQueryState('periode', { defaultValue: 'all' })
   const [form, setForm] = useState({ ...formState })
@@ -169,7 +184,9 @@ function App() {
   }
 
   useEffect(() => {
-    getData()
+    if (action === constant.action.VIEW) {
+      getData()
+    }
   }, [organization, search, periode])
 
   useEffect(() => {
@@ -182,34 +199,37 @@ function App() {
         <div className="col p-0">
 
           {/* sidebar */}
-          <nav className="navbar navbar-expand-lg" style={{ background: "#fcfcfc" }}>
+          <nav className="navbar navbar-expand-lg" style={{ background: "#fcfcfc", minHeight: '7vh' }}>
             <div className="navbar-brand icon-dash">
               <img src="img/logo.png" alt="" />
             </div>
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item active">
-                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, "SCCIC")} style={{ color: organization === "SCCIC" ? '#6a070c' : 'black' }}>SCCIC</a>
+                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.SCCIC)} style={{ color: organization === constant.org.SCCIC ? '#6a070c' : 'black' }}>SCCIC</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, "IDS")} style={{ color: organization === 'IDS' ? '#6a070c' : 'black' }}>IDS</a>
+                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.IDS)} style={{ color: organization === constant.org.IDS ? '#6a070c' : 'black' }}>IDS</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, "IDH")} style={{ color: organization === 'IDH' ? '#6a070c' : 'black' }}>IDH</a>
+                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.IDH)} style={{ color: organization === constant.org.IDH ? '#6a070c' : 'black' }}>IDH</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, "MSP")} style={{ color: organization === 'MSP' ? '#6a070c' : 'black' }}>MSP</a>
+                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.MSP)} style={{ color: organization === constant.org.MSP ? '#6a070c' : 'black' }}>MSP</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, "LCI")} style={{ color: organization === 'LCI' ? '#6a070c' : 'black' }}>LCI</a>
+                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.LCI)} style={{ color: organization === constant.org.LCI ? '#6a070c' : 'black' }}>LCI</a>
                 </li>
+                {/* <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.RESUME)} style={{ color: organization === constant.org.RESUME ? '#6a070c' : 'black' }}>Resume</a>
+                </li> */}
               </ul>
             </div>
           </nav>
 
           {/* main content */}
           {
-            action === 'add' ? (
+            action === constant.action.ADD && (
               <div className="col-lg-12 col-md-10 col-sm-8 maindoc">
                 <div className="row">
                   <div className="col title">
@@ -260,7 +280,10 @@ function App() {
                   </div>
                 </div>
               </div>
-            ) : (
+            )
+          }
+          {
+            action === constant.action.VIEW && (
               <div className="col-lg-12 col-md-10 col-sm-8 main container-fluid">
                 <div className="row">
                   <div className="col title">
