@@ -44,16 +44,29 @@ const periodYear = ['2025', '2024', '2023', '2022', '2021', '2020']
 const constant = {
   org: {
     SCCIC: 'SCCIC',
-    IDS: 'IDS',
+    IDS_LCI: 'IDSxLCI',
     IDH: 'IDH',
     MSP: 'MSP',
-    LCI: 'LCI',
     RESUME: 'RESUME',
   },
   action: {
     VIEW: 'view',
     ADD: 'add'
   }
+}
+
+const StatusColors = {
+  kontrak: "green",
+  negosiasi: "blue",
+  proposal: "yellow",
+  inisiasi: "white",
+}
+
+const StatusTextColors = {
+  kontrak: "white",
+  negosiasi: "white",
+  proposal: "black",
+  inisiasi: "black",
 }
 
 function App() {
@@ -169,19 +182,7 @@ function App() {
     $('#deleteModal').modal('toggle')
   }
 
-  const StatusColors = {
-    kontrak: "green",
-    negosiasi: "blue",
-    proposal: "yellow",
-    inisiasi: "white",
-  }
 
-  const StatusTextColors = {
-    kontrak: "white",
-    negosiasi: "white",
-    proposal: "black",
-    inisiasi: "black",
-  }
 
   useEffect(() => {
     if (action === constant.action.VIEW) {
@@ -199,26 +200,23 @@ function App() {
         <div className="col p-0">
 
           {/* sidebar */}
-          <nav className="navbar navbar-expand-lg" style={{ background: "#fcfcfc", minHeight: '7vh' }}>
+          <nav className="navbar navbar-expand-lg " style={{ background: "#fcfcfc", minHeight: '7vh' }}>
             <div className="navbar-brand icon-dash">
               <img src="img/logo.png" alt="" />
             </div>
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item active">
-                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.SCCIC)} style={{ color: organization === constant.org.SCCIC ? '#6a070c' : 'black' }}>SCCIC</a>
+                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.SCCIC)} style={{ color: organization === constant.org.SCCIC ? '#6a070c' : 'black' }}>SCCIC</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.IDS)} style={{ color: organization === constant.org.IDS ? '#6a070c' : 'black' }}>IDS</a>
+                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.IDS_LCI)} style={{ color: organization === constant.org.IDS_LCI ? '#6a070c' : 'black' }}>IDSxLCI</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.IDH)} style={{ color: organization === constant.org.IDH ? '#6a070c' : 'black' }}>IDH</a>
+                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.MSP)} style={{ color: organization === constant.org.MSP ? '#6a070c' : 'black' }}>MSP</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.MSP)} style={{ color: organization === constant.org.MSP ? '#6a070c' : 'black' }}>MSP</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.LCI)} style={{ color: organization === constant.org.LCI ? '#6a070c' : 'black' }}>LCI</a>
+                  <a className="nav-link h4" href="#" onClick={(e) => NavClick(e, constant.org.IDH)} style={{ color: organization === constant.org.IDH ? '#6a070c' : 'black' }}>IDH</a>
                 </li>
                 {/* <li className="nav-item">
                   <a className="nav-link" href="#" onClick={(e) => NavClick(e, constant.org.RESUME)} style={{ color: organization === constant.org.RESUME ? '#6a070c' : 'black' }}>Resume</a>
