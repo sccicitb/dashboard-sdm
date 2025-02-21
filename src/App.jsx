@@ -29,12 +29,12 @@ function sortByStatus(data) {
   return data.sort((a, b) => {
     // First sort by status
     const statusComparison = statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status);
-    
+
     // If status is the same, sort by updated_at descending
     if (statusComparison === 0) {
       return new Date(b.updated_at) - new Date(a.updated_at);
     }
-    
+
     return statusComparison;
   });
 }
@@ -47,7 +47,8 @@ const formState = {
   status: "inisiasi",
   pic: "",
   note: "",
-  outsource: ""
+  outsource: "",
+  updated_at: new Date().toISOString().split('T')[0]
 }
 
 const periodYear = ['2025', '2024', '2023', '2022', '2021', '2020']
@@ -114,7 +115,7 @@ function App() {
     setOrganization(org)
     setAction(constant.action.VIEW)
   }
-  
+
   const ViewResume = (e) => {
     e.preventDefault();
 
@@ -133,7 +134,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const { error } = await supabase.from('t_project').insert({
       name: form.name,
       partner: form.partner,
@@ -144,7 +145,7 @@ function App() {
       note: form.note,
       outsource: form.outsource,
       organization: organization.toLocaleLowerCase(),
-      updated_at: new Date()
+      updated_at: new Date(form.updated_at)
     })
 
     if (error) {
@@ -173,7 +174,7 @@ function App() {
       pic: form.pic,
       note: form.note,
       outsource: form.outsource,
-      updated_at: new Date()
+      updated_at: new Date(form.updated_at)
     }).eq('id', form.id)
 
     if (error) {
@@ -307,6 +308,17 @@ function App() {
                                   <option value="Urban">Urban</option>
                                   <option value="IDH">IDH</option>
                                 </select>
+                              </div>
+                              <div className="form-group">
+                                <label htmlFor="updated_at" style={{ color: "rgb(216, 216, 216)" }}>Tanggal Update</label>
+                                <input
+                                  type="date"
+                                  id="updated_at"
+                                  name="updated_at"
+                                  value={form.updated_at ? new Date(form.updated_at).toISOString().split('T')[0] : ''}
+                                  onChange={handleInputChange}
+                                  style={{ width: "100%" }}
+                                /> <br />
                               </div>
                               <div className="button">
                                 <button type="submit" className="btn submit" style={{ marginTop: "10px" }}>Submit</button>
@@ -456,6 +468,15 @@ function App() {
                     <option value="Urban">Urban</option>
                     <option value="IDH">IDH</option>
                   </select>
+                  <label htmlFor="updated_at" className="labs">Tanggal Update</label>
+                  <input
+                    type="date"
+                    id="updated_at"
+                    name="updated_at"
+                    value={form.updated_at ? new Date(form.updated_at.split('T')[0]).toISOString().split('T')[0] : ''}
+                    onChange={handleInputChange}
+                    style={{ width: "100%" }}
+                  />
                   <br />
                 </div>
                 <div className="modal-footer">
