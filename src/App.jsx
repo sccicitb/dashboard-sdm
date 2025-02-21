@@ -266,18 +266,17 @@ function App() {
                           <div className="col">
                             <form className="add" onSubmit={handleSubmit}>
                               <div className="form-group">
-                                <label htmlFor="email" style={{ color: "rgb(216, 216, 216)" }} >Proyek</label>
-                                <input type="text" className="form-control" id="email" aria-describedby="emailHelp" name="name" value={form.name} onChange={handleInputChange} required />
+                                <label htmlFor="name" style={{ color: "rgb(216, 216, 216)" }} >Proyek</label>
+                                <input type="text" className="form-control" id="name" aria-describedby="emailHelp" name="name" value={form.name} onChange={handleInputChange} required />
                               </div>
                               <div className="form-group">
-                                <label htmlFor="specialist" style={{ color: "rgb(216, 216, 216)" }} >Mitra</label>
-                                <input type="text" className="form-control" id="specialist" name="partner" value={form.partner} onChange={handleInputChange} required />
+                                <label htmlFor="partner" style={{ color: "rgb(216, 216, 216)" }} >Mitra</label>
+                                <input type="text" className="form-control" id="partner" name="partner" value={form.partner} onChange={handleInputChange} required />
                               </div>
                               <div className="form-group">
-                                <label htmlFor="phone" style={{ color: "rgb(216, 216, 216)" }} >Dana Kontrak</label>
+                                <label htmlFor="value" style={{ color: "rgb(216, 216, 216)" }} >Dana Kontrak</label>
                                 <input type="text" className="form-control" id="phone" name="value" value={form.value} onChange={handleInputChange} required />
                               </div>
-                              // In the add form
                               <div className="form-group">
                                 <label htmlFor="tax" style={{ color: "rgb(216, 216, 216)" }} >Estimasi Pendapatan</label>
                                 <input type="text" className="form-control" id="tax" name="tax" value={form.tax} onChange={handleInputChange} required />
@@ -355,8 +354,8 @@ function App() {
                     <thead>
                       <tr>
                         <th>No.</th>
-                        <th>Proyek</th>
                         <th>Mitra</th>
+                        <th>Proyek</th>
                         <th>Dana Kontrak</th>
                         <th>Estimasi Pendapatan</th>
                         <th>Status</th>
@@ -372,8 +371,8 @@ function App() {
                         data.map((el, idx) => (
                           <tr key={idx} style={{ backgroundColor: StatusColors[el.status], borderBottom: "1px #dee2e6 solid" }}>
                             <td style={{ color: StatusTextColors[el.status] }} >{idx + 1}</td>
-                            <td style={{ color: StatusTextColors[el.status] }} >{el.name}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{el.partner}</td>
+                            <td style={{ color: StatusTextColors[el.status] }} >{el.name}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{FormatRupiah(el.value)}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{FormatRupiah(el.tax)}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{el.status}</td>
