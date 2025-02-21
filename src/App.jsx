@@ -96,7 +96,7 @@ function App() {
     let query = supabase.from('t_project').select().eq('organization', organization.toLocaleLowerCase()).order('updated_at', { ascending: true })
 
     if (search) {
-      const searchTerm = `name.ilike.%${search}%,partner.ilike.%${search}%,status.ilike.%${search}%,pic.ilike.%${search}%`
+      const searchTerm = `name.ilike.%${search}%,partner.ilike.%${search}%,status.ilike.%${search}%,pic.ilike.%${search}%,outsource.ilike.%${search}%`
       query = query.or(searchTerm);
     }
 
