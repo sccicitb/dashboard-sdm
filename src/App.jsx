@@ -267,12 +267,12 @@ function App() {
                           <div className="col">
                             <form className="add" onSubmit={handleSubmit}>
                               <div className="form-group">
+                                <label htmlFor="partner" style={{ color: "rgb(216, 216, 216)" }} >Mitra</label>
+                                <input type="text" className="form-control" id="partner" name="partner" value={form.partner} onChange={handleInputChange} required />
+                              <div className="form-group">
                                 <label htmlFor="name" style={{ color: "rgb(216, 216, 216)" }} >Proyek</label>
                                 <input type="text" className="form-control" id="name" aria-describedby="emailHelp" name="name" value={form.name} onChange={handleInputChange} required />
                               </div>
-                              <div className="form-group">
-                                <label htmlFor="partner" style={{ color: "rgb(216, 216, 216)" }} >Mitra</label>
-                                <input type="text" className="form-control" id="partner" name="partner" value={form.partner} onChange={handleInputChange} required />
                               </div>
                               <div className="form-group">
                                 <label htmlFor="value" style={{ color: "rgb(216, 216, 216)" }} >Dana Kontrak</label>
@@ -441,10 +441,10 @@ function App() {
                   </button>
                 </div>
                 <div className="modal-body">
-                  <label htmlFor="name" className="labs">Proyek</label>
-                  <input type="text" id='name' name="name" value={form.name} onChange={handleInputChange} /> <br />
                   <label htmlFor="partner" className="labs">Mitra</label>
                   <input type="text" id='partner' name="partner" value={form.partner} onChange={handleInputChange} /> <br />
+                  <label htmlFor="name" className="labs">Proyek</label>
+                  <input type="text" id='name' name="name" value={form.name} onChange={handleInputChange} /> <br />
                   <label htmlFor="value" className="labs">Dana Kontrak</label>
                   <input type="text" id="value" name="value" value={form.value} onChange={handleInputChange} required /> <br />
                   <label htmlFor="tax" className="labs">Estimasi Pendapatan</label>
