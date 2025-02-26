@@ -1,6 +1,7 @@
-import { useQueryState } from 'nuqs'
-import { useState, useEffect } from 'react'
-import { createClient } from '@supabase/supabase-js'
+/* eslint-disable no-undef */
+import { createClient } from '@supabase/supabase-js';
+import { useQueryState } from 'nuqs';
+import { useEffect, useState } from 'react';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -24,6 +25,8 @@ function getFormattedDate(date = new Date()) {
 }
 
 function sortByStatus(data) {
+  if (data.length === 0) return data
+
   const statusOrder = ['kontrak', 'negosiasi', 'proposal', 'inisiasi'];
 
   return data.sort((a, b) => {
@@ -49,6 +52,14 @@ const formState = {
   note: "",
   outsource: "",
   updated_at: new Date().toISOString().split('T')[0]
+}
+
+const resumeFormState = {
+  target: "",
+  target_q1: "",
+  realization_q1: "",
+  target_q2: "",
+  realization_q2: "",
 }
 
 const periodYear = ['2025', '2024', '2023', '2022', '2021', '2020']
@@ -91,6 +102,31 @@ function App() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
 
+  // -- Resume
+  const [resumeForm, setresumeForm] = useState({ ...resumeFormState })
+
+  const getResumeData = async () => {
+    setLoading(true)
+    let resumePeriod;
+
+    if (periode === 'all') {
+      resumePeriod = new Date().getFullYear()
+    } else {
+      resumePeriod = periode
+    }
+
+    let query = supabase.from('t_org_target').select().eq('period', resumePeriod)
+    let queryResume = supabase.rpc(
+      'get_project_summary_by_organization'
+    );
+
+    const { data: targetData } = await query
+    const { data: resumeData } = await queryResume
+
+    setData({ target: targetData, resume: resumeData })
+    setLoading(false)
+  }
+
   const getData = async () => {
     setLoading(true)
     let query = supabase.from('t_project').select().eq('organization', organization.toLocaleLowerCase()).order('updated_at', { ascending: true })
@@ -118,7 +154,7 @@ function App() {
 
   const ViewResume = (e) => {
     e.preventDefault();
-
+    setPeriode(2024)
     setOrganization("")
     setAction(constant.action.RESUME)
   }
@@ -211,13 +247,15 @@ function App() {
   useEffect(() => {
     if (action === constant.action.VIEW) {
       getData()
+    } else if (action === constant.action.RESUME) {
+      getResumeData()
     }
-  }, [organization, search, periode])
+  }, [organization, search, periode, action])
 
   useEffect(() => {
     setForm({ ...formState })
   }, [action])
-
+  console.log(data)
   return (
     <>
       <div className="dashboard section">
@@ -269,10 +307,10 @@ function App() {
                               <div className="form-group">
                                 <label htmlFor="partner" style={{ color: "rgb(216, 216, 216)" }} >Mitra</label>
                                 <input type="text" className="form-control" id="partner" name="partner" value={form.partner} onChange={handleInputChange} required />
-                              <div className="form-group">
-                                <label htmlFor="name" style={{ color: "rgb(216, 216, 216)" }} >Proyek</label>
-                                <input type="text" className="form-control" id="name" aria-describedby="emailHelp" name="name" value={form.name} onChange={handleInputChange} required />
-                              </div>
+                                <div className="form-group">
+                                  <label htmlFor="name" style={{ color: "rgb(216, 216, 216)" }} >Proyek</label>
+                                  <input type="text" className="form-control" id="name" aria-describedby="emailHelp" name="name" value={form.name} onChange={handleInputChange} required />
+                                </div>
                               </div>
                               <div className="form-group">
                                 <label htmlFor="value" style={{ color: "rgb(216, 216, 216)" }} >Dana Kontrak</label>
@@ -361,7 +399,7 @@ function App() {
                   </div>
                 </div>
                 <br />
-                <div className="doctorlist-title">
+                <div className="doctorlist-title" style={{ height: "100vh" }}>
                   <table className="table table-borderless">
                     <thead>
                       <tr>
@@ -427,6 +465,153 @@ function App() {
                   </table>
                 </div>
               </div>
+            )
+          }
+          {
+            action === constant.action.RESUME && (
+              <>
+                <div className="col-lg-12 col-md-10 col-sm-8 main container-fluid">
+                  <div className="row">
+                    <div className="col title">
+                      <h1>{constant.action.RESUME.toUpperCase()}</h1>
+                    </div>
+                  </div>
+                  <div className="row doctor mb-5">
+                    <div className="selected-year d-flex justify-content-end align-self-center mr-5 ml-4">
+                      <label htmlFor="periode">Periode : </label>
+                      <select id="periode" name="periode" value={periode} onChange={e => setPeriode(e.target.value)} >
+                        <option value="all">All</option>
+                        {periodYear.map((el, idx) => <option key={idx} value={el}>{el}</option>)}
+                      </select>
+                    </div>
+                  </div>
+                  <div className="target-realisasi">
+                    <div className="doctorlist-title">
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th>Organisasi</th>
+                            <th>Target</th>
+                            <th>Realisasi (Q1)</th>
+                            <th>Target (Q1)</th>
+                            <th>Realisasi (Q2)</th>
+                            <th>Target (Q2)</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabel-target">
+                          {!loading &&
+                            data.target.map((el, idx) => (
+                              <tr key={idx}>
+                                <td>{el.name}</td>
+                                <td>{FormatRupiah(el.target)}</td>
+                                <td>{FormatRupiah(el.realization_q1)}</td>
+                                <td>{FormatRupiah(el.target_q1)}</td>
+                                <td>{FormatRupiah(el.realization_q2)}</td>
+                                <td>{FormatRupiah(el.target_q2)}</td>
+                                <td>
+                                  <button
+                                    style={{
+                                      backgroundColor: "Transparent",
+                                      backgroundRepeat: "no-repeat",
+                                      border: "none",
+                                      cursor: "pointer",
+                                      overflow: "hidden",
+                                      marginRight: "12px",
+                                    }}
+                                    onClick={() => handleEdit(el)}
+                                    disabled
+                                  >
+                                    <i className="fa fa-pencil" style={{ fontSize: "24px", color: StatusTextColors[el.status], marginLeft: "5px" }} ></i>
+                                  </button>
+                                </td>
+                              </tr>
+                            ))
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <br />
+                  <div className="status-proyek">
+                    <div className="doctorlist-title">
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th>Organisasi</th>
+                            <th>Kontrak</th>
+                            <th>Negosiasi</th>
+                            <th>Proposal</th>
+                            <th>Inisiasi</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabel-proyek">
+                          {!loading &&
+                            data.resume.map((el, idx) => (
+                              <tr key={idx}>
+                                <td>{el.organization}</td>
+                                <td id="sccic-kontrak">{FormatRupiah(el.kontrak_value)}</td>
+                                <td id="sccic-penawaran">{FormatRupiah(el.negosiasi_value)}</td>
+                                <td id="sccic-proposal">{FormatRupiah(el.proposal_value)}</td>
+                                <td id="sccic-inisiasi">{FormatRupiah(el.inisiasi_value)}</td>
+                              </tr>
+                            ))
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <br />
+                  <div className="row d-flex justify-content-center" style={{ padding: "15px" }}>
+                    <div className="doctorlist-title status-proyek col">
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th>Organisasi</th>
+                            <th colSpan="4" className="text-center">Jumlah Client</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabel-proyek">
+                        {!loading &&
+                            data.resume.map((el, idx) => (
+                              <tr key={idx}>
+                                <td>{el.organization}</td>
+                                <td id="sccic-kontrak">{el.kontrak_count}</td>
+                                <td id="sccic-penawaran">{el.negosiasi_count}</td>
+                                <td id="sccic-proposal">{el.proposal_count}</td>
+                                <td id="sccic-inisiasi">{el.inisiasi_count}</td>
+                              </tr>
+                            ))
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="doctorlist-title status-proyek col">
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th>Organisasi</th>
+                            <th>Total Dana</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabel-proyek">
+                        {!loading &&
+                            data.resume.map((el, idx) => (
+                              <tr key={idx}>
+                                <td>{el.organization}</td>
+                                <td id="sccic-dana">{FormatRupiah(el.total_value)}</td>
+                              </tr>
+                            ))
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <br />
+                  <br />
+                </div>
+              </>
+
             )
           }
 
