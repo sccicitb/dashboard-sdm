@@ -243,7 +243,6 @@ function App() {
 
   const handleResumeEdit = (el) => {
     setForm(el)
-    alert(JSON.stringify(el, null, 2))
     $('#editModalResume').modal('toggle')
   }
 
@@ -728,11 +727,13 @@ function App() {
                   <label htmlFor="realization_q1" className="labs">Realisasi (Q1)</label>
                   <input type="text" id="realization_q1" name="realization_q1" value={form.realization_q1} onChange={handleInputChange} required /> <br />
                   <label htmlFor="target_q1" className="labs">Target (Q1)</label>
-                  <p>{FormatRupiah(form.target_q1)}</p>
+                  {/* <p>{FormatRupiah(form.target_q1)}</p> */}
+                  <input type="text" id="target_q1" name="target_q1" value={form.target_q1} onChange={handleInputChange} required /> <br />
                   <label htmlFor="realization_q2" className="labs">Realisasi (Q2)</label>
                   <input type="text" id="realization_q2" name="realization_q2" value={form.realization_q2} onChange={handleInputChange} required /> <br />
                   <label htmlFor="target_q2" className="labs">Target (Q2)</label>
-                  <p>{FormatRupiah(form.target_q2)}</p>
+                  <input type="text" id="target_q2" name="target_q2" value={form.target_q2} onChange={handleInputChange} required /> <br />
+                  {/* <p>{FormatRupiah(form.target_q2)}</p> */}
                 </div>
                 <div className="modal-footer">
                   <button id="UpDatadoc" className="UpDatadoc btn btn-success" type="button" onClick={handleResumeUpdateSubmit}>Update Data</button>
