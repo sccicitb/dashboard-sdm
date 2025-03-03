@@ -54,14 +54,6 @@ const formState = {
   updated_at: new Date().toISOString().split('T')[0]
 }
 
-const resumeFormState = {
-  target: "",
-  target_q1: "",
-  realization_q1: "",
-  target_q2: "",
-  realization_q2: "",
-}
-
 const periodYear = ['2025', '2024', '2023', '2022', '2021', '2020']
 
 const constant = {
@@ -102,9 +94,6 @@ function App() {
   const [data, setData] = useState()
   const [loading, setLoading] = useState(false)
 
-  // -- Resume
-  const [resumeForm, setresumeForm] = useState({ ...resumeFormState })
-
   const getResumeData = async () => {
     setLoading(true)
     let resumePeriod;
@@ -116,9 +105,12 @@ function App() {
     }
 
     let query = supabase.from('t_org_target').select().eq('period', resumePeriod)
+    // let queryResume = supabase.rpc(
+    //   'get_project_summary_by_organization'
+    // );
     let queryResume = supabase.rpc(
-      'get_project_summary_by_organization'
-    );
+      'get_project_summary_by_organization_period'
+    ).eq('project_year', "2025");
 
     const { data: targetData } = await query
     const { data: resumeData } = await queryResume
@@ -286,7 +278,7 @@ function App() {
   useEffect(() => {
     setForm({ ...formState })
   }, [action])
-  console.log(data)
+
   return (
     <>
       <div className="dashboard section">
@@ -448,7 +440,7 @@ function App() {
                       </tr>
                     </thead>
                     <tbody id="dokterList" style={{ borderTop: "1px #dee2e6 solid" }}>
-                      {!loading &&
+                      {!loading && Array.isArray(data) &&
                         data.map((el, idx) => (
                           <tr key={idx} style={{ backgroundColor: StatusColors[el.status], borderBottom: "1px #dee2e6 solid" }}>
                             <td style={{ color: StatusTextColors[el.status] }} >{idx + 1}</td>
