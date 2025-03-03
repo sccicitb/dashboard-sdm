@@ -147,7 +147,6 @@ function App() {
 
   const ViewResume = (e) => {
     e.preventDefault();
-    setPeriode(2024)
     setOrganization("")
     setData({
       target: [],
@@ -560,10 +559,10 @@ function App() {
                         <thead>
                           <tr>
                             <th>Organisasi</th>
-                            <th>Kontrak</th>
-                            <th>Negosiasi</th>
-                            <th>Proposal</th>
-                            <th>Inisiasi</th>
+                            <th>Total nilai Kontrak</th>
+                            <th>Total nilai Negosiasi</th>
+                            <th>Total nilai Proposal</th>
+                            <th>Total nilai Inisiasi</th>
                           </tr>
                         </thead>
                         <tbody id="tabel-proyek">
@@ -575,6 +574,35 @@ function App() {
                                 <td id="sccic-penawaran">{FormatRupiah(el.negosiasi_value)}</td>
                                 <td id="sccic-proposal">{FormatRupiah(el.proposal_value)}</td>
                                 <td id="sccic-inisiasi">{FormatRupiah(el.inisiasi_value)}</td>
+                              </tr>
+                            ))
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <br />
+                  <div className="status-proyek">
+                    <div className="doctorlist-title">
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th>Organisasi</th>
+                            <th>Estimasi Pendapatan Kontrak</th>
+                            <th>Estimasi Pendapatan Negosiasi</th>
+                            <th>Estimasi Pendapatan Proposal</th>
+                            <th>Estimasi Pendapatan Inisiasi</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabel-proyek">
+                          {!loading && typeof data === 'object'  && 
+                            data.resume.map((el, idx) => (
+                              <tr key={idx}>
+                                <td>{el.organization}</td>
+                                <td id="sccic-kontrak">{FormatRupiah(el.kontrak_estimate)}</td>
+                                <td id="sccic-penawaran">{FormatRupiah(el.negosiasi_estimate)}</td>
+                                <td id="sccic-proposal">{FormatRupiah(el.proposal_estimate)}</td>
+                                <td id="sccic-inisiasi">{FormatRupiah(el.inisiasi_estimate)}</td>
                               </tr>
                             ))
                           }
@@ -612,7 +640,8 @@ function App() {
                         <thead>
                           <tr>
                             <th>Organisasi</th>
-                            <th>Total Dana</th>
+                            <th>Total Nilai</th>
+                            <th>Estimasi Pendapatan</th>
                           </tr>
                         </thead>
                         <tbody id="tabel-proyek">
@@ -621,6 +650,7 @@ function App() {
                               <tr key={idx}>
                                 <td>{el.organization}</td>
                                 <td id="sccic-dana">{FormatRupiah(el.total_value)}</td>
+                                <td id="sccic-dana">{FormatRupiah(el.total_estimate)}</td>
                               </tr>
                             ))
                           }
