@@ -346,7 +346,7 @@ function App() {
                                 <select name="status" value={form.status} onChange={handleInputChange} id="status">
                                   <option value="inisiasi">Inisiasi</option>
                                   <option value="proposal">Proposal</option>
-                                  <option value="penawaran">Penawaran</option>
+                                  <option value="penawaran">Negosiasi</option>
                                   <option value="kontrak">Kontrak</option>
                                 </select>
                               </div>
