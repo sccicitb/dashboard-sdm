@@ -148,6 +148,7 @@ function App() {
   const NavClick = (e, org) => {
     e.preventDefault();
 
+    setData([])
     setOrganization(org)
     setAction(constant.action.VIEW)
   }
@@ -156,6 +157,10 @@ function App() {
     e.preventDefault();
     setPeriode(2024)
     setOrganization("")
+    setData({
+      target: [],
+      resume: []
+    })
     setAction(constant.action.RESUME)
   }
 
