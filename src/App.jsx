@@ -99,7 +99,7 @@ function App() {
   const [search, setSearch] = useQueryState('search', { defaultValue: '' })
   const [periode, setPeriode] = useQueryState('periode', { defaultValue: 'all' })
   const [form, setForm] = useState({ ...formState })
-  const [data, setData] = useState([])
+  const [data, setData] = useState()
   const [loading, setLoading] = useState(false)
 
   // -- Resume
@@ -249,6 +249,32 @@ function App() {
     $('#deleteModal').modal('toggle')
   }
 
+  const handleResumeEdit = (el) => {
+    setForm(el)
+    alert(JSON.stringify(el, null, 2))
+    $('#editModalResume').modal('toggle')
+  }
+
+  const handleResumeUpdateSubmit = async (e) => {
+    e.preventDefault()
+    const { error } = await supabase.from('t_org_target').update({
+      realization_q1: form.realization_q1,
+      realization_q2: form.realization_q2,
+      period: form.period,
+      updated_at: new Date()
+    }).eq('id', form.id)
+
+    if (error) {
+      console.error(error)
+      alert(JSON.stringify(error, null, 2))
+    }
+
+    getResumeData()
+    setAction(constant.action.RESUME)
+    setForm({ ...formState })
+    $('#editModalResume').modal('toggle')
+  }
+
   useEffect(() => {
     if (action === constant.action.VIEW) {
       getData()
@@ -256,7 +282,7 @@ function App() {
       getResumeData()
     }
   }, [organization, search, periode, action])
-
+  
   useEffect(() => {
     setForm({ ...formState })
   }, [action])
@@ -505,7 +531,7 @@ function App() {
                           </tr>
                         </thead>
                         <tbody id="tabel-target">
-                          {!loading &&
+                          {!loading && typeof data === 'object'  && 
                             data.target.map((el, idx) => (
                               <tr key={idx}>
                                 <td>{el.name}</td>
@@ -524,8 +550,7 @@ function App() {
                                       overflow: "hidden",
                                       marginRight: "12px",
                                     }}
-                                    onClick={() => handleEdit(el)}
-                                    disabled
+                                    onClick={() => handleResumeEdit(el)}
                                   >
                                     <i className="fa fa-pencil" style={{ fontSize: "24px", color: StatusTextColors[el.status], marginLeft: "5px" }} ></i>
                                   </button>
@@ -551,7 +576,7 @@ function App() {
                           </tr>
                         </thead>
                         <tbody id="tabel-proyek">
-                          {!loading &&
+                          {!loading && typeof data === 'object'  && 
                             data.resume.map((el, idx) => (
                               <tr key={idx}>
                                 <td>{el.organization}</td>
@@ -577,7 +602,7 @@ function App() {
                           </tr>
                         </thead>
                         <tbody id="tabel-proyek">
-                        {!loading &&
+                        {!loading && typeof data === 'object'  && 
                             data.resume.map((el, idx) => (
                               <tr key={idx}>
                                 <td>{el.organization}</td>
@@ -600,7 +625,7 @@ function App() {
                           </tr>
                         </thead>
                         <tbody id="tabel-proyek">
-                        {!loading &&
+                        {!loading && typeof data === 'object'  && 
                             data.resume.map((el, idx) => (
                               <tr key={idx}>
                                 <td>{el.organization}</td>
@@ -690,6 +715,35 @@ function App() {
                 </div>
                 <div className="modal-btn">
                   <button id="Deldoc" className="DelDoc btn btn-danger" type="button" onClick={handleDeleteSubmit}>Delete Data</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Update Resume Modal */}
+          <div className="modal fade" id="editModalResume" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+            <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">Update Data </h5>
+                  <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div className="modal-body">
+                  <label htmlFor="organization" className="labs">Organisasi</label>
+                  <p>{form.name.toUpperCase()}</p>
+                  <label htmlFor="realization_q1" className="labs">Realisasi (Q1)</label>
+                  <input type="text" id="realization_q1" name="realization_q1" value={form.realization_q1} onChange={handleInputChange} required /> <br />
+                  <label htmlFor="target_q1" className="labs">Target (Q1)</label>
+                  <p>{FormatRupiah(form.target_q1)}</p>
+                  <label htmlFor="realization_q2" className="labs">Realisasi (Q2)</label>
+                  <input type="text" id="realization_q2" name="realization_q2" value={form.realization_q2} onChange={handleInputChange} required /> <br />
+                  <label htmlFor="target_q2" className="labs">Target (Q2)</label>
+                  <p>{FormatRupiah(form.target_q2)}</p>
+                </div>
+                <div className="modal-footer">
+                  <button id="UpDatadoc" className="UpDatadoc btn btn-success" type="button" onClick={handleResumeUpdateSubmit}>Update Data</button>
                 </div>
               </div>
             </div>
