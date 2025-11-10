@@ -54,7 +54,15 @@ const formState = {
   updated_at: new Date().toISOString().split('T')[0]
 }
 
-const periodYear = ['2025', '2024', '2023', '2022', '2021', '2020']
+const periodYear = [
+  '2026',
+  '2025',
+  '2024',
+  '2023',
+  '2022',
+  '2021',
+  '2020'
+]
 
 const constant = {
   org: {
