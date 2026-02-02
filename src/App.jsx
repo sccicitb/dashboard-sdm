@@ -2,6 +2,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { useQueryState } from 'nuqs';
 import { useEffect, useState } from 'react';
+import { generateExcel } from './utils/excelGenerator';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -25,7 +26,7 @@ function getFormattedDate(date = new Date()) {
 }
 
 function sortByStatus(data) {
-  if (data.length === 0) return data
+  if (!data || data.length === 0) return data || []
 
   const statusOrder = ['kontrak', 'negosiasi', 'proposal', 'inisiasi'];
 
@@ -102,6 +103,71 @@ function App() {
   const [form, setForm] = useState({ ...formState })
   const [data, setData] = useState()
   const [loading, setLoading] = useState(false)
+  const [exportLoading, setExportLoading] = useState(false)
+
+  const handleExport = async (e) => {
+    e.preventDefault();
+    console.log("Starting export process...");
+    setExportLoading(true);
+
+    try {
+      // 1. Fetch Projects (All Organizations)
+      let projectQuery = supabase.from('t_project').select().order('updated_at', { ascending: true });
+      if (periode !== 'all') {
+        projectQuery = projectQuery.eq('year_updated', periode);
+      }
+      const { data: projectData, error: projectError } = await projectQuery;
+      if (projectError) {
+        console.error("Project fetch error:", projectError);
+        throw projectError;
+      }
+      console.log("Projects fetched:", projectData?.length);
+
+      // 2. Fetch Resume Data
+      // Replicating logic from getResumeData: if 'all', default to current year for resume
+      let resumePeriod = periode === 'all' ? new Date().getFullYear().toString() : periode;
+      
+      // Target Data
+      const { data: targetData, error: targetError } = await supabase
+        .from('t_org_target')
+        .select()
+        .eq('period', resumePeriod);
+      if (targetError) {
+        console.error("Target fetch error:", targetError);
+        throw targetError;
+      }
+      console.log("Targets fetched:", targetData?.length);
+
+      // Summary Data (RPC)
+      const { data: summaryData, error: summaryError } = await supabase
+        .rpc('get_project_summary_by_organization_period')
+        .eq('project_year', resumePeriod);
+      if (summaryError) {
+        console.error("Summary fetch error:", summaryError);
+        throw summaryError;
+      }
+      console.log("Summary fetched:", summaryData?.length);
+
+      // Generate Excel
+      const fullData = {
+        projects: sortByStatus(projectData),
+        resume: {
+          target: targetData,
+          summary: summaryData
+        }
+      };
+
+      console.log("Calling generateExcel...");
+      await generateExcel(fullData, periode);
+      console.log("Export completed successfully");
+
+    } catch (error) {
+      console.error("Export failed:", error);
+      alert("Export failed: " + (error.message || JSON.stringify(error)));
+    } finally {
+      setExportLoading(false);
+    }
+  };
 
   const getResumeData = async () => {
     setLoading(true)
@@ -119,7 +185,7 @@ function App() {
     // );
     let queryResume = supabase.rpc(
       'get_project_summary_by_organization_period'
-    ).eq('project_year', "2025");
+    ).eq('project_year', resumePeriod);
 
     const { data: targetData } = await query
     const { data: resumeData } = await queryResume
@@ -314,6 +380,12 @@ function App() {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link h4" href="#" onClick={ViewResume} style={{ color: action === constant.action.RESUME ? '#6a070c' : 'black' }}>Resume</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link h4" href="#" onClick={handleExport} style={{ color: 'black', cursor: exportLoading ? 'wait' : 'pointer', pointerEvents: exportLoading ? 'none' : 'auto' }}>
+                    {exportLoading ? <span className="fa fa-spinner fa-spin mr-1"></span> : <span className="fa fa-download mr-1"></span>}
+                    {exportLoading ? 'Exporting...' : 'Export'}
+                  </a>
                 </li>
               </ul>
             </div>
