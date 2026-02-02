@@ -46,6 +46,7 @@ const formState = {
   name: "",
   partner: "",
   value: "",
+  operational_budget: "",
   tax: "",
   status: "inisiasi",
   pic: "",
@@ -97,7 +98,7 @@ function App() {
   const [action, setAction] = useQueryState('action', { defaultValue: 'view' })
   const [organization, setOrganization] = useQueryState('org', { defaultValue: constant.org.SCCIC })
   const [search, setSearch] = useQueryState('search', { defaultValue: '' })
-  const [periode, setPeriode] = useQueryState('periode', { defaultValue: 'all' })
+  const [periode, setPeriode] = useQueryState('periode', { defaultValue: new Date().getFullYear().toString() })
   const [form, setForm] = useState({ ...formState })
   const [data, setData] = useState()
   const [loading, setLoading] = useState(false)
@@ -179,6 +180,7 @@ function App() {
       name: form.name,
       partner: form.partner,
       value: form.value,
+      operational_budget: form.operational_budget,
       tax: form.tax,
       status: form.status,
       pic: form.pic,
@@ -209,6 +211,7 @@ function App() {
       name: form.name,
       partner: form.partner,
       value: form.value,
+      operational_budget: form.operational_budget,
       tax: form.tax,
       status: form.status,
       pic: form.pic,
@@ -346,6 +349,10 @@ function App() {
                                 <input type="text" className="form-control" id="phone" name="value" value={form.value} onChange={handleInputChange} required />
                               </div>
                               <div className="form-group">
+                                <label htmlFor="operational_budget" style={{ color: "rgb(216, 216, 216)" }} >Anggaran</label>
+                                <input type="text" className="form-control" id="operational_budget" name="operational_budget" value={form.operational_budget} onChange={handleInputChange} required />
+                              </div>
+                              <div className="form-group">
                                 <label htmlFor="tax" style={{ color: "rgb(216, 216, 216)" }} >Estimasi Pendapatan</label>
                                 <input type="text" className="form-control" id="tax" name="tax" value={form.tax} onChange={handleInputChange} required />
                               </div>
@@ -436,6 +443,7 @@ function App() {
                         <th>Mitra</th>
                         <th>Proyek</th>
                         <th>Dana Kontrak</th>
+                        <th>Anggaran</th>
                         <th>Estimasi Pendapatan</th>
                         <th>Status</th>
                         <th>PIC</th>
@@ -453,6 +461,7 @@ function App() {
                             <td style={{ color: StatusTextColors[el.status] }} >{el.partner}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{el.name}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{FormatRupiah(el.value)}</td>
+                            <td style={{ color: StatusTextColors[el.status] }} >{FormatRupiah(el.operational_budget)}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{FormatRupiah(el.tax)}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{el.status}</td>
                             <td style={{ color: StatusTextColors[el.status] }} >{el.pic}</td>
@@ -691,6 +700,8 @@ function App() {
                   <input type="text" id='name' name="name" value={form.name} onChange={handleInputChange} /> <br />
                   <label htmlFor="value" className="labs">Dana Kontrak</label>
                   <input type="text" id="value" name="value" value={form.value} onChange={handleInputChange} required /> <br />
+                  <label htmlFor="operational_budget" className="labs">Anggaran</label>
+                  <input type="text" id="operational_budget" name="operational_budget" value={form.operational_budget} onChange={handleInputChange} required /> <br />
                   <label htmlFor="tax" className="labs">Estimasi Pendapatan</label>
                   <input type="text" id="tax" name="tax" value={form.tax} onChange={handleInputChange} required /> <br />
                   <label htmlFor="status" className="labs">Status:</label>
